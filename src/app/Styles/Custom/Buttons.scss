@@ -1,0 +1,45 @@
+@mixin button(
+	$color,
+	$alt-color,
+	$background-color,
+	$alt-background-color,
+	$border-color,
+	$alt-border-color
+) {
+	color: $color !important;
+	background: $background-color !important;
+	border: 1px solid $border-color !important;
+	&:hover,
+	&:focus,
+	&:active,
+	&.active {
+		color: $alt-color !important;
+		background: $alt-background-color !important;
+		border-color: $alt-border-color !important;
+		box-shadow:
+			0 4px 6px rgba(50, 50, 93, 0.11),
+			0 1px 3px rgba(0, 0, 0, 0.08);
+	}
+}
+
+.btn-primary {
+	@include button(
+		var(--primary-color1),
+		var(--primary-color1),
+		var(--gold-gradient),
+		var(--gold1),
+		var(--gold-gradient),
+		var(--gold1)
+	);
+}
+
+.btn-outline-primary {
+	@include button(
+		var(--primary-color1),
+		var(--primary-font-color),
+		var(--primary-font-color),
+		var(--primary-color2),
+		var(--primary-color1),
+		var(--primary-color1)
+	);
+}

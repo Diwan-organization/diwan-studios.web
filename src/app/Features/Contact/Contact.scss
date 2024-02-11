@@ -1,0 +1,39 @@
+$font-color: var(--gold1);
+$font-color-secondary: var(--gold2);
+
+.page-inner {
+	display: flex;
+	background-color: #000;
+	background-image: conic-gradient(
+			at 0% 55%,
+			rgb(60 60 60 / 40%),
+			transparent 22%
+		),
+		radial-gradient(at 82% 65%, rgb(237, 209, 0, 0.3) 0, transparent 55%);
+	img {
+		max-width: 400px;
+	}
+	.social {
+		text-align: center;
+		a {
+			i {
+				font-size: 24px;
+			}
+			padding: 0 10px;
+			color: $font-color-secondary;
+			&:hover {
+				color: $font-color;
+			}
+		}
+	}
+	.address {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.title {
+			text-transform: uppercase;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+// https://stackoverflow.com/questions/67016460/difference-between-scss-variables-and-css-variables
+// https://css-tricks.com/difference-between-types-of-css-variables/
+:root {
+	--gold1: #a6823a;
+	--gold2: #bd9d61;
+	--gold-gradient: linear-gradient(90deg, #a6823a 0%, #bd9d61 100%);
+
+	// --primary-bg-color1:rgba(0,0,0,0.8);
+	--primary-bg-color: rgb(4, 0, 9);
+
+	// --primary-cool-color1: rgb(237, 142, 0);
+	--primary-cool-color1: white;
+
+	--primary-color1: black;
+	--primary-color2: rgb(26, 26, 26);
+	--primary-color3: rgb(58, 58, 58);
+
+	--primary-font-color: white;
+	--secondary-font-color: rgb(203, 203, 203);
+	--primary-dark-font-color: black;
+	--secondary-dark-font-color: rgb(46, 46, 46);
+
+	--primary-font-color-header: rgb(184, 184, 184);
+	--header-height: 56px;
+	// --page-inner-content-padding: 20px;
+	// --page-inner-sm-content-padding: 100px;
+	// --carousel-width: 500px;
+	// --carousel-sm-width: 300px;
+	// --background-horizontal-gradient-180: linear-gradient(
+	// 	180deg,
+	// 	var(--primary-font-color) 0%,
+	// 	var(--primary-color3) 100%
+	// );
+	// --background-horizontal-gradient-0: linear-gradient(
+	// 	0deg,
+	// 	var(--primary-font-color) 0%,
+	// 	var(--primary-color3) 100%
+	// );
+	// --box-shadow-offer-card: 0px 0px 10px 5px rgba(117, 117, 117, 0.71);
+	// --box-shadow-course-card: 0px 0px 5px 1px rgba(117, 117, 117, 0.5);
+	// // --animation-time: 2s;
+	// .dark {
+	// 	--primary-font-color: black;
+	// }
+}
