@@ -38,88 +38,36 @@
 				<div class="browse-more mb-3">
 					<a class="btn btn-primary" [routerLink]="RoutePaths.ArtWorks">Learn More</a>
 				</div>
-				<!-- <div class="list about-list">
-					<div *ngFor="let about of About;let i = index " class="overlay-img-item img{{i}}">
-						<img [src]="about.ImgSrc" [alt]="about.ImgAlt" class="img" />
-						<div class="visible">
-							<div class="mb-2">{{about.Title}}</div>
-							<div class="me-1">{{about.Description}}</div>
-						</div>
-					</div>
-				</div> -->
 			</div>
 		</section>
 
 		<section class="page-section no-min projects">
 			<div class="tab-content">
-				<div class="projects-list">
-					<div class="project">
-						<img src="assets/Images/girl-wall.jpg" class="gallery-img" />
-						<div class="project-description">
-							<h1>PROJECT 1</h1>
-							<h5>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem
-								libero.
-							</h5>
-
-							<a class="btn btn-primary" [routerLink]="RoutePaths.ArtWorks">Learn More</a>
-						</div>
+				<div class="parent">
+					<div class="div1 project">
+						<img src="assets/Images/girl-wall.jpg" />
 					</div>
-					<div class="project">
-						<div class="project-description">
-							<h1>PROJECT 2</h1>
-							<h5>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem
-								libero.
-							</h5>
-							<a class="btn btn-primary" [routerLink]="RoutePaths.ArtWorks">Learn More</a>
-						</div>
-						<img src="assets/Images/girl-wall-3.jpg" class="gallery-img" />
+					<div class="div2 project">
+						<img src="assets/Images/dog-wall.jpg" />
 					</div>
-					<div class="project">
-						<img src="assets/Images/girl-wall.jpg" class="gallery-img" />
-						<div class="project-description">
-							<h1>PROJECT 3</h1>
-							<h5>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem
-								libero.
-							</h5>
-
-							<a class="btn btn-primary" [routerLink]="RoutePaths.ArtWorks">Learn More</a>
-						</div>
+					<div class="div3 project">
+						<img src="assets/Images/dog-wall-2.jpg" />
 					</div>
-					<div class="project">
-						<div class="project-description">
-							<h1>PROJECT 4</h1>
-							<h5>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem
-								libero.
-							</h5>
-							<a class="btn btn-primary" [routerLink]="RoutePaths.ArtWorks">Learn More</a>
-						</div>
-						<img src="assets/Images/girl-wall-3.jpg" class="gallery-img" />
+					<div class="div4 project">
+						<img src="assets/Images/girl-wall-3.jpg" />
+					</div>
+					<div class="div5 project">
+						<img src="assets/Images/girl-wall-5.jpg" />
+					</div>
+					<div class="div6 project">
+						<img src="assets/Images/dog-wall-2.jpg" />
+					</div>
+					<div class="div7 project">
+						<img src="assets/Images/girl-wall-2.jpg" />
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<!-- <section class="page-section no-min latest-news">
-			<h1 class="title" data-wow-delay="0.1s">Latest news</h1>
-
-			<div class="tab-content">
-				<div class="list">
-					<div *ngFor="let news of News;let i = index " class="card">
-						<img class="card-img-top" [src]="news.ImgSrc" [alt]="news.ImgAlt" />
-						<div class="card-body">
-							<h5 class="card-title">{{news.Title}}</h5>
-							<p class="card-text">{{news.Title}}</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
-
 		<section class="page-section no-min partners">
 			<h1 class="title">Partners</h1>
 			<div class="tab-content">
@@ -134,121 +82,7 @@
 						</button>
 					</span>
 				</div>
-				<!-- <div id="carouselLogos" class="carousel slide pt-5 pb-4" data-bs-ride="carousel">
-					<div class="carousel-inner px-5">
-						<div
-							class="carousel-item active"
-							*ngFor="let Partner of Partners
-						">
-							<div class="row justify-content-center">
-								<div class="col-6 col-lg-2 align-self-center" *ngFor="let img of Partner">
-									<img class="d-block w-100 px-3 mb-3" [src]="img.ImgSrc" alt="" />
-								</div>
-							</div>
-						</div>
-					</div> -->
-
-				<!--
-		<ol class="carousel-indicators list-unstyled position-relative mt-3">
-			<li data-bs-target="#carouselLogos" data-bs-slide-to="0" class="active bg-dark carousel-control-prev-icon"></li>
-			<li data-bs-target="#carouselLogos" data-bs-slide-to="1" class="bg-dark"></li>
-		</ol>
-		-->
-
-				<!-- <div class="w-100 px-3 text-center mt-4">
-						<a class="carousel-control-prev position-relative d-inline me-4" href="#carouselLogos" data-bs-slide="prev">
-							<svg width="2em" height="2em" viewBox="0 0 16 16" class="text-dark" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path
-									fill-rule="evenodd"
-									d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
-							</svg>
-							<span class="visually-hidden">Previous</span>
-						</a>
-						<a class="carousel-control-next position-relative d-inline" href="#carouselLogos" data-bs-slide="next">
-							<svg width="2em" height="2em" viewBox="0 0 16 16" class="text-dark" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path
-									fill-rule="evenodd"
-									d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
-							</svg>
-							<span class="visually-hidden">Next</span>
-						</a>
-					</div> 
-				</div>-->
 			</div>
 		</section>
-
-		<!-- <section class="page-section no-min reviews">
-		<div id="ReviewsCarousel" class="carousel carousel-dark slide">
-			<div class="carousel-indicators">
-				<button type="button" data-bs-target="#ReviewsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-				<button type="button" data-bs-target="#ReviewsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-				<button type="button" data-bs-target="#ReviewsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-			</div>
-			<div class="carousel-inner">
-				<ng-container *ngFor="let carousel of ReviewsCarousel; first as firstly">
-					<div class="carousel-item active">
-						<div class="carousel-caption d-none d-md-block">
-							<div>5 star rating icons</div>
-							<h5 class="font-style">{{carousel.Caption.Title}}</h5>
-							<p class="font-style">{{carousel.Caption.Description}}</p>
-						</div>
-						<img [src]="carousel.ImgSrc" class="d-block img" [alt]="carousel.ImgAlt" />
-					</div>
-				</ng-container>
-			</div>
-			<button class="carousel-control carousel-control-prev" type="button" data-bs-target="#ReviewsCarousel" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control carousel-control-next" type="button" data-bs-target="#ReviewsCarousel" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
-	</section> -->
-		<!-- <section>
-			<div class="parent container">
-				<div class="div1">
-					<img class="img-fluid" style="height: 100%" src="assets/Images/girl-wall.jpg" />
-				</div>
-				<div class="div2">
-					<img class="img-fluid" style="height: 100%" src="assets/Images/girl-wall.jpg" />
-				</div>
-				<div class="div3">
-					<img class="img-fluid" style="height: 100%" src="assets/Images/girl-wall.jpg" />
-				</div>
-				<div class="div4">
-					<img class="img-fluid" style="height: 100%" src="assets/Images/girl-wall.jpg" />
-				</div>
-				<div class="div5">
-					<img class="img-fluid" style="height: 100%" src="assets/Images/girl-wall.jpg" />
-				</div>
-				<div class="div6">
-					<img class="img-fluid" style="height: 100%" src="assets/Images/girl-wall.jpg" />
-				</div>
-				<div class="div7">
-					<img class="img-fluid" style="height: 100%" src="assets/Images/girl-wall.jpg" />
-				</div>
-			</div>
-		</section> -->
 	</div>
 </div>
-
-<!-- <div class="parent">
-	<div *ngFor="let img of images;let i = index " class="div{{i+1}}">
-		<img src="{{img}}" alt="" class="gallery-img hoverable-img-item" />
-	</div>
-</div> -->
-<!-- <div class="list">
-	<div *ngFor="let img of images;let i = index " class="hoverable-img-item img{{i}} gallery-img ">
-		<img src="{{img}}" alt="" class="img" />
-		<div class="visible">
-			<span class="productn d-block h5 mb-2">title</span>
-			<span class="price me-1">Lorem ipsum dolor sit amet consectetur adipisicing.</span>
-		</div>
-	</div>
-</div> -->
-
-<!-- <div class="browse-more">
-	<a class="btn btn-outline-primary" [routerLink]="RoutePaths.ArtWorks">Browse More Products</a>
-</div> -->
