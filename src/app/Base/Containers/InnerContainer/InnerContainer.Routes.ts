@@ -33,6 +33,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('@App/Features/Art/Art').then((c) => c.ArtComponent),
       },
+      {
+        path: 'deft',
+        loadComponent: () =>
+          import('@App/Features/Deft/Deft').then((c) => c.DeftComponent),
+      },
       // {
       // 	path: 'course/:id',
       // 	loadComponent: () => import('@App/Features/CoursesList/Course/Course').then((c) => c.CourseComponent)
@@ -69,4 +74,4 @@ export const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class InnerContainerRoutes {}
+export class InnerContainerRoutes { }

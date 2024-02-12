@@ -1,0 +1,85 @@
+<div class="page-inner">
+	<aside>
+		<div class="input-group mb-5 mt-5">
+			<input
+				type="text"
+				class="gold-text"
+				[(ngModel)]="SearchText"
+				placeholder="Search"
+				aria-label="Search"
+				aria-describedby="basic-addon1"
+				(input)="Search()" />
+			<i class="fa fa-search input-group-text gold-text" id="basic-addon1"></i>
+		</div>
+		<div *ngFor="let category of filteredProjects;let i = index">
+			<a href="javascript:void(0)" class="active gold-text" id="categories" [attr.data-category]="category.Name.replace(' ','')">
+				{{category.Name}}
+				<span>
+					<i class="fa fa-thumb-tack"></i>
+					{{category.Location}}
+				</span>
+			</a>
+		</div>
+		<div>
+			<a href="javascript:void(0)" class="gold-text" id="categories" [attr.data-category]="'MoreProjects'">
+				<!-- <i class="fa fa-map-marker"></i> -->
+				More Projects...
+			</a>
+		</div>
+	</aside>
+	<div class="page-section art-div">
+		<div class="category" *ngFor="let category of filteredProjects; let i = index" [id]="category.Name.replace(' ', '')">
+			<h1 class="title gold-text">{{category.Name}}</h1>
+			<p class="sub-title gold-text">{{category.Description}}</p>
+			<div class="images">
+				<div *ngFor="let img of category.Images; let j = index" class="hoverable-img-item">
+					<img class="img" [src]="img" alt="" data-bs-toggle="modal" [attr.data-bs-target]="'#project-' + i + '-' + j" />
+					<!-- Modal -->
+					<div class="modal fade" [id]="'project-' + i + '-' + j" tabindex="-1" aria-labelledby="projectLabel">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content" (click)="$event.stopPropagation()">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="projectLabel">{{category.Name}}</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<img class="img-modal" [src]="img" alt="" />
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="category" [id]="'MoreProjects'">
+			<h1 class="title gold-text">More Projects</h1>
+			<p class="sub-title gold-text">For More Projects With Diwan Studios</p>
+			<div class="images">
+				<div *ngFor="let project of MoreProjects; let i = index" class="hoverable-img-item">
+					<img class="img" [src]="project.Images[0]" alt="" data-bs-toggle="modal" [attr.data-bs-target]="'#more-project-' + i" />
+					<!-- Modal -->
+					<div class="modal fade" [id]="'more-project-' + i" tabindex="-1" aria-labelledby="more-projectLabel">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content" (click)="$event.stopPropagation()">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="more-projectLabel">{{project.Name}}</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<img class="img-modal" [src]="project.Images[0]" alt="" />
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
