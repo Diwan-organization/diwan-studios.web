@@ -68,20 +68,11 @@
 				</div>
 			</div>
 		</section>
+
 		<section class="page-section no-min partners">
-			<h1 class="title">Partners</h1>
+			<h1 class="gold-text">Partners</h1>
 			<div class="tab-content">
-				<div class="list">
-					<span *ngFor="let partner of Partners.slice(0, MinIndex);let i = index " class="">
-						<img [src]="partner.ImgSrc" [alt]="partner.ImgAlt" />
-					</span>
-					<span class="browse-more mt-3">
-						<button (click)="loadMore()" *ngIf="MinIndex < Partners.length" class="btn btn-primary">
-							More
-							<i class="fa fa-chevron-right" aria-hidden="true"></i>
-						</button>
-					</span>
-				</div>
+				<app-Carousel [Images]="x"></app-Carousel>
 			</div>
 		</section>
 	</div>

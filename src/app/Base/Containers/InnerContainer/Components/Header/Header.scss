@@ -44,12 +44,12 @@ $font-color-secondary: var(--gold2);
 		}
 	}
 	.navbar-toggler {
-		border-color: var(--primary-color1);
+		border-color: $font-color;
 		&:focus {
 			box-shadow: 0 0 0 0;
 		}
 		.navbar-toggler-icon {
-			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(54, 69, 85, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(166, 130, 58, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 		}
 	}
 }
@@ -65,7 +65,7 @@ $font-color-secondary: var(--gold2);
 	//     display: block;
 	// }
 	i {
-		color: white;
+		color: $font-color;
 	}
 	a {
 		color: $font-color-secondary !important;
@@ -84,9 +84,9 @@ $font-color-secondary: var(--gold2);
 		background-color: inherit;
 	}
 	.navbar-toggler {
-		border-color: white;
+		border-color: $font-color;
 		.navbar-toggler-icon {
-			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(166, 130, 58, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 		}
 	}
 }
@@ -120,10 +120,26 @@ $font-color-secondary: var(--gold2);
 // art section hover
 .navbar {
 	.navbar-nav {
+		.art {
+			.up {
+				display: none;
+				font-size: 12px;
+			}
+			.down {
+				display: inline;
+				font-size: 12px;
+			}
+		}
 		.art:hover {
 			.art-categories {
 				display: flex;
-				justify-content: space-around;
+			}
+
+			.up {
+				display: inline;
+			}
+			.down {
+				display: none;
 			}
 		}
 		.art-categories {
@@ -134,7 +150,7 @@ $font-color-secondary: var(--gold2);
 			left: 0;
 			padding: 20px 0;
 			display: none;
-			justify-content: space-around;
+			justify-content: center;
 
 			.art-inner-categories {
 				display: flex;

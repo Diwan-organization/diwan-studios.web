@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { animate, stagger } from 'motion';
 import { RoutePaths } from '@App/Common/Settings/RoutePaths';
 import { RouterModule } from '@angular/router';
+import { CarouselComponent } from '@App/Common/Widgets/Carousel/Carousel';
 
 class NewsItem {
 	ImgSrc!: string;
@@ -37,7 +38,7 @@ class StatsItem {
 	standalone: true,
 	templateUrl: './Home.html',
 	styleUrls: ['Home.scss'],
-	imports: [FormsModule, CommonModule, RouterModule,],
+	imports: [FormsModule, CommonModule, RouterModule, CarouselComponent],
 })
 export class HomeComponent implements OnInit {
 	RoutePaths = RoutePaths;
@@ -207,7 +208,7 @@ export class HomeComponent implements OnInit {
 			Link: '',
 		}
 	]
-
+	x = this.Partners.map(p => p.ImgSrc)
 
 	ngAfterViewInit() {
 		this.StatAnimation()
