@@ -1,14 +1,10 @@
 <div class="page-inner">
-	<section class="page-section video-div p-0">
-		<video autoplay muted loop class="video">
-			<source src="assets/Videos/diwan-graffiti1.mp4" type="video/mp4" />
-			<!-- Add additional video sources for cross-browser compatibility if needed -->
-			Your browser does not support the video tag.
-		</video>
-		<div class="landing-overlay" [style.opacity]="opacity"></div>
-		<div class="landing-overlay text">
-			<!-- <h6>About</h6> -->
-			<h1 class="gold-text">Amr Diwan</h1>
+	<section class="page-section landing p-0">
+		<div class="landing-overlay">
+			<img src="assets/Images/girl-wall-3.jpg" alt="" />
+		</div>
+		<div class="landing-text text">
+			<h1 class="gold-text">Diwan Studio</h1>
 			<h3 class="gold-text">Graffiti and architecture design.</h3>
 			<h3 class="gold-text">Bringing life to walls <s></s>ince 2004.</h3>
 		</div>
@@ -18,62 +14,81 @@
 		</div>
 	</section>
 
-	<div class="page-container">
-		<section class="page-section no-min about">
-			<div class="sub-title gold-text">
-				<strong>Amr Diwan</strong> combines the concepts of <strong>graffiti</strong> and <strong>architecture</strong> design elements. <br />
+	<!-- <div class="page-container"> -->
+	<section class="page-section no-min about">
+		<div class="sub-title">
+			<h3>Who we are</h3>
+			<h4 class="gold-text">Slogan Lorem ipsum dolor sit amet.</h4>
+			<p class="text-start">
+				<strong>Diwan studios</strong> combines the concepts of <strong>graffiti</strong> and <strong>architecture</strong> design elements. <br />
 				<small>we guarantee high quality personalized designs that will bring your brand to life.</small>
+			</p>
+		</div>
+		<div class="tab-content">
+			<div class="stat-list">
+				<div *ngFor="let stat of Stats; let i = index" class="stat" [ngClass]="{'stat-clickable': stat.Link}" (click)="GotoStat(stat.Link)">
+					<div class="number" [id]="i" [attr.number]="stat.Number" [attr.timeinterval]="stat.TimeInterval"></div>
+					<div class="text text{{i}}">
+						<div class="stat-title">{{ stat.Title }}</div>
+						<div class="description">{{ stat.Description }}</div>
+					</div>
+				</div>
 			</div>
-			<div class="tab-content">
-				<div class="stat-list">
-					<div *ngFor="let stat of Stats; let i = index" class="stat stat{{i}}">
-						<div class="number" [id]="'number-' + i">{{ stat.Number }}</div>
-						<div class="text t{{i}}">
-							<div class="stat-title">{{ stat.Title }}</div>
-							<div class="description">{{ stat.Description }}</div>
+		</div>
+	</section>
+
+	<section class="page-section no-min values">
+		<div class="tab-content">
+			<div class="list">
+				<div class="value" *ngFor="let Value of Values; index as i">
+					<div>
+						<img [src]="Value.ImgSrc" [alt]="Value.ImgAlt" class="img" />
+					</div>
+					<div class="text-content">
+						<h1>{{Value.Title}}</h1>
+						<h1>{{Value.Title}}</h1>
+
+						<h5>{{Value.Description}}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="page-section no-min projects">
+		<div class="containerr">
+			<div class="left-section">
+				<div class="contentt">
+					<!-- Content for left section -->
+					<h1>left section title</h1>
+					<h4>sub title</h4>
+					<p>
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt veritatis voluptates, saepe laudantium debitis illum voluptatibus
+						assumenda, pariatur reprehenderit dolores facilis nam perferendis illo eum autem rerum ipsum quasi consectetur expedita. Mollitia,
+						nesciunt! Eius ullam illo id quod repellat, ut error, laborum, maxime fuga sit eaque distinctio est? Aliquid, accusamus!
+					</p>
+				</div>
+			</div>
+			<div class="right-section">
+				<div class="contentt">
+					<div class="project" *ngFor="let project of Projects; index as i">
+						<img [src]="project.ImgSrc" [alt]="project.ImgAlt" class="img" />
+						<div class="project-description">
+							<h1>{{project.Title}}</h1>
+							<h5>{{project.Description}}</h5>
+							<a class="btn btn-primary" [routerLink]="'/'+ RoutePaths.ArtWorks + '/' + project.Link">Learn More</a>
 						</div>
 					</div>
 				</div>
-
-				<div class="browse-more mb-3">
-					<a class="btn btn-primary" [routerLink]="RoutePaths.ArtWorks">Learn More</a>
-				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="page-section no-min projects">
-			<div class="tab-content">
-				<div class="parent">
-					<div class="div1 project">
-						<img src="assets/Images/girl-wall.jpg" />
-					</div>
-					<div class="div2 project">
-						<img src="assets/Images/dog-wall.jpg" />
-					</div>
-					<div class="div3 project">
-						<img src="assets/Images/dog-wall-2.jpg" />
-					</div>
-					<div class="div4 project">
-						<img src="assets/Images/girl-wall-3.jpg" />
-					</div>
-					<div class="div5 project">
-						<img src="assets/Images/girl-wall-5.jpg" />
-					</div>
-					<div class="div6 project">
-						<img src="assets/Images/dog-wall-2.jpg" />
-					</div>
-					<div class="div7 project">
-						<img src="assets/Images/girl-wall-2.jpg" />
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="page-section no-min partners">
-			<h1 class="gold-text">Partners</h1>
-			<div class="tab-content">
-				<app-Carousel [Images]="x"></app-Carousel>
-			</div>
-		</section>
-	</div>
+	<section class="page-section no-min partners">
+		<h1 class="gold-text">Partners</h1>
+		<div class="tab-content">
+			<app-Carousel [Images]="x"></app-Carousel>
+		</div>
+	</section>
 </div>
+<!-- </div> -->
