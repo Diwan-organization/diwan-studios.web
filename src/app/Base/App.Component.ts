@@ -2,6 +2,7 @@ import { ApplicationRef, Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { PlatformLocation } from '@angular/common';
 import { RoutePaths } from '../Common/Settings/RoutePaths';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -15,13 +16,34 @@ export class AppComponent {
   constructor(
     private PlatformLocation: PlatformLocation,
     private Router: Router,
-    private appRef: ApplicationRef
+    private appRef: ApplicationRef,
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
     this.PreLoaderListener();
     this.ScrollUpSub();
     this.CheckIOS();
+    this.loadImages();
+  }
+
+  images: string[] = [
+  ];
+  imagesLoaded: number = 0;
+  totalImages: number = this.images.length;
+
+  loadImages() {
+    this.images.forEach(url => {
+      this.http.get(url, { responseType: 'blob' }).subscribe(() => {
+        this.imagesLoaded++;
+        // console.log('imagesLoaded', this.imagesLoaded);
+
+        if (this.imagesLoaded === this.totalImages) {
+          // All images are loaded, hide the preloader
+          this.IsLoaded = true;
+        }
+      });
+    });
   }
 
   PreLoaderListener() {

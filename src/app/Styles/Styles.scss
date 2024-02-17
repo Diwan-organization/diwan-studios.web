@@ -1,6 +1,12 @@
 @import 'Variables.scss';
 @import 'Layout/_Layout.scss';
 @import 'Custom/_Custom.scss';
-@import "/node_modules/font-awesome/css/font-awesome.css";
+@import '/node_modules/font-awesome/css/font-awesome.css';
 // @import 'Library/Library.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* {
+	// font-family: 'Bebas Neue', sans-serif;
+	// font-weight: 400;
+	// font-style: normal;
+}

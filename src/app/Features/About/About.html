@@ -1,36 +1,99 @@
 <div class="page-inner">
-	<div class="page-section landing-img">
-		<img src="assets/Images/shaheen-graffiti.jpg" alt="" />
+	<!-- <div class="page-section landing-img">
+		<img src="assets/Images/diwan-handbook/break-the-rules.png" alt="" />
 		<div class="landing-overlay">
 			<h6>About</h6>
-			<h1>Amr Diwan</h1>
-			<h3>Lorem ipsum dolor sit amet.</h3>
+			<h1>Diwan Studios</h1>
+			<h3>
+				Break the Rules says it all. Fun creative out of the ordinary, we like to portray our values of bringing out the unexpected from any project we
+				work on
+			</h3>
 		</div>
-	</div>
-	<div class="page-section no-min about-summary">
-		<h3>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur eaque odio deleniti labore! Veritatis recusandae, saepe, quibusdam ad aliquid
-			optio dolorum rem cum perspiciatis voluptatem sunt, eaque possimus soluta quae.
-		</h3>
-	</div>
+	</div> -->
 
-	<div class="page-section no-min about-company">
+	<div class="page-section landing">
 		<div class="partition image">
-			<img src="assets/Images/about-company.jpg" />
+			<img class="glitch" src="assets/Images/diwan-handbook/break-the-rules.png" alt="" />
+			<!-- <div class="glitch">
+				<div class="channel r"></div>
+				<div class="channel g"></div>
+				<div class="channel b"></div>
+			</div> -->
 		</div>
 		<div class="partition content">
-			<h4>About The Company</h4>
+			<h1>About Us</h1>
+			<!-- <h1>Diwan Studios</h1> -->
+			<h6>
+				Break the Rules says it all. Fun creative out of the ordinary, we like to portray our values of bringing out the unexpected from any project we
+				work on
+			</h6>
+		</div>
+	</div>
+
+	<div class="page-section no-min our-story">
+		<div class="partition image bulk-image">
+			<img src="assets/Images/diwan-handbook/our-story.png" />
+		</div>
+		<div class="partition content">
 			<p>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non reprehenderit corporis dolore aspernatur et eveniet eos sint nemo temporibus,
-				cupiditate maiores, quo at rem molestiae placeat exercitationem! Provident et dolore veniam corrupti quo illum dolores odit magnam cum ullam
-				quod exercitationem inventore quidem dolorem itaque quos officia distinctio totam sunt accusamus ipsum iusto, tempore impedit? Libero tenetur
-				cum, saepe debitis ratione a esse obcaecati labore magnam eius illum distinctio aliquam! Fugit, dolorum architecto ex quis modi exercitationem
-				nam corporis dolor totam veritatis, rerum quasi perferendis placeat vitae labore minus, ipsum officia nesciunt. Eum pariatur, qui tenetur
-				officia quos maiores provident temporibus fugit autem, dolor, quis nemo harum blanditiis. Maiores non quasi ipsam, rerum distinctio quia illo ad
-				animi architecto. Dolore placeat odit asperiores excepturi quae maxime nam necessitatibus autem. Et odit optio impedit possimus, nam enim
-				delectus reprehenderit aperiam voluptatum blanditiis quis eligendi minus non autem deleniti officiis quam? Voluptates.
+				Established in the early two thousand Amr Diwan has more than passion for graffiti, he has a vision. With each stroke, he adds a customized
+				sense of personality to the final outcome. Whether it is his own or the vision of the brand he is currently working with. Since the
+				establishment of Diwan Studios, the main element of attracting people lies in the usage of iconic imagery.
 			</p>
-			<button class="btn btn-outline-primary">READ MORE</button>
+			<p>
+				The designs can be spotted all over Egypt different cities in the Middle East and even parts of Europe. When it comes to "wall art" Diwan
+				Studios takes graffiti to a different level. It's more than just spray painting a wall, it's a documentation of culture and history used to
+				represent individuality and personality.
+			</p>
+			<p>
+				Today Diwan Studios is seen as an established name known for the high quality, customized visual aesthetics. Each collaboration has resulted in
+				a design that ontinues to leave an impact on todays world. Diwan Studios is all about breaking the rules of standard to send a message that
+				people can feel and remember
+			</p>
+		</div>
+	</div>
+
+	<div class="page-section no-min our-values">
+		<div class="partition image line-image">
+			<img src="assets/Images/diwan-handbook/our-values.png" />
+		</div>
+		<div class="partition content">
+			<div class="list">
+				<div class="value" *ngFor="let Value of Values; index as i">
+					<div>
+						<img [src]="Value.ImgSrc" [alt]="Value.ImgAlt" class="img" />
+					</div>
+					<div class="text-content">
+						<h1>{{Value.Title}}</h1>
+
+						<h5>{{Value.Description}}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-section no-min provide">
+		<div class="partition image line-image">
+			<img src="assets/Images/diwan-handbook/what-we-provide.png" />
+		</div>
+		<div class="partition content">
+			<p>
+				Mural art ( graffiti ) is our main service. We can work on any interior takinginto consideration the material of the wall, quality paint for
+				higher quality and meeting the client's objective and even more
+			</p>
+		</div>
+	</div>
+
+	<div class="page-section no-min mission-vision">
+		<div class="partition image bulk-image">
+			<img src="assets/Images/diwan-handbook/mission-vision.png" />
+		</div>
+		<div class="partition content">
+			<p>
+				Helping individuals focus and be productive in their business and endeavour Provide vibrant and inspirational service through encouraging
+				creativity with a high quality service to stimulate focus and productivity To develop communities by connecting people through art.
+			</p>
 		</div>
 	</div>
 </div>
