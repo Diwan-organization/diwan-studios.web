@@ -15,16 +15,23 @@ $transition: all 0.6s ease-in;
 			text-align: center;
 		}
 
+		.bulk-image {
+			width: 40%;
+		}
+
+		.line-image {
+			width: 100%;
+			img {
+				max-height: 100px;
+			}
+		}
+
 		&.landing {
 			justify-content: center;
 			gap: 50px;
 			align-items: flex-start;
 
 			.image {
-				height: 100vh;
-				display: flex;
-				justify-content: center;
-				align-items: center;
 				opacity: 0;
 				transform: translateY(50px);
 				transition: $transition;
@@ -39,7 +46,7 @@ $transition: all 0.6s ease-in;
 				}
 			}
 			.content {
-				padding-top: 100px;
+				padding: 0 20%;
 				opacity: 0;
 				transform: translateY(50px);
 				transition: $transition;

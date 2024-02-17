@@ -37,10 +37,16 @@ export const routes: Routes = [
         path: 'deft',
         loadComponent: () =>
           import('@App/Features/Deft/Deft').then((c) => c.DeftComponent),
-      }, {
+      },
+      {
         path: 'careers',
         loadComponent: () =>
           import('@App/Features/Careers/Careers').then((c) => c.CareersComponent),
+      },
+      {
+        path: 'careers/update',
+        loadComponent: () =>
+          import('@App/Features/Careers/UpdateCareers/UpdateCareers').then((c) => c.CareerUpdateComponent),
       },
       // {
       // 	path: 'course/:id',
