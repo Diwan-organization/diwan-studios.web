@@ -11,14 +11,37 @@
 				(input)="Search()" />
 			<i class="fa fa-search input-group-text gold-text" id="basic-addon1"></i>
 		</div>
-		<div *ngFor="let category of filteredProjects;let i = index">
-			<a href="javascript:void(0)" class="active gold-text" id="categories" [attr.data-category]="category.Name.replace(' ','')">
-				{{category.Name}}
-				<span>
-					<i class="fa fa-thumb-tack"></i>
-					{{category.Location}}
-				</span>
-			</a>
+
+		<div *ngFor="let category of Categories;let i = index">
+			<ul class="list-unstyled ps-0">
+				<li class="mb-1">
+					<button
+						class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed gold-text"
+						data-bs-toggle="collapse"
+						[attr.data-bs-target]="'#' + category.Name + '-collapse'"
+						aria-expanded="false">
+						{{category.Name}}
+					</button>
+					<div class="collapse" [attr.id]="category.Name+'-collapse'">
+						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" *ngFor="let project of category.ProjectItem;let i = index">
+							<!-- <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li> -->
+							<li>
+								<a
+									href="javascript:void(0)"
+									class="active gold-text nav-link px-0"
+									id="categories"
+									[attr.data-category]="project.Name.replace(' ','')">
+									{{project.Name}}
+									<span>
+										<i class="fa fa-thumb-tack"></i>
+										{{project.Location}}
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</aside>
 	<div class="page-section art-div">

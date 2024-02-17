@@ -10,6 +10,10 @@ class ProjectItem {
     Images!: string[];
     Location!: string;
 }
+class Category {
+    Name!: string;
+    ProjectItem!: ProjectItem[]
+}
 
 
 @Component({
@@ -95,6 +99,12 @@ export class ArtComponent {
     ];
 
     filteredProjects: ProjectItem[];
+
+    Categories: Category[] = [
+        { Name: 'Fun', ProjectItem: this.Projects },
+        { Name: 'Creative', ProjectItem: this.Projects },
+        { Name: 'Killer', ProjectItem: this.Projects }
+    ]
 
 
     constructor(private renderer: Renderer2, private el: ElementRef) {
