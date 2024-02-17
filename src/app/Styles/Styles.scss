@@ -1,6 +1,49 @@
 @import 'Variables.scss';
 @import 'Layout/_Layout.scss';
 @import 'Custom/_Custom.scss';
-@import "/node_modules/font-awesome/css/font-awesome.css";
+@import '/node_modules/font-awesome/css/font-awesome.css';
 // @import 'Library/Library.scss';
 
+#menu-icon {
+	font-size: 77px;
+	color: var(--gold2);
+	z-index: 10000;
+	position: absolute;
+	right: -33px;
+	display: none;
+	top: 290px;
+	&:hover {
+		cursor: pointer;
+	}
+}
+@keyframes moveWithAnimation {
+	0% {
+		transform: scale(1) translate(0, 0);
+	}
+	50% {
+		transform: scale(0.8) translate(-25%, -10.5%);
+	}
+	100% {
+		transform: scale(0.8) translate(-25%, -10.5%);
+	}
+}
+
+.move-animation {
+	animation: moveWithAnimation 1s ease-in-out forwards;
+}
+
+@keyframes backWithAnimation {
+	0% {
+		transform: scale(0.8) translate(-25%, -10.5%);
+	}
+	50% {
+		transform: scale(1) translate(0, 0);
+	}
+	100% {
+		transform: scale(1) translate(0, 0);
+	}
+}
+
+.normal {
+	animation: backWithAnimation 1s ease-in-out backwards;
+}

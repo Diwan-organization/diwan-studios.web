@@ -186,3 +186,19 @@ $font-color-secondary: var(--gold2);
 		}
 	}
 }
+
+.toggler-btn {
+	padding: var(--bs-navbar-toggler-padding-y)
+		var(--bs-navbar-toggler-padding-x);
+	font-size: var(--bs-navbar-toggler-font-size);
+	line-height: 1;
+	color: var(--gold1) !important;
+	background-color: transparent;
+	border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
+	border-radius: var(--bs-navbar-toggler-border-radius);
+	transition: var(--bs-navbar-toggler-transition);
+	border-color: var(--gold1);
+	span {
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(166, 130, 58, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+	}
+}

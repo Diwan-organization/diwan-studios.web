@@ -10,6 +10,7 @@ import { InnerContainer } from './InnerContainer';
 import { FooterComponent } from './Components/Footer/Footer';
 import { MenuComponent } from './Components/Menu/Menu';
 import { HeaderComponent } from './Components/Header/Header';
+import { SideHeaderComponent } from './Components/Header copy/SideHeader';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -17,9 +18,10 @@ import { RouterModule } from '@angular/router';
   declarations: [
     InnerContainer,
     HeaderComponent,
+    SideHeaderComponent,
     MenuComponent,
     FooterComponent,
   ],
   providers: [],
 })
-export class InnerContainerModule {}
+export class InnerContainerModule { }
