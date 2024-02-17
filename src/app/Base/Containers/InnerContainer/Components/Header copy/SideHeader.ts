@@ -20,6 +20,7 @@ export class ArtCategory {
 export class SideHeaderComponent implements OnInit {
 	RoutePaths = RoutePaths
 	@ViewChild('dropdownMenu') dropdownMenu!: ElementRef;
+	@ViewChild('dropdownMenuDeft') dropdownMenuDeft!: ElementRef;
 
 	constructor() { }
 	ngOnInit(): void {
@@ -112,17 +113,32 @@ export class SideHeaderComponent implements OnInit {
 		}
 	]
 
-	toggleDropdown(event: MouseEvent) {
-		const dropdownMenuElement = this.dropdownMenu.nativeElement as HTMLElement;
-		if (dropdownMenuElement.style.display === 'block') {
-			dropdownMenuElement.style.display = 'none';
-			document.getElementById('dropdownMenuLink')?.classList.remove('show');
+	toggleDropdown(event: MouseEvent, dropdown: string) {
+		if (dropdown == 'dropdownMenu') {
+			const dropdownMenuElement = this.dropdownMenu.nativeElement as HTMLElement;
+			if (dropdownMenuElement.style.display === 'block') {
+				dropdownMenuElement.style.display = 'none';
+				document.getElementById('dropdownMenuLink')?.classList.remove('show');
 
+			} else {
+				dropdownMenuElement.style.display = 'block';
+				document.getElementById('dropdownMenuLink')?.classList.add('show');
+
+			}
 		} else {
-			dropdownMenuElement.style.display = 'block';
-			document.getElementById('dropdownMenuLink')?.classList.add('show');
+			const dropdownMenuElement = this.dropdownMenuDeft.nativeElement as HTMLElement;
 
+			if (dropdownMenuElement.style.display === 'block') {
+				dropdownMenuElement.style.display = 'none';
+				document.getElementById('dropdownMenuLinkDeft')?.classList.remove('show');
+
+			} else {
+				dropdownMenuElement.style.display = 'block';
+				document.getElementById('dropdownMenuLinkDeft')?.classList.add('show');
+
+			}
 		}
+
 		event.stopPropagation(); // Prevent event bubbling to parent elements
 	}
 

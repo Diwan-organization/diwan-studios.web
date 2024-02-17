@@ -1,4 +1,6 @@
 $bg-color: var(--primary-bg-color);
+$font-color: var(--gold1);
+
 .side-menu {
 	position: fixed;
 	top: 0;
@@ -32,7 +34,8 @@ $bg-color: var(--primary-bg-color);
 			overflow-y: scroll;
 			padding-left: 20px;
 			background-color: $bg-color !important;
-
+			position: relative !important;
+			transform: translate3d(-5%, 0px, 0px) !important;
 			.dropdown-item {
 				background: transparent;
 				border-bottom: 1px solid #a6823a;
@@ -44,6 +47,11 @@ $bg-color: var(--primary-bg-color);
 				.nav-link {
 					padding-left: 15px;
 					font-size: 13px;
+					color: var(--gold1);
+				}
+				&:hover.nav-link,
+				&.active.nav-link {
+					color: $font-color !important;
 				}
 			}
 		}
@@ -77,7 +85,7 @@ $bg-color: var(--primary-bg-color);
 			}
 		}
 		.child-menu {
-			padding-left: 0px;
+			padding-left: 30px;
 			transform: translate3d(100%, -0.8px, 0px);
 		}
 		.dropdown-toggle {
