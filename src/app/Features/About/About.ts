@@ -83,24 +83,26 @@ export class AboutComponent implements OnInit {
 			landingImageObserver.observe(landingImage);
 
 
-			const landingText = document.querySelector('.landing .content')!;
-			landingText.classList.remove('landing-text-transition');
+			const landingTextDiv = document.querySelector('.landing .content')!;
+			const landingText = document.querySelector('.landing .content h6')!;
+			landingTextDiv.classList.remove('landing-text-transition');
 			const landingTextObserver = new IntersectionObserver(entries => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
-						landingText.classList.add('landing-text-transition');
+						landingTextDiv.classList.add('landing-text-transition');
+						landingText.classList.add('typing-effect');
 						return;
 					}
 
-					landingText.classList.remove('landing-text-transition');
+					landingTextDiv.classList.remove('landing-text-transition');
 				});
 			});
-			landingTextObserver.observe(landingText);
+			landingTextObserver.observe(landingTextDiv);
 		},
 
 		Story: () => {
 			const story = document.querySelector('.our-story')!;
-			story.classList.remove('story-transition');
+			const storyText = document.querySelector('.our-story .content')!;
 			const storyObserver = new IntersectionObserver(entries => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {

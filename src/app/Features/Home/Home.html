@@ -74,12 +74,14 @@
 					<!-- Content for left section -->
 					<h1 class="gold-text">left section title</h1>
 					<h4>sub title</h4>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, laudantium.</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, laudantium.
+						<a class="" [routerLink]="'/'+ RoutePaths.About">Portfolio</a>
+					</p>
 
-					<p *ngFor="let category of Categories; index as i" class="own-description" [ngClass]="{'current': i==CurrentCategoryIndex}">
+					<p *ngFor="let category of Categories; index as i" class="own-description" [ngClass]="{'current typing-effect': i==CurrentCategoryIndex}">
 						{{category.OwnDescription}}
 					</p>
-					<a class="btn btn-primary" [routerLink]="'/'+ RoutePaths.About">Portfolio</a>
 				</div>
 			</div>
 		</div>
