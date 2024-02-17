@@ -18,8 +18,8 @@ import { RouterModule } from '@angular/router';
     InnerContainer,
     HeaderComponent,
     MenuComponent,
-    FooterComponent,
+    FooterComponent
   ],
   providers: [],
 })
-export class InnerContainerModule {}
+export class InnerContainerModule { }
