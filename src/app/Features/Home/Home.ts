@@ -254,29 +254,43 @@ export class HomeComponent implements OnInit {
 	Values: ValueItem[] = [
 		{
 			ImgSrc: 'assets/Logos/4seasons.png ',
-			ImgAlt: 'Exceptional Quality',
-			Title: 'Exceptional Quality',
+			ImgAlt: 'Quality',
+			Title: 'Quality',
 			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat, suscipit est sequi.',
 
 		},
 		{
 			ImgSrc: 'assets/Logos/adidas.png ',
-			ImgAlt: 'Adherence',
-			Title: 'Adherence',
+			ImgAlt: 'Integrity',
+			Title: 'Integrity',
 			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat.',
 
 		},
 		{
 			ImgSrc: 'assets/Logos/amazon.png ',
-			ImgAlt: 'Reliability',
-			Title: 'Reliability',
+			ImgAlt: 'Team work',
+			Title: 'Team work',
 			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat, suscipit est sequi.',
 
 		},
 		{
 			ImgSrc: 'assets/Logos/Careem2.png ',
-			ImgAlt: 'Agility',
-			Title: 'Agility',
+			ImgAlt: 'Innovation',
+			Title: 'Innovation',
+			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea?',
+
+		},
+		{
+			ImgSrc: 'assets/Logos/Careem2.png ',
+			ImgAlt: 'Creativity',
+			Title: 'Creativity',
+			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea?',
+
+		},
+		{
+			ImgSrc: 'assets/Logos/Careem2.png ',
+			ImgAlt: 'Consistency',
+			Title: 'Consistency',
 			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea?',
 
 		}
