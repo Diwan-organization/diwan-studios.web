@@ -5,5 +5,6 @@ export class RoutePaths {
 	public static Deft = 'deft';
 	public static About = 'about';
 	public static Contact = 'contactus';
+	public static Careers = 'careers';
 
 }
