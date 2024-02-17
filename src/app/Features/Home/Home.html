@@ -79,7 +79,8 @@
 					<p *ngFor="let category of Categories; index as i" class="own-description" [ngClass]="{'current': i==CurrentCategoryIndex}">
 						{{category.OwnDescription}}
 					</p>
-					<a class="btn btn-primary" [routerLink]="'/'+ RoutePaths.About">Portfolio</a>
+					<a class="btn btn-primary" href="./../../../assets/PDF/brandbook diwan studios.pdf" target="_blank">Portfolio</a>
+					<!-- <a class="btn btn-primary" [routerLink]="'/'+ RoutePaths.About">Portfolio</a> -->
 				</div>
 			</div>
 		</div>
