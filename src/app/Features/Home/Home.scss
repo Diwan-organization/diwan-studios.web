@@ -391,6 +391,19 @@ $transition: all 0.6s ease-in;
 						position: sticky;
 						top: 35%;
 
+						a {
+							$font-color: var(--gold1);
+							$font-color-secondary: var(--gold2);
+							i {
+								font-size: 24px;
+							}
+							padding: 0 10px;
+							color: $font-color-secondary;
+							&:hover {
+								color: $font-color;
+							}
+						}
+
 						.own-description {
 							font-weight: bold;
 							overflow: hidden;
@@ -401,40 +414,9 @@ $transition: all 0.6s ease-in;
 							transition: $transition;
 
 							&.current {
-								--bgColor: var(--primary-bg-color);
-								--lines: 500;
-								--lineHeight: 1.5rem;
-								--timePerLine: 1s;
-								--widthCh: 100%;
-								--width: calc(var(--widthCh) * 1ch);
 								height: auto;
 								opacity: 1;
 								transform: translateX(0px) rotateX(0deg);
-								--time: calc(var(--lines) * var(--timePerLine));
-								animation: grow var(--time) steps(var(--lines));
-								animation-fill-mode: forwards;
-								background: var(--bgColor);
-								line-height: var(--lineHeight);
-								max-height: var(--lineHeight);
-								overflow: hidden;
-								position: relative;
-								width: var(--width);
-								&::before {
-									content: '';
-									animation:
-										type var(--timePerLine) linear infinite,
-										carriageReturn var(--time)
-											steps(var(--lines)) var(--lines),
-										caret 0.5s steps(2) infinite;
-									background: var(--bgColor);
-									border-left: 2px solid;
-									bottom: 0;
-									height: 2rem;
-									position: absolute;
-									right: 0;
-									width: 100%;
-									border-left-width: 0;
-								}
 							}
 						}
 					}

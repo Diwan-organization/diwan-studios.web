@@ -141,7 +141,7 @@ export class HomeComponent implements OnInit {
 
 	];
 	// CategoryOwnDescription: string= 'testtttttttttttttt';
-	CurrentCategoryIndex: number = 0;
+	CurrentCategoryIndex: number = -1;
 
 	News: NewsItem[] = [
 		{
