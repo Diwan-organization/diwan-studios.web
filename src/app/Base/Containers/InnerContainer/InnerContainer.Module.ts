@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     SideHeaderComponent,
     MenuComponent,
-    FooterComponent,
+    FooterComponent
   ],
   providers: [],
 })

@@ -1,0 +1,149 @@
+// @mixin typingAnimation($bgColor, $lines, $lineHeight, $timePerLine, $widthCh) {
+// 	--bgColor: $bgColor;
+// 	--lines: $lines;
+// 	--lineHeight: $lineHeight;
+// 	--timePerLine: $timePerLine;
+// 	--widthCh: $widthCh;
+// 	--width: calc(var(--widthCh) * 1ch);
+// 	height: auto;
+// 	background-color: red;
+// 	opacity: 1;
+// 	transform: translateX(0px) rotateX(0deg);
+// 	--time: calc(var(--lines) * var(--timePerLine));
+// 	animation: grow var(--time) steps(var(--lines));
+// 	animation-fill-mode: forwards;
+// 	background: var(--bgColor);
+// 	line-height: var(--lineHeight);
+// 	max-height: var(--lineHeight);
+// 	overflow: hidden;
+// 	position: relative;
+// 	width: var(--width);
+
+// 	&::before {
+// 		content: '';
+// 		animation:
+// 			type var(--timePerLine) linear infinite,
+// 			carriageReturn var(--time) steps(var(--lines)) var(--lines),
+// 			caret 0.5s steps(2) infinite;
+// 		background: var(--bgColor);
+// 		border-left: 2px solid;
+// 		bottom: 0;
+// 		height: 2rem;
+// 		position: absolute;
+// 		right: 0;
+// 		width: 100%;
+// 		border-left-width: 0;
+// 	}
+// }
+
+.typing-effect {
+	--bgColor: var(--primary-bg-color);
+	--lines: 500;
+	--lineHeight: 1.5rem;
+	--timePerLine: 0.5s;
+	--widthCh: 100%;
+	--width: calc(var(--widthCh) * 1ch);
+	height: auto;
+	opacity: 1;
+	transform: translateX(0px) rotateX(0deg);
+	--time: calc(var(--lines) * var(--timePerLine));
+	animation: grow var(--time) steps(var(--lines));
+	animation-fill-mode: forwards;
+	background: var(--bgColor);
+	line-height: var(--lineHeight);
+	max-height: var(--lineHeight);
+	overflow: hidden;
+	position: relative;
+	width: var(--width);
+	&::before {
+		content: '';
+		animation:
+			type var(--timePerLine) linear infinite,
+			carriageReturn var(--time) steps(var(--lines)) var(--lines),
+			caret 0.5s steps(2) infinite;
+		background: var(--bgColor);
+		border-left: 2px solid;
+		bottom: 0;
+		height: 2rem;
+		position: absolute;
+		right: 0;
+		width: 100%;
+		border-left-width: 0;
+	}
+}
+
+// .typing-effect-1 {
+// 	@include typingAnimation(var(--bg-color), 500, 1.5rem, 30s, 100%);
+// }
+
+.typing-effect-1 {
+	--bgColor: var(--primary-bg-color);
+	--lines: 50;
+	--lineHeight: 1.5rem;
+	--timePerLine: 0.3s;
+	--widthCh: 100%;
+	--width: calc(var(--widthCh) * 1ch);
+	height: auto;
+	opacity: 1;
+	transform: translateX(0px) rotateX(0deg);
+	--time: calc(var(--lines) * var(--timePerLine));
+	animation: grow var(--time) steps(var(--lines));
+	animation-fill-mode: forwards;
+	background: var(--bgColor);
+	line-height: var(--lineHeight);
+	max-height: var(--lineHeight);
+	overflow: hidden;
+	position: relative;
+	width: var(--width);
+	&::before {
+		content: '';
+		animation:
+			type var(--timePerLine) linear infinite,
+			carriageReturn var(--time) steps(var(--lines)) var(--lines),
+			caret 0.5s steps(2) infinite;
+		background: var(--bgColor);
+		border-left: 2px solid;
+		bottom: 0;
+		height: 2rem;
+		position: absolute;
+		right: 0;
+		width: 100%;
+		border-left-width: 0;
+	}
+}
+
+@keyframes grow {
+	0% {
+		max-height: var(--lineHeight);
+	}
+	100% {
+		max-height: calc(var(--lineHeight) * var(--lines));
+	}
+}
+
+@keyframes carriageReturn {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: calc(var(--lineHeight) * var(--lines));
+	}
+}
+
+@keyframes type {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+
+@keyframes caret {
+	0% {
+		color: var(--bgColor);
+	}
+	100% {
+		color: black;
+	}
+}

@@ -1,0 +1,8 @@
+<div *ngFor="let career of careers; let i = index">
+	<h2>{{ career.career }}</h2>
+	<p *ngIf="!career.editing">{{ career.description }}</p>
+	<input *ngIf="career.editing" type="text" [(ngModel)]="careers[i].description" />
+	<button (click)="toggleEdit(career)">Edit</button>
+	<hr />
+</div>
+<button (click)="submitChanges()">Submit Changes</button>

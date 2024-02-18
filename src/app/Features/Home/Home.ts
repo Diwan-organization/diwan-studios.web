@@ -6,11 +6,12 @@ import { RoutePaths } from '@App/Common/Settings/RoutePaths';
 import { Router, RouterModule } from '@angular/router';
 import { CarouselComponent } from '@App/Common/Widgets/Carousel/Carousel';
 
-class ProjectItem {
+class CategoryItem {
 	ImgSrc!: string;
 	ImgAlt!: string;
 	Title!: string;
 	Description!: string;
+	OwnDescription!: string;
 	Link!: string;
 }
 
@@ -46,7 +47,7 @@ class ValueItem {
 	ImgAlt!: string;
 	Title!: string;
 	Description!: string;
-	Link!: string;
+	// Link!: string;
 }
 
 
@@ -104,37 +105,43 @@ export class HomeComponent implements OnInit {
 		},
 	]
 
-	Projects: ProjectItem[] = [
+	Categories: CategoryItem[] = [
 		{
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			ImgAlt: '',
-			Title: 'Fifa World Cup Qatar 2022',
+			Title: 'Entertainment',
 			Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
 			Link: 'fifa',
+			OwnDescription: 'Entertainment Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt veritatis voluptates, saepe laudantium debitis illum voluptatibus assumenda, pariatur reprehenderit dolores facilis nam perferendis illo eum autem rerum ipsum quasi consectetur expedita. Mollitia, nesciunt! Eius ullam illo id quod repellat, ut error, laborum, maxime fuga sit eaque distinctio est? Aliquid, accusamus!'
 		},
 		{
 			ImgSrc: 'assets/Images/girl-wall-3.jpg',
 			ImgAlt: '',
-			Title: 'HSBC',
+			Title: 'Commercial',
 			Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
 			Link: 'hsbc',
+			OwnDescription: 'Commercial Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt veritatis voluptates, saepe laudantium debitis illum voluptatibus assumenda, pariatur reprehenderit dolores facilis nam perferendis illo eum autem rerum ipsum quasi consectetur expedita. Mollitia, nesciunt! Eius ullam illo id quod repellat, ut error, laborum, maxime fuga sit eaque distinctio est? Aliquid, accusamus!'
 		},
 		{
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			ImgAlt: '',
-			Title: 'Moussa Hospital',
+			Title: 'Residential',
 			Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
 			Link: 'moussa',
+			OwnDescription: 'Residential Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt veritatis voluptates, saepe laudantium debitis illum voluptatibus assumenda, pariatur reprehenderit dolores facilis nam perferendis illo eum autem rerum ipsum quasi consectetur expedita. Mollitia, nesciunt! Eius ullam illo id quod repellat, ut error, laborum, maxime fuga sit eaque distinctio est? Aliquid, accusamus!'
 		},
 		{
 			ImgSrc: 'assets/Images/girl-wall-3.jpg',
 			ImgAlt: '',
-			Title: 'Meryal Water Park',
+			Title: 'Corporate',
 			Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
 			Link: 'meryal',
+			OwnDescription: 'Corporate Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt veritatis voluptates, saepe laudantium debitis illum voluptatibus assumenda, pariatur reprehenderit dolores facilis nam perferendis illo eum autem rerum ipsum quasi consectetur expedita. Mollitia, nesciunt! Eius ullam illo id quod repellat, ut error, laborum, maxime fuga sit eaque distinctio est? Aliquid, accusamus!'
 		}
 
 	];
+	// CategoryOwnDescription: string= 'testtttttttttttttt';
+	CurrentCategoryIndex: number = -1;
 
 	News: NewsItem[] = [
 		{
@@ -247,31 +254,45 @@ export class HomeComponent implements OnInit {
 	Values: ValueItem[] = [
 		{
 			ImgSrc: 'assets/Logos/4seasons.png ',
-			ImgAlt: 'about the artist',
-			Title: 'The Artist',
-			Description: '',
-			Link: '',
+			ImgAlt: 'Quality',
+			Title: 'Quality',
+			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat, suscipit est sequi.',
+
 		},
 		{
 			ImgSrc: 'assets/Logos/adidas.png ',
-			ImgAlt: 'about the company',
-			Title: 'The Company',
-			Description: '',
-			Link: '',
+			ImgAlt: 'Integrity',
+			Title: 'Integrity',
+			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat.',
+
 		},
 		{
 			ImgSrc: 'assets/Logos/amazon.png ',
-			ImgAlt: 'about the company',
-			Title: 'The Company',
-			Description: '',
-			Link: '',
+			ImgAlt: 'Team work',
+			Title: 'Team work',
+			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat, suscipit est sequi.',
+
 		},
 		{
 			ImgSrc: 'assets/Logos/Careem2.png ',
-			ImgAlt: 'about the company',
-			Title: 'The Company',
-			Description: '',
-			Link: '',
+			ImgAlt: 'Innovation',
+			Title: 'Innovation',
+			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea?',
+
+		},
+		{
+			ImgSrc: 'assets/Logos/Careem2.png ',
+			ImgAlt: 'Creativity',
+			Title: 'Creativity',
+			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea?',
+
+		},
+		{
+			ImgSrc: 'assets/Logos/Careem2.png ',
+			ImgAlt: 'Consistency',
+			Title: 'Consistency',
+			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea?',
+
 		}
 
 	]
@@ -284,7 +305,8 @@ export class HomeComponent implements OnInit {
 		this.Animation.LandingText();
 		this.Animation.About();
 		this.Animation.Stat();
-		this.Animation.Projects();
+		this.Animation.Categories();
+		this.Animation.Values();
 		this.Animation.Partners();
 	}
 
@@ -339,7 +361,7 @@ export class HomeComponent implements OnInit {
 					const numberElement = element.querySelector('.number');
 					const targetNumber = parseInt(numberElement.getAttribute('number'));
 					const targetTimeInterval = parseInt(numberElement.getAttribute('timeinterval'));
-					console.log(targetNumber);
+					// console.log(targetNumber);
 
 					let currentNumber = 0;
 					const interval = setInterval(() => {
@@ -363,24 +385,63 @@ export class HomeComponent implements OnInit {
 			}
 		},
 
-		Projects: () => {
-			const projects = document.querySelectorAll('.project')!;
-			projects.forEach(project => {
-				// console.log(project);
-				project.classList.remove('project-transition');
+		Categories: () => {
+			// categories list one by one
+			const categories = document.querySelectorAll('.category')!;
+			categories.forEach(category => {
+				// console.log(category);
+				category.classList.remove('category-transition');
 
 				const observer = new IntersectionObserver(entries => {
 					entries.forEach(entry => {
 						if (entry.isIntersecting) {
-							project.classList.add('project-transition');
+							category.classList.add('category-transition');
 							return;
 						}
-						project.classList.remove('project-transition');
+						category.classList.remove('category-transition');
 					});
 				});
 
-				observer.observe(project);
+				observer.observe(category);
 			})
+
+			// categories description in stationary section
+			const categories1 = document.querySelectorAll('.category-description h1')!;
+			const categoriesDesc = document.querySelectorAll('.own-description')!;
+
+			categories1.forEach((category, i) => {
+				const observer = new IntersectionObserver(entries => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							// category.classList.add('category-transition');
+							// console.log('index', i);
+
+							// categoriesDesc.forEach(desc => desc.classList.remove('current'))
+							// categoriesDesc[i].classList.add('current');
+							this.CurrentCategoryIndex = i;
+							return;
+						}
+						// categoriesDesc[i].classList.remove('current');
+					});
+				});
+				observer.observe(category);
+			})
+		},
+
+		Values: () => {
+			const values = document.querySelector('.values')!;
+			values.classList.remove('values-transition');
+			const valuesObserver = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						values.classList.add('values-transition');
+						return;
+					}
+
+					values.classList.remove('values-transition');
+				});
+			});
+			valuesObserver.observe(values);
 		},
 
 		Partners: () => {
