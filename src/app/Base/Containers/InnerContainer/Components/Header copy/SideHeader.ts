@@ -1,3 +1,4 @@
+import { SidebarAnimationService } from '@App/Common/Services/SidebarAnimation.Service';
 import { RoutePaths } from '@App/Common/Settings/RoutePaths';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
@@ -22,7 +23,7 @@ export class SideHeaderComponent implements OnInit {
 	@ViewChild('dropdownMenu') dropdownMenu!: ElementRef;
 	@ViewChild('dropdownMenuDeft') dropdownMenuDeft!: ElementRef;
 
-	constructor() { }
+	constructor(private Animation: SidebarAnimationService) { }
 	ngOnInit(): void {
 
 	}
@@ -116,17 +117,23 @@ export class SideHeaderComponent implements OnInit {
 	toggleDropdown(event: MouseEvent, dropdown: string) {
 		if (dropdown == 'dropdownMenu') {
 			const dropdownMenuElement = this.dropdownMenu.nativeElement as HTMLElement;
+			const secdropdownMenuElement = this.dropdownMenuDeft.nativeElement as HTMLElement;
 			if (dropdownMenuElement.style.display === 'block') {
 				dropdownMenuElement.style.display = 'none';
 				document.getElementById('dropdownMenuLink')?.classList.remove('show');
 
 			} else {
 				dropdownMenuElement.style.display = 'block';
+				secdropdownMenuElement.style.display = 'none';
+				document.getElementById('dropdownMenuLinkDeft')?.classList.remove('show');
 				document.getElementById('dropdownMenuLink')?.classList.add('show');
+
+
 
 			}
 		} else {
 			const dropdownMenuElement = this.dropdownMenuDeft.nativeElement as HTMLElement;
+			const secdropdownMenuElement = this.dropdownMenu.nativeElement as HTMLElement;
 
 			if (dropdownMenuElement.style.display === 'block') {
 				dropdownMenuElement.style.display = 'none';
@@ -134,6 +141,8 @@ export class SideHeaderComponent implements OnInit {
 
 			} else {
 				dropdownMenuElement.style.display = 'block';
+				secdropdownMenuElement.style.display = 'none';
+				document.getElementById('dropdownMenuLink')?.classList.remove('show');
 				document.getElementById('dropdownMenuLinkDeft')?.classList.add('show');
 
 			}
@@ -141,5 +150,8 @@ export class SideHeaderComponent implements OnInit {
 
 		event.stopPropagation(); // Prevent event bubbling to parent elements
 	}
-
+	closemenu() {
+		this.Animation.animationflag = false;
+		this.Animation.transform();
+	}
 }

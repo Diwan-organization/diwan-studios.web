@@ -1,6 +1,6 @@
 <main class="min-vh-100 inner-container">
-	<div class="page-master" #mainElement>
-		<app-header (OpenMenuEvent)="transform()"></app-header>
+	<div class="page-master">
+		<app-header></app-header>
 		<app-side-header></app-side-header>
 		<i class="fa fa-times-circle-o" id="menu-icon" aria-hidden="true" (click)="back()"></i>
 		<router-outlet></router-outlet>

@@ -3,7 +3,8 @@
 		<ul class="navbar-nav">
 			<li class="nav-item">
 				<a
-					class="nav-link"
+					(click)="closemenu()"
+					class="nav-link main-links"
 					aria-current="page"
 					[routerLink]="[RoutePaths.Home]"
 					routerLinkActive="active"
@@ -14,7 +15,8 @@
 			</li>
 			<li class="nav-item">
 				<a
-					class="nav-link"
+					(click)="closemenu()"
+					class="nav-link main-links"
 					[routerLink]="[RoutePaths.About]"
 					routerLinkActive="active"
 					data-bs-toggle="collapse"
@@ -23,7 +25,9 @@
 				</a>
 			</li>
 			<li class="nav-item small-screen">
-				<a class="nav-link" [routerLink]="[RoutePaths.ArtWorks]" routerLinkActive="active" data-bs-toggle="collapse"> Art Works </a>
+				<a (click)="closemenu()" class="nav-link main-links" [routerLink]="[RoutePaths.ArtWorks]" routerLinkActive="active" data-bs-toggle="collapse">
+					Art Works
+				</a>
 				<span class="dropdown">
 					<span
 						(click)="toggleDropdown($event,'dropdownMenu')"
@@ -43,7 +47,9 @@
 							</div>
 
 							<span class="dropdown">
-								<a class="nav-link d-inline" [routerLink]="[RoutePaths.ArtWorks]" data-bs-toggle="collapse"> {{category.Title}} </a>
+								<a (click)="closemenu()" class="nav-link d-inline" [routerLink]="[RoutePaths.ArtWorks]" data-bs-toggle="collapse">
+									{{category.Title}}
+								</a>
 								<span
 									class="dropdown-toggle child-dropdown"
 									href="#"
@@ -56,7 +62,9 @@
 								</span>
 								<div class="art-categories dropdown-menu child-menu" attr.aria-labelledby="dropdownMenu{{i}}">
 									<ng-container *ngFor="let link of category.Links; index as i">
-										<a class="nav-link" *ngIf="i<4" [routerLink]="link.Link+'/'+link.Title.toLocaleLowerCase()"> {{link.Title}}</a>
+										<a (click)="closemenu()" class="nav-link" *ngIf="i<4" [routerLink]="link.Link+'/'+link.Title.toLocaleLowerCase()">
+											{{link.Title}}</a
+										>
 									</ng-container>
 								</div>
 							</span>
@@ -65,7 +73,9 @@
 				</span>
 			</li>
 			<li class="nav-item small-screen">
-				<a class="nav-link" [routerLink]="[RoutePaths.Deft]" routerLinkActive="active" data-bs-toggle="collapse"> Deft </a>
+				<a (click)="closemenu()" class="nav-link main-links" [routerLink]="[RoutePaths.Deft]" routerLinkActive="active" data-bs-toggle="collapse">
+					Deft
+				</a>
 				<span class="dropdown">
 					<span
 						(click)="toggleDropdown($event,'dropdownMenuDeft')"
@@ -85,7 +95,9 @@
 							</div>
 
 							<span class="dropdown">
-								<a class="nav-link d-inline" [routerLink]="[RoutePaths.ArtWorks]" data-bs-toggle="collapse"> {{category.Title}} </a>
+								<a (click)="closemenu()" class="nav-link d-inline" [routerLink]="[RoutePaths.ArtWorks]" data-bs-toggle="collapse">
+									{{category.Title}}
+								</a>
 								<span
 									class="dropdown-toggle child-dropdown"
 									href="#"
@@ -98,7 +110,9 @@
 								</span>
 								<div class="art-categories dropdown-menu child-menu" attr.aria-labelledby="dropdownMenuDeft{{i}}">
 									<ng-container *ngFor="let link of category.Links; index as i">
-										<a class="nav-link" *ngIf="i<4" [routerLink]="link.Link+'/'+link.Title.toLocaleLowerCase()"> {{link.Title}}</a>
+										<a (click)="closemenu()" class="nav-link" *ngIf="i<4" [routerLink]="link.Link+'/'+link.Title.toLocaleLowerCase()">
+											{{link.Title}}</a
+										>
 									</ng-container>
 								</div>
 							</span>
@@ -108,7 +122,19 @@
 			</li>
 			<li class="nav-item">
 				<a
-					class="nav-link"
+					(click)="closemenu()"
+					class="nav-link main-links"
+					[routerLink]="[RoutePaths.Careers]"
+					routerLinkActive="active"
+					data-bs-toggle="collapse"
+					data-bs-target=".navbar-collapse.show">
+					Careers
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					(click)="closemenu()"
+					class="nav-link main-links"
 					[routerLink]="[RoutePaths.Contact]"
 					routerLinkActive="active"
 					data-bs-toggle="collapse"

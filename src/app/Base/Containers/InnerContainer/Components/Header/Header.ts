@@ -1,3 +1,4 @@
+import { SidebarAnimationService } from '@App/Common/Services/SidebarAnimation.Service';
 import { RoutePaths } from '@App/Common/Settings/RoutePaths';
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
@@ -20,8 +21,8 @@ export class ArtCategory {
 })
 export class HeaderComponent implements OnInit {
 	@ViewChild('NavbarCollapse') NavbarCollapse!: ElementRef;
-	@Output() OpenMenuEvent = new EventEmitter();
 	RoutePaths = RoutePaths
+
 
 	ArtCategories: ArtCategory[] = [
 		{
@@ -110,7 +111,7 @@ export class HeaderComponent implements OnInit {
 		}
 	]
 
-	constructor(private Router: Router) { }
+	constructor(private Router: Router, private Animation: SidebarAnimationService) { }
 
 	ngOnInit(): void {
 		this.ScrollChanges()
@@ -154,7 +155,11 @@ export class HeaderComponent implements OnInit {
 
 
 	OpenMenu() {
-		this.OpenMenuEvent.emit();
+
+		this.Animation.animationflag = true;
+		this.Animation.transform();
+
+
 	}
 
 }

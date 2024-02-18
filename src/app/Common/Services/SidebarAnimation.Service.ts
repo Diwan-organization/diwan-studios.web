@@ -1,44 +1,37 @@
 import { ElementRef, Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({ providedIn: 'root' })
 export class SidebarAnimationService {
     animationflag: boolean = false;
-    private isOpenSubject = new BehaviorSubject<boolean>(false);
-    isOpen$ = this.isOpenSubject.asObservable();
 
-    toggle() {
-        this.isOpenSubject.next(!this.isOpenSubject.value);
-    }
 
     constructor(
 
     ) { }
-    transform(Element: ElementRef) {
+    transform() {
+
         const icon = document.getElementById('menu-icon');
         const body = document.querySelector('body');
+        const page = document.getElementById('page-inner') as HTMLElement;
 
         if (this.animationflag == true) {
-            Element.nativeElement.classList.remove('normal');
-            Element.nativeElement.classList.add('move-animation');
-            if (icon && icon.style) {
-                icon.style.display = 'block';
-            }
-            if (body != null) {
+            body?.classList.remove('normal');
+            body?.classList.add('move-animation');
+            if (body && icon) {
                 body.style.overflow = 'hidden';
+                icon.style.display = 'block';
 
             }
         }
 
         else {
-            Element.nativeElement.classList.remove('move-animation');
-            Element.nativeElement.classList.add('normal');
-            if (icon && icon.style) {
-                icon.style.display = 'none';
-            }
-            if (body != null) {
+            body?.classList.remove('move-animation');
+            body?.classList.add('normal');
+            if (body && icon) {
                 body.style.overflow = 'auto';
+                icon.style.display = 'none';
+
 
             }
         }
