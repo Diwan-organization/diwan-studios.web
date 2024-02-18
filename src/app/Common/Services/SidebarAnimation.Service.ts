@@ -11,14 +11,19 @@ export class SidebarAnimationService {
     ) { }
     transform() {
 
-        const icon = document.getElementById('menu-icon');
+        const icon = document.getElementById('menu-icon')!;
         const body = document.querySelector('body');
+        const mainApp = document.querySelector('.main-app');
         const page = document.getElementById('page-inner') as HTMLElement;
 
         if (this.animationflag == true) {
-            body?.classList.remove('normal');
-            body?.classList.add('move-animation');
+            mainApp?.classList.remove('normal');
+            mainApp?.classList.add('move-animation');
             if (body && icon) {
+                // body.style.overflow = 'hidden';
+                icon.style.display = 'block';
+            }
+            if (body != null) {
                 body.style.overflow = 'hidden';
                 icon.style.display = 'block';
 
@@ -26,13 +31,15 @@ export class SidebarAnimationService {
         }
 
         else {
-            body?.classList.remove('move-animation');
-            body?.classList.add('normal');
+            mainApp?.classList.remove('move-animation');
+            mainApp?.classList.add('normal');
             if (body && icon) {
+                // body.style.overflow = 'auto';
+                icon.style.display = 'none';
+            }
+            if (body != null) {
                 body.style.overflow = 'auto';
                 icon.style.display = 'none';
-
-
             }
         }
     }
