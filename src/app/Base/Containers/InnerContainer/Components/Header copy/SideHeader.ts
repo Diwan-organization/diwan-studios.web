@@ -154,4 +154,9 @@ export class SideHeaderComponent implements OnInit {
 		this.Animation.animationflag = false;
 		this.Animation.transform();
 	}
+	back() {
+		this.Animation.animationflag = false;
+		this.Animation.transform();
+
+	}
 }

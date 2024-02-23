@@ -12,9 +12,5 @@ export class InnerContainer implements OnInit {
   ngOnInit(): void { }
 
 
-  back() {
-    this.Animation.animationflag = false;
-    this.Animation.transform();
 
-  }
 }
