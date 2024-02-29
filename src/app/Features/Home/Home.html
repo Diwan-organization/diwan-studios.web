@@ -27,7 +27,12 @@
 		<div class="tab-content">
 			<div class="stat-list">
 				<div *ngFor="let stat of Stats; let i = index" class="stat" [ngClass]="{'stat-clickable': stat.Link}" (click)="GotoStat(stat.Link)">
-					<div class="number" [id]="i" [attr.number]="stat.Number" [attr.timeinterval]="stat.TimeInterval"></div>
+					<div
+						class="number"
+						[ngClass]="{'bg': i != 4,'meters': i == 3 }"
+						[id]="i"
+						[attr.number]="stat.Number"
+						[attr.timeinterval]="stat.TimeInterval"></div>
 					<div class="text text{{i}}">
 						<div class="stat-title">{{ stat.Title }}</div>
 						<div class="description">{{ stat.Description }}</div>

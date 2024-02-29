@@ -71,7 +71,7 @@ export class HomeComponent implements OnInit {
 			ImgSrc: '',
 			ImgAlt: '',
 			Title: 'Years Of Experience',
-			Number: '15',
+			Number: '19+',
 			Description: '',
 			Link: '',
 			TimeInterval: 100
@@ -80,19 +80,28 @@ export class HomeComponent implements OnInit {
 			ImgSrc: '',
 			ImgAlt: '',
 			Title: 'Projects',
-			Number: '25',
+			Number: '500+',
 			Description: '',
 			Link: '',
-			TimeInterval: 70
+			TimeInterval: 40
 		},
 		{
 			ImgSrc: '',
 			ImgAlt: '',
 			Title: 'Countries',
-			Number: '4',
+			Number: '5+',
 			Description: '',
 			Link: '',
-			TimeInterval: 200
+			TimeInterval: 300
+		},
+		{
+			ImgSrc: '',
+			ImgAlt: '',
+			Title: 'Meters',
+			Number: '6000+',
+			Description: '',
+			Link: '',
+			TimeInterval: 25
 		},
 		{
 			ImgSrc: '',
@@ -104,6 +113,7 @@ export class HomeComponent implements OnInit {
 			TimeInterval: 0
 		},
 	]
+
 
 	Categories: CategoryItem[] = [
 		{
@@ -361,7 +371,7 @@ export class HomeComponent implements OnInit {
 					const numberElement = element.querySelector('.number');
 					const targetNumber = parseInt(numberElement.getAttribute('number'));
 					const targetTimeInterval = parseInt(numberElement.getAttribute('timeinterval'));
-					// console.log(targetNumber);
+					console.log(targetNumber);
 
 					let currentNumber = 0;
 					const interval = setInterval(() => {
@@ -371,10 +381,16 @@ export class HomeComponent implements OnInit {
 							resolve();
 							return
 						}
-						currentNumber++;
+						if (numberElement.id == 3) {
+							currentNumber = currentNumber + 100;
+						} else if (numberElement.id == 1) {
+							currentNumber = currentNumber + 10;
+						} else {
+							currentNumber++;
+						}
 						numberElement.innerText = currentNumber;
 						if (currentNumber >= targetNumber) {
-							if (numberElement.id == 0) {
+							if (numberElement.id != 4) {
 								numberElement.innerText += '+'
 							}
 							clearInterval(interval);
@@ -384,6 +400,7 @@ export class HomeComponent implements OnInit {
 				});
 			}
 		},
+
 
 		Categories: () => {
 			// categories list one by one
