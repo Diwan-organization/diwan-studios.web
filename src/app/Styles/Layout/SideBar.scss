@@ -1,12 +1,16 @@
 $transition: transform 0.5s ease-out;
 
 .move-animation {
-	transform: scale(0.8) translate(-25%, 5%) !important;
 	transition: $transition;
 
 	&.main-app {
+		transform: scale(0.8) translate(-400px, 5%) !important;
 		overflow: hidden !important;
 	}
+	&.side-menu {
+		transform: scale(0.8) translate(-500px, 5%) !important;
+	}
+
 	.page-inner {
 		margin: 0px !important;
 		padding: 0px !important;
@@ -19,20 +23,7 @@ $transition: transform 0.5s ease-out;
 }
 
 .normal {
-	transform: scale(1) translate();
+	transform: none;
 	transition: $transition;
 	overflow-x: clip !important;
-}
-
-@media (max-width: 1050px) {
-	.move-animation {
-		transform: scale(0.8) translate(-330px, -500px) !important;
-		transition: $transition;
-	}
-
-	.normal {
-		transform: scale(1) translate();
-		transition: $transition;
-		overflow-x: clip !important;
-	}
 }

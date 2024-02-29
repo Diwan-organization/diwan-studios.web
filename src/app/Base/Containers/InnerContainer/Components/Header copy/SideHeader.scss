@@ -4,11 +4,11 @@ $font-color: var(--gold1);
 .side-menu {
 	position: fixed;
 	top: 0px;
-	right: -60px;
+	right: -400px;
 	height: 100%;
 	width: 400px;
 	color: white;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	// box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	padding: 1% 0 0 2%;
 	transform: translateX(100%);
 	z-index: 1000;
@@ -18,7 +18,7 @@ $font-color: var(--gold1);
 		color: var(--primary-color1);
 		z-index: 10000;
 		position: absolute;
-		left: -55px;
+		left: -70px;
 		display: none;
 		top: 290px;
 		background-color: var(--gold2);
@@ -168,11 +168,5 @@ $font-color: var(--gold1);
 		.child-dropdown {
 			transform: translate(8vw, 33px) !important;
 		}
-	}
-}
-@media (max-width: 1054px) {
-	.side-menu {
-		top: 370px !important;
-		right: -310px !important;
 	}
 }
