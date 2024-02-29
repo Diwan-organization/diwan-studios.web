@@ -1,26 +1,17 @@
 $transition: transform 0.5s ease-out;
 
-#menu-icon {
-	font-size: 77px;
-	color: var(--gold2);
-	z-index: 10000;
-	position: absolute;
-	left: -55px;
-	display: none;
-	top: 290px;
-	&:hover {
-		cursor: pointer;
-	}
-}
-
 .move-animation {
-	transform: scale(0.8) translate(-25%, -10.5%) !important;
+	transform: scale(0.8) translate(-25%, 5%) !important;
 	transition: $transition;
-	.page-inner {
+
+	&.main-app {
 		overflow: hidden !important;
+	}
+	.page-inner {
 		margin: 0px !important;
 		padding: 0px !important;
 		height: 800vh !important;
+
 		.page-section.contact {
 			position: absolute !important;
 		}
@@ -32,6 +23,7 @@ $transition: transform 0.5s ease-out;
 	transition: $transition;
 	overflow-x: clip !important;
 }
+
 @media (max-width: 1050px) {
 	.move-animation {
 		transform: scale(0.8) translate(-330px, -500px) !important;
