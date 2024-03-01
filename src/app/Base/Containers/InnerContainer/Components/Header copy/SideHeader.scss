@@ -90,7 +90,7 @@ $font-color: var(--gold1);
 			}
 		}
 		.parent-dropdown {
-			transform: translate(25vw, -40px);
+			transform: translate(22vw, -40px);
 			.fa-chevron-down {
 				display: block;
 			}
@@ -162,7 +162,7 @@ $font-color: var(--gold1);
 	}
 }
 
-@media (max-width: 576px) {
+@media (max-width: 650px) {
 	.parent-dropdown {
 		transform: translate(50vw, -40px) !important;
 		.child-dropdown {
