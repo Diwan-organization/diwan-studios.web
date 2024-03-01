@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
 		{
 			Title: 'KSA Projects',
 			ImgAlt: '',
-			ImgSrc: 'assets/Images/kansas-wall-2.jpg',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
 					Title: 'Project 1',
@@ -46,7 +46,7 @@ export class HeaderComponent implements OnInit {
 		}, {
 			Title: 'Qatar Projects',
 			ImgAlt: '',
-			ImgSrc: 'assets/Images/kansas-wall-2.jpg',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
 					Title: 'Project 1',
@@ -64,7 +64,7 @@ export class HeaderComponent implements OnInit {
 		}, {
 			Title: 'EGYPT Projects',
 			ImgAlt: '',
-			ImgSrc: 'assets/Images/kansas-wall-2.jpg',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
 					Title: 'Project 1',
@@ -93,7 +93,7 @@ export class HeaderComponent implements OnInit {
 		}, {
 			Title: 'France Projects',
 			ImgAlt: '',
-			ImgSrc: 'assets/Images/kansas-wall-2.jpg',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
 					Title: 'Project 1',
