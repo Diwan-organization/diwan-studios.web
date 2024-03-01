@@ -8,7 +8,7 @@ $transition: transform 0.5s ease-out;
 		overflow: hidden !important;
 	}
 	&.side-menu {
-		transform: scale(0.8) translate(-500px, 5%) !important;
+		transform: scale(0.8) translate(-530px, 5%) !important;
 	}
 
 	.page-inner {
@@ -26,4 +26,11 @@ $transition: transform 0.5s ease-out;
 	transform: none;
 	transition: $transition;
 	overflow-x: clip !important;
+}
+@media (max-width: 650px) {
+	.move-animation {
+		&.side-menu {
+			transform: scale(0.8) translate(-500px, 5%) !important;
+		}
+	}
 }
