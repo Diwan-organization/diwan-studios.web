@@ -1,4 +1,5 @@
 @import './Scroll.scss';
+@import './SideBar.scss';
 
 body {
 	scroll-behavior: smooth;
@@ -18,14 +19,25 @@ body {
 
 .inner-container {
 	width: 100%;
-	background-color: var(--primary-bg-color);
 
 	.page-master {
 		width: 100%;
 		min-height: 100vh;
+		// for menu bg
+		background-color: var(--primary-color2);
+
 		app-header {
 			display: block;
 		}
+
+		// for menu opening
+		.main-app {
+			height: 100vh;
+			width: 100%;
+			overflow: auto;
+			background-color: var(--primary-bg-color);
+		}
+
 		.page-inner {
 			animation: initial-transition 0.3s ease-in-out;
 			color: var(--primary-cool-color1);

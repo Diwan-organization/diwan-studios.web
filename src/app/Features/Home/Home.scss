@@ -261,11 +261,10 @@ $transition: all 0.6s ease-in;
 					.stat {
 						display: flex;
 						flex-direction: column;
-						// background: #2c2c2c;
-						border-radius: 10px;
 						justify-content: center;
 						align-items: center;
-						// margin: 3px;
+
+						border-radius: 10px;
 						min-height: 120px;
 						width: 50%;
 
@@ -273,13 +272,29 @@ $transition: all 0.6s ease-in;
 							cursor: pointer;
 						}
 						.number {
-							// width: 100px;
 							color: var(--gold1);
-							font-size: 80px;
+							font-size: 60px;
 							font-weight: 600;
-							// opacity: 0;
+
 							transition: all 0.5s ease;
+
+							&.meters {
+								font-size: 45px;
+							}
+							&.bg {
+								background-image: url('../../../assets/Images/stat-cover-diwan.png');
+								background-size: cover;
+								width: 150px;
+								height: 150px;
+
+								padding-bottom: 12px;
+
+								display: flex;
+								justify-content: center;
+								align-items: center;
+							}
 						}
+
 						.text {
 							margin-inline-start: 15px;
 							flex-grow: 1;
@@ -488,72 +503,6 @@ $transition: all 0.6s ease-in;
 			}
 		}
 
-		// &.latest-news {
-		// 	.tab-content {
-		// 		.list {
-		// 			grid-template-columns: repeat(
-		// 				auto-fill,
-		// 				minmax(350px, 300px)
-		// 			);
-		// 			grid-gap: 5px;
-		// 		}
-		// 	}
-		// }
-
-		// &.reviews {
-		// 	.carousel {
-		// 		width: 100%;
-		// 		// background: white;
-		// 		backdrop-filter: blur(12px) saturate(200%);
-		// 		background-color: rgba(17, 25, 40, 0.42);
-		// 		// border-radius: 12px;
-		// 		// border: 1px solid rgba(255, 255, 255, 0.125);
-		// 		color: var(--primary-font-color);
-
-		// 		.carousel-indicators {
-		// 			button {
-		// 				width: 10px;
-		// 				height: 10px;
-		// 				border-radius: 50%;
-		// 			}
-		// 		}
-		// 		.carousel-inner {
-		// 			.carousel-item {
-		// 				// display: flex;
-		// 				// justify-content: space-between;
-		// 				// align-items: center;
-		// 				// display: flex;
-		// 				// flex-direction: row-reverse;
-		// 				height: 200px;
-		// 				.img {
-		// 					width: 300px;
-		// 					max-width: none;
-		// 					display: none;
-		// 				}
-		// 				&.active {
-		// 					img {
-		// 						display: block;
-		// 						right: 0;
-		// 						position: absolute;
-		// 					}
-		// 				}
-		// 				.carousel-caption {
-		// 					// position: static;
-		// 					top: 0;
-		// 					left: 0;
-		// 					width: 50%;
-		// 					text-align: start;
-		// 					margin-left: 10%;
-		// 					color: var(--primary-font-color);
-		// 				}
-		// 			}
-		// 		}
-		// 		.carousel-control {
-		// 			width: 50px;
-		// 		}
-		// 	}
-		// }
-
 		&.partners {
 			background-color: white;
 			overflow: auto;
@@ -569,40 +518,5 @@ $transition: all 0.6s ease-in;
 				transform: translateY(0px);
 			}
 		}
-	}
-}
-@keyframes grow {
-	0% {
-		max-height: var(--lineHeight);
-	}
-	100% {
-		max-height: calc(var(--lineHeight) * var(--lines));
-	}
-}
-
-@keyframes carriageReturn {
-	0% {
-		top: 0;
-	}
-	100% {
-		top: calc(var(--lineHeight) * var(--lines));
-	}
-}
-
-@keyframes type {
-	0% {
-		width: 100%;
-	}
-	100% {
-		width: 0%;
-	}
-}
-
-@keyframes caret {
-	0% {
-		color: var(--bgColor);
-	}
-	100% {
-		color: black;
 	}
 }

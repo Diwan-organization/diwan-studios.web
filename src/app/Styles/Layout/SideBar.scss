@@ -1,0 +1,29 @@
+$transition: transform 0.5s ease-out;
+
+.move-animation {
+	transition: $transition;
+
+	&.main-app {
+		transform: scale(0.8) translate(-400px, 5%) !important;
+		overflow: hidden !important;
+	}
+	&.side-menu {
+		transform: scale(0.8) translate(-500px, 5%) !important;
+	}
+
+	.page-inner {
+		margin: 0px !important;
+		padding: 0px !important;
+		min-height: 100vh !important;
+
+		.page-section.contact {
+			position: absolute !important;
+		}
+	}
+}
+
+.normal {
+	transform: none;
+	transition: $transition;
+	overflow-x: clip !important;
+}
