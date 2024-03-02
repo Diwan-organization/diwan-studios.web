@@ -65,12 +65,12 @@ export class SideHeaderComponent implements OnInit {
 				}
 			]
 		}, {
-			Title: 'EGYPT Projects',
+			Title: 'FUN',
 			ImgAlt: '',
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
-					Title: 'Project 1',
+					Title: 'ADIDAS',
 					Link: `${RoutePaths.ArtWorks}`
 				},
 				{
