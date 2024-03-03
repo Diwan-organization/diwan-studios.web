@@ -54,6 +54,9 @@ export class SidebarAnimationService {
                 body.style.overflow = 'auto';
                 icon.style.display = 'none';
             }
+            if (mainApp != null) {
+                mainApp.scrollTop = 0;
+            }
         }
     }
 

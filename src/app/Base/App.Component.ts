@@ -22,7 +22,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.PreLoaderListener();
-    this.ScrollUpSub();
+    // this.ScrollUpSub();
     this.CheckIOS();
     this.loadImages();
   }
@@ -72,14 +72,14 @@ export class AppComponent {
     });
   }
 
-  ScrollUpSub() {
-    this.Router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        // Scroll to the top of the page when a new route is navigated
-        window.scrollTo(0, 0);
-      }
-    });
-  }
+  // ScrollUpSub() {
+  //   this.Router.events.subscribe((event) => {
+  //     if (event instanceof NavigationEnd) {
+  //       // Scroll to the top of the page when a new route is navigated
+  //       window.scrollTo(0, 0);
+  //     }
+  //   });
+  // }
 
   CheckIOS() {
     // Check if the user is using an iOS device

@@ -34,7 +34,12 @@ export const routes: Routes = [
           import('@App/Features/Art/Art').then((c) => c.ArtComponent),
       },
       {
-        path: 'artworks/:project',
+        path: 'artworks/:category/:project',
+        loadComponent: () =>
+          import('@App/Features/Art/Art').then((c) => c.ArtComponent),
+      },
+      {
+        path: 'artworks/:category',
         loadComponent: () =>
           import('@App/Features/Art/Art').then((c) => c.ArtComponent),
       },

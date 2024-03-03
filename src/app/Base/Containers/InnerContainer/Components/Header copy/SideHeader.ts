@@ -47,16 +47,16 @@ export class SideHeaderComponent implements OnInit {
 				}
 			]
 		}, {
-			Title: 'Qatar Projects',
+			Title: 'CREATIVE',
 			ImgAlt: '',
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
-					Title: 'Project 1',
+					Title: 'FIFA',
 					Link: `${RoutePaths.ArtWorks}`
 				},
 				{
-					Title: 'Project 2',
+					Title: 'HSBC',
 					Link: `${RoutePaths.ArtWorks}`
 				},
 				{
@@ -65,12 +65,12 @@ export class SideHeaderComponent implements OnInit {
 				}
 			]
 		}, {
-			Title: 'EGYPT Projects',
+			Title: 'FUN',
 			ImgAlt: '',
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
-					Title: 'Project 1',
+					Title: 'ADIDAS',
 					Link: `${RoutePaths.ArtWorks}`
 				},
 				{
