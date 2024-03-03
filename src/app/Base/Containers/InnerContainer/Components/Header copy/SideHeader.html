@@ -54,7 +54,7 @@
 								<a
 									(click)="closemenu()"
 									class="nav-link d-inline"
-									[routerLink]="RoutePaths.ArtWorks+'/'+category.Title.toLocaleLowerCase()"
+									[routerLink]="RoutePaths.ArtWorks+'/'+category.Title.toLocaleLowerCase()+'/'+category.Links[0].Title.toLocaleLowerCase()"
 									data-bs-toggle="collapse">
 									{{category.Title}}
 								</a>

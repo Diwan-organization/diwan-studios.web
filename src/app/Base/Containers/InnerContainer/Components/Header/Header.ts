@@ -161,5 +161,8 @@ export class HeaderComponent implements OnInit {
 
 
 	}
-
+	ScrollUp() {
+		this.Animation.animationflag = false;
+		this.Animation.transform();
+	}
 }
