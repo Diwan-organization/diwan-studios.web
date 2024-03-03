@@ -153,6 +153,10 @@ export class SideHeaderComponent implements OnInit {
 	closemenu() {
 		this.Animation.animationflag = false;
 		this.Animation.transform();
+		const mainApp = document.querySelector('.main-app');
+		if (mainApp != null) {
+			mainApp.scrollTop = 0;
+		}
 	}
 	back() {
 		this.Animation.animationflag = false;

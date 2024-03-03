@@ -6,22 +6,33 @@
 		display: flex;
 		justify-content: center;
 
-		img {
-			max-width: 150px;
-			min-width: 150px;
-			max-height: 150px;
-			min-height: 150px;
-			padding: 10px;
-			display: block; /* Ensure the image takes up its full container */
-			width: 100%; /* Adjust the width as needed */
-			height: auto; /* Maintain aspect ratio */
-			object-fit: contain;
+		.logo-container {
+			background-image: url('../../../../assets/Images/stat-cover-diwan.png');
+			background-size: cover;
+			width: 170px !important;
+			height: 170px !important;
+			padding-bottom: 12px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img {
+				max-width: 150px;
+				// min-width: 150px;
+				max-height: 150px;
+				// min-height: 150px;
+				padding: 10px;
+				display: block; /* Ensure the image takes up its full container */
+				width: 78%; /* Adjust the width as needed */
+				height: auto; /* Maintain aspect ratio */
+				object-fit: contain;
+				border-radius: 50%;
 
-			filter: grayscale(100%); /* Convert image to black and white */
-			transition: filter 0.3s ease;
-			cursor: pointer;
-			&:hover {
-				filter: grayscale(0%);
+				filter: grayscale(100%); /* Convert image to black and white */
+				transition: filter 0.3s ease;
+				cursor: pointer;
+				&:hover {
+					filter: grayscale(0%);
+				}
 			}
 		}
 	}

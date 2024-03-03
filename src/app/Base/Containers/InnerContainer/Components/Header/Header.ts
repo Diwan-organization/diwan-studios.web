@@ -162,7 +162,9 @@ export class HeaderComponent implements OnInit {
 
 	}
 	ScrollUp() {
-		this.Animation.animationflag = false;
-		this.Animation.transform();
+		const mainApp = document.querySelector('.main-app');
+		if (mainApp != null) {
+			mainApp.scrollTop = 0;
+		}
 	}
 }
