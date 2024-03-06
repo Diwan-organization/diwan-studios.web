@@ -77,23 +77,24 @@ $transition: all 0.6s ease-in;
 		}
 
 		&.our-values {
-			flex-direction: column;
-			background-image: url('./../../../assets/Images/black-gold-bg.jpg');
+			// background-image: url('./../../../assets/Images/black-gold-bg.jpg');
 			background-size: cover;
 			background-position: center;
 			background-attachment: fixed;
 			padding: 20px;
-			.image {
+
+			.tab-content {
 				opacity: 0;
 				transform: translateY(50px);
 				transition: $transition;
-			}
-			.content {
-				opacity: 0;
-				transform: translateY(50px);
-				transition: $transition;
+
 				width: 100%;
 
+				.image {
+					img {
+						height: 60px;
+					}
+				}
 				.list {
 					display: flex;
 					flex-wrap: wrap;
@@ -104,39 +105,50 @@ $transition: all 0.6s ease-in;
 					.value {
 						display: flex;
 						flex-direction: column;
+						justify-content: center;
 						align-items: center;
 
-						min-width: 200px;
-						max-width: 24%;
-						padding: 20px;
-						// text-align: center;
+						border-radius: 10px;
+						min-height: 120px;
+						width: 33%;
 
-						.img {
-							border-radius: 50%;
-							height: 100px;
-							width: 100px;
-							object-fit: contain;
-							background: wheat;
-						}
+						.title {
+							color: var(--primary-font-color);
+							font-size: 22px;
+							font-weight: 600;
 
-						.text-content {
-							margin-top: 10px;
-							text-align: center;
-							width: 100%;
-							h1,
-							h5 {
-								font-size: 16px;
-							}
+							transition: all 0.5s ease;
+
+							background-image: url('../../../assets/Images/stat-cover-diwan.png');
+							background-size: cover;
+							width: 150px;
+							height: 150px;
+
+							display: flex;
+							justify-content: center;
+							align-items: center;
 						}
 					}
 				}
 			}
 
 			&.values-transition {
-				.content,
-				.image {
+				.tab-content {
 					opacity: 1;
 					transform: translateY(0px);
+				}
+			}
+
+			@media (max-width: 576px) {
+				.tab-content {
+					.list {
+						.value {
+							width: 50%;
+
+							.title {
+							}
+						}
+					}
 				}
 			}
 		}

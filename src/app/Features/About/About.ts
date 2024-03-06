@@ -4,11 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 class ValueItem {
-	ImgSrc!: string;
-	ImgAlt!: string;
 	Title!: string;
-	Description!: string;
-	// Link!: string;
 }
 
 @Component({
@@ -18,34 +14,28 @@ class ValueItem {
 	imports: [FormsModule, CommonModule]
 })
 export class AboutComponent implements OnInit {
-
 	Values: ValueItem[] = [
 		{
-			ImgSrc: 'assets/Logos/4seasons.png ',
-			ImgAlt: 'Exceptional Quality',
-			Title: 'Exceptional Quality',
-			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat, suscipit est sequi.',
+			Title: 'Quality',
+		},
+		{
+			Title: 'Integrity',
 
 		},
 		{
-			ImgSrc: 'assets/Logos/adidas.png ',
-			ImgAlt: 'Adherence',
-			Title: 'Adherence',
-			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat.',
+			Title: 'Team work',
 
 		},
 		{
-			ImgSrc: 'assets/Logos/amazon.png ',
-			ImgAlt: 'Reliability',
-			Title: 'Reliability',
-			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat, suscipit est sequi.',
+			Title: 'Innovation',
 
 		},
 		{
-			ImgSrc: 'assets/Logos/Careem2.png ',
-			ImgAlt: 'Agility',
-			Title: 'Agility',
-			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea?',
+			Title: 'Creativity',
+
+		},
+		{
+			Title: 'Consistency',
 
 		}
 

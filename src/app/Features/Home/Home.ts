@@ -43,11 +43,7 @@ class StatsItem {
 }
 
 class ValueItem {
-	ImgSrc!: string;
-	ImgAlt!: string;
 	Title!: string;
-	Description!: string;
-	// Link!: string;
 }
 
 
@@ -114,7 +110,6 @@ export class HomeComponent implements OnInit {
 		},
 	]
 
-
 	Categories: CategoryItem[] = [
 		{
 			ImgSrc: 'assets/Images/girl-wall.jpg',
@@ -152,33 +147,6 @@ export class HomeComponent implements OnInit {
 	];
 	// CategoryOwnDescription: string= 'testtttttttttttttt';
 	CurrentCategoryIndex: number = -1;
-
-	News: NewsItem[] = [
-		{
-			ImgSrc: 'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-			ImgAlt: 'news image 1',
-			Title: 'News 1 title',
-			Date: new Date('28/6/1996'),
-			Description: 'Some representative placeholder content for the first slide.',
-			Link: '',
-		},
-		{
-			ImgSrc: 'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp',
-			ImgAlt: 'news image 2',
-			Title: 'News 2 title',
-			Date: new Date('28/6/1996'),
-			Description: 'Some representative placeholder content for the first slide.',
-			Link: '',
-		},
-		{
-			ImgSrc: 'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/MIAMI-GALLERY-jpg.webp',
-			ImgAlt: 'news image 3',
-			Title: 'News 3 title',
-			Date: new Date('28/6/1996'),
-			Description: 'Some representative placeholder content for the first slide.',
-			Link: '',
-		}
-	]
 
 	Partners: PartnerItem[] = [
 		{
@@ -518,45 +486,26 @@ export class HomeComponent implements OnInit {
 
 	Values: ValueItem[] = [
 		{
-			ImgSrc: 'assets/Logos/4seasons.png ',
-			ImgAlt: 'Quality',
 			Title: 'Quality',
-			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat, suscipit est sequi.',
-
 		},
 		{
-			ImgSrc: 'assets/Logos/adidas.png ',
-			ImgAlt: 'Integrity',
 			Title: 'Integrity',
-			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat.',
 
 		},
 		{
-			ImgSrc: 'assets/Logos/amazon.png ',
-			ImgAlt: 'Team work',
 			Title: 'Team work',
-			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea? A animi voluptas sit libero fugiat, suscipit est sequi.',
 
 		},
 		{
-			ImgSrc: 'assets/Logos/Careem2.png ',
-			ImgAlt: 'Innovation',
 			Title: 'Innovation',
-			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea?',
 
 		},
 		{
-			ImgSrc: 'assets/Logos/Careem2.png ',
-			ImgAlt: 'Creativity',
 			Title: 'Creativity',
-			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea?',
 
 		},
 		{
-			ImgSrc: 'assets/Logos/Careem2.png ',
-			ImgAlt: 'Consistency',
 			Title: 'Consistency',
-			Description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore explicabo quis consequuntur beatae quos obcaecati eius a accusamus maxime, totam ea?',
 
 		}
 

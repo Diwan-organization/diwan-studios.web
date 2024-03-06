@@ -1,12 +1,12 @@
 <div class="page-inner">
 	<section class="page-section landing p-0">
 		<div class="landing-overlay">
-			<img src="assets/Images/girl-wall-3.jpg" alt="" />
+			<img src="assets/Images/landing.jpg" alt="landing image" />
 		</div>
 		<div class="landing-text text">
-			<h1 class="gold-text">Diwan Studio</h1>
-			<h3 class="gold-text">Graffiti and architecture design.</h3>
-			<h3 class="gold-text">Bringing life to walls <s></s>ince 2004.</h3>
+			<!-- <h1 class="gold-text">Diwan Studio</h1> -->
+			<!-- <h3 class="gold-text">Graffiti and architecture design.</h3>
+			<h3 class="gold-text">Bringing life to walls <s></s>ince 2004.</h3> -->
 		</div>
 		<div class="scroll-down">
 			<div class="arrow1"></div>
@@ -44,16 +44,12 @@
 
 	<section class="page-section no-min values">
 		<div class="tab-content">
+			<div class="partition image line-image">
+				<img src="assets/Images/diwan-handbook/our-values-home.png" />
+			</div>
 			<div class="list">
-				<div class="value" *ngFor="let Value of Values; index as i">
-					<div>
-						<img [src]="Value.ImgSrc" [alt]="Value.ImgAlt" class="img" />
-					</div>
-					<div class="text-content">
-						<h1>{{Value.Title}}</h1>
-
-						<h5>{{Value.Description}}</h5>
-					</div>
+				<div *ngFor="let Value of Values;" class="value">
+					<div class="title">{{Value.Title}}</div>
 				</div>
 			</div>
 		</div>
