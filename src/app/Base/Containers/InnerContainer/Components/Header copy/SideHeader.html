@@ -107,7 +107,11 @@
 							</div>
 
 							<span class="dropdown">
-								<a (click)="closemenu()" class="nav-link d-inline" [routerLink]="[RoutePaths.ArtWorks]" data-bs-toggle="collapse">
+								<a
+									(click)="closemenu()"
+									class="nav-link d-inline"
+									[routerLink]="[RoutePaths.Deft]+'/'+category.Title"
+									data-bs-toggle="collapse">
 									{{category.Title}}
 								</a>
 								<span
@@ -122,9 +126,7 @@
 								</span>
 								<div class="art-categories dropdown-menu child-menu" attr.aria-labelledby="dropdownMenuDeft{{i}}">
 									<ng-container *ngFor="let link of category.Links; index as i">
-										<a (click)="closemenu()" class="nav-link" *ngIf="i<4" [routerLink]="link.Link+'/'+link.Title.toLocaleLowerCase()">
-											{{link.Title}}</a
-										>
+										<a (click)="closemenu()" class="nav-link" *ngIf="i<4" [routerLink]="link.Link"> {{link.Title}}</a>
 									</ng-container>
 								</div>
 							</span>

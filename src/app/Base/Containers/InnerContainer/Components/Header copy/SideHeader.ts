@@ -27,91 +27,48 @@ export class SideHeaderComponent implements OnInit {
 	ngOnInit(): void {
 
 	}
+
 	ArtCategories: ArtCategory[] = [
 		{
-			Title: 'KSA Projects',
+			Title: 'Painting',
 			ImgAlt: '',
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
-					Title: 'Project 1',
-					Link: `${RoutePaths.ArtWorks}`
+					Title: 'fifa',
+					Link: `${RoutePaths.Deft}/Painting/fifa`
 				},
 				{
 					Title: 'Project 2',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.Deft}/Painting/project2`
 				},
 				{
 					Title: 'Project 3',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.Deft}/Painting/project3`
 				}
 			]
 		}, {
-			Title: 'CREATIVE',
+			Title: 'Sculptures',
 			ImgAlt: '',
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
 					Title: 'FIFA',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.Deft}/Sculptures/fifa`
 				},
 				{
 					Title: 'HSBC',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.Deft}/Sculptures/hsbc`
 				},
 				{
 					Title: 'Project 3',
-					Link: `${RoutePaths.ArtWorks}`
-				}
-			]
-		}, {
-			Title: 'FUN',
-			ImgAlt: '',
-			ImgSrc: 'assets/Images/girl-wall.jpg',
-			Links: [
-				{
-					Title: 'ADIDAS',
-					Link: `${RoutePaths.ArtWorks}`
-				},
-				{
-					Title: 'Project 2',
-					Link: `${RoutePaths.ArtWorks}`
-				},
-				{
-					Title: 'Project 3',
-					Link: `${RoutePaths.ArtWorks}`
-				}, {
-					Title: 'Project 4',
-					Link: `${RoutePaths.ArtWorks}`
-				},
-				{
-					Title: 'Project 5',
-					Link: `${RoutePaths.ArtWorks}`
-				},
-				{
-					Title: 'Project 6',
-					Link: `${RoutePaths.ArtWorks}`
-				}
-			]
-		}, {
-			Title: 'France Projects',
-			ImgAlt: '',
-			ImgSrc: 'assets/Images/girl-wall.jpg',
-			Links: [
-				{
-					Title: 'Project 1',
-					Link: `${RoutePaths.ArtWorks}`
-				},
-				{
-					Title: 'Project 2',
-					Link: `${RoutePaths.ArtWorks}`
-				},
-				{
-					Title: 'Project 3',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.Deft}/Sculptures/project3`
 				}
 			]
 		}
+
+
+
 	]
 
 	toggleDropdown(event: MouseEvent, dropdown: string) {
