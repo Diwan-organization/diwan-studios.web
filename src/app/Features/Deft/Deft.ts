@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { animate, stagger } from 'motion';
-
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { Location } from '@angular/common';
+import { RoutePaths } from '@App/Common/Settings/RoutePaths';
 
 class ProjectItem {
     Name!: string;
@@ -10,16 +12,22 @@ class ProjectItem {
     Images!: string[];
     Location!: string;
 }
+class Category {
+    Name!: string;
+    ProjectItem!: ProjectItem[]
+}
 
 
 @Component({
     standalone: true,
     templateUrl: './Deft.html',
     styleUrls: ['Deft.scss'],
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, RouterModule],
 
 })
 export class DeftComponent {
+    RoutePaths = RoutePaths;
+
     private animatedSections: Set<string> = new Set();
     SearchText: string = '';
     Projects: ProjectItem[] = [
@@ -94,77 +102,49 @@ export class DeftComponent {
 
     ];
 
-    MoreProjects: ProjectItem[] = [
-        {
-            Name: 'Project 1',
-            Description: 'description 1',
-            Location: 'KSA',
-            Images: [
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp'
-            ]
-        },
-
-        {
-            Name: 'Project 2',
-            Description: 'description 2',
-            Location: 'Qatar',
-            Images: ['https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/MIAMI-GALLERY-jpg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp']
-
-        },
-
-        {
-            Name: 'Project 3',
-            Description: 'description 3',
-            Location: 'Egypt',
-            Images: ['https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/MIAMI-GALLERY-jpg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2022/11/CFA-Atlanta-Gallery-jpeg.webp',
-                'https://nyc.carouselartgroup.com/wp-content/uploads/2023/10/CHICAGO-GALLERY-jpg.webp']
-        }
-
-    ];
     filteredProjects: ProjectItem[];
+    project: string = '';
+    Categories: Category[] = [
+        { Name: 'Painting', ProjectItem: this.Projects },
+        { Name: 'Sculptures', ProjectItem: this.Projects },
+    ]
+    category: any;
 
 
-    constructor(private renderer: Renderer2, private el: ElementRef) {
+    constructor(private renderer: Renderer2, private el: ElementRef, private ActivatedRoute: ActivatedRoute, private location: Location) {
         this.filteredProjects = this.Projects
     }
 
     private scrollTo(element: HTMLElement) {
-        const offset = 50;
-        const position = element.offsetTop - offset;
-
-        window.scrollTo({
-            top: position,
-            behavior: 'smooth'
+        element.scrollIntoView({
+            behavior: 'smooth', block: 'start',
         });
-    }
-
-
-    @HostListener('window:scroll', [])
-    onWindowScroll() {
+        element.style.paddingTop = "50px"
         this.checkElementsVisibility();
+
     }
 
     ngAfterViewInit() {
-        this.attachClickEventListeners();
-        this.checkElementsVisibility();
+        this.filteredProjects = this.Projects;
+        this.ActivatedRoute.params.subscribe((params) => {
+            debugger;
+            this.project = params['project'];
+            this.category = params['category'];
+
+            if (!this.category) { this.checkElementsVisibility(); return }
+            if (!this.project) {
+                const parent = this.el.nativeElement.querySelector(`.${this.category.replace(' ', '').trim().toLocaleUpperCase()}`)
+                setTimeout(() => {
+                    this.scrollTo(parent);
+                }, 100);
+                return
+            }
+            const parent = this.el.nativeElement.querySelector(`.${this.category.replace(' ', '').trim().toLocaleUpperCase()}`)
+            const element = parent.querySelector(`#${this.project.replace(' ', '').trim().toLocaleUpperCase()}`)
+            setTimeout(() => {
+                this.scrollTo(element);
+            }, 100);
+        });
     }
 
     observerOptions: {} = {
@@ -173,83 +153,105 @@ export class DeftComponent {
         threshold: 0.1,
     };
     private checkElementsVisibility() {
-        const elements = this.el.nativeElement.querySelectorAll('.category');
-        elements.forEach((element: HTMLElement) => {
-            const category = element.getAttribute('id');
-            const categoryAnchor = this.el.nativeElement.querySelector(`a[data-category="${category}"]`);
-            const rect = element.getBoundingClientRect();
-            if (rect.top <= 400 && rect.bottom > 400) {
-                this.renderer.addClass(categoryAnchor, 'active');
-                if (category != null && !this.animatedSections.has(category)) {
-                    const observerprojects = new IntersectionObserver((entries) => {
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                const imgFluidElements = element.querySelectorAll('.img');
-                                animate(
-                                    imgFluidElements,
-                                    {
-                                        opacity: [0, 0.5, 1],
-                                        y: [15, 0],
-                                    },
-                                    {
-                                        delay: stagger(0.05),
-                                        duration: 0.6,
-                                        easing: ['ease-in-out'],
-                                    }
-                                );
+        const categoryElements = this.el.nativeElement.querySelectorAll('.category');
 
-                                observerprojects.disconnect();
-                                this.animatedSections.add(category);
-                            }
-                        });
-                    }, this.observerOptions);
+        categoryElements.forEach((categoryElement: Element) => {
+            debugger
+            const category = categoryElement.getAttribute('id')
+            const projectElements = categoryElement.querySelectorAll('.projects');
 
-                    observerprojects.observe(element);
+            projectElements.forEach((projectElement: Element) => {
+                const project = projectElement.getAttribute('id');
+                const categoryAnchor = this.el.nativeElement.querySelector(`a[data-category="${category + '-' + project}"]`);
+                const rect = projectElement.getBoundingClientRect();
+
+                if (rect.top <= 400 && rect.bottom > 400) {
+                    this.renderer.addClass(categoryAnchor, 'active');
+                    debugger
+                    if (project != null && !this.animatedSections.has(category + '-' + project)) {
+                        const observerprojects = new IntersectionObserver((entries) => {
+                            entries.forEach((entry) => {
+                                if (entry.isIntersecting) {
+                                    const imgFluidElements = projectElement.querySelectorAll('.img');
+                                    animate(
+                                        imgFluidElements,
+                                        {
+                                            opacity: [0, 0.5, 1],
+                                            y: [15, 0],
+                                        },
+                                        {
+                                            delay: stagger(0.05),
+                                            duration: 0.6,
+                                            easing: ['ease-in-out'],
+                                        }
+                                    );
+
+                                    observerprojects.disconnect();
+                                    this.animatedSections.add(category + '-' + project);
+                                }
+                            });
+                        }, this.observerOptions);
+
+                        observerprojects.observe(projectElement);
+                    }
+                } else {
+                    this.renderer.removeClass(categoryAnchor, 'active');
                 }
-            } else {
-                this.renderer.removeClass(categoryAnchor, 'active');
-            }
+            });
         });
     }
+
 
     Search() {
         this.animatedSections.clear();
         if (this.SearchText.trim() === '') {
             this.filteredProjects = this.Projects;
+            this.activetab(undefined)
 
         } else {
             this.filteredProjects = this.Projects.filter(category =>
-                category.Name.toLowerCase().includes(this.SearchText.trim().toLowerCase()) ||
-                category.Description.toLowerCase().includes(this.SearchText.trim().toLowerCase())
+                category.Name.toLowerCase().includes(this.SearchText.trim().toLowerCase())
+                || category.Description.toLowerCase().includes(this.SearchText.trim().toLowerCase())
             );
-
+            const menulink = this.el.nativeElement.querySelector('.' + this.filteredProjects[0].Name)
+            this.activetab(menulink)
         }
-        setTimeout(() => {
-            this.attachClickEventListeners();
-            this.checkElementsVisibility();
 
-        }, 0);
+    }
+    activetab(link?: Element) {
+        const menuLinks = this.el.nativeElement.querySelectorAll('#categories');
+        menuLinks.forEach((link: Element) => {
+            link.classList.remove('active');
+        })
+        if (link) {
+            link.classList.add('active');
+
+        } else {
+            menuLinks[0].classList.add('active');
+        }
+
     }
 
+    attachClickEventListeners(category: string, project: string) {
+        debugger;
+        this.location.go('/deft/' + category.trim().toLocaleLowerCase() + '/' + project.trim().toLocaleLowerCase());
+        const parent = this.el.nativeElement.querySelector(`.${category.replace(' ', '').trim().toLocaleUpperCase()}`)
+        const element = parent.querySelector(`#${project.replace(' ', '').trim().toLocaleUpperCase()}`)
+        this.scrollTo(element);
+    }
+    ngOnInit(): void {
+        var main = document.querySelector('.main-app');
+        if (main) {
+            main.addEventListener('scroll', this.onScroll.bind(this));
+        }
+    }
 
-    attachClickEventListeners() {
-        const menuLinks = this.el.nativeElement.querySelectorAll('#categories');
+    ngOnDestroy(): void {
+        var main = document.querySelector('.main-app');
+        main?.removeEventListener('scroll', this.onScroll.bind(this));
+    }
 
-        menuLinks.forEach((link: Element) => {
-            link.addEventListener('click', (event: { preventDefault: () => void; }) => {
-                event.preventDefault();
-                const targetId = link.getAttribute('data-category');
-                if (targetId) {
-                    menuLinks.forEach((menuLink: { classList: { remove: (arg0: string) => void; }; }) => {
-                        menuLink.classList.remove('active');
-                    });
-                    link.classList.add('active');
-                    const targetElement = this.el.nativeElement.querySelector(`#${targetId}`);
-                    if (targetElement) {
-                        this.scrollTo(targetElement);
-                    }
-                }
-            });
-        });
+    onScroll(event: any): void {
+        this.checkElementsVisibility()
     }
 }
