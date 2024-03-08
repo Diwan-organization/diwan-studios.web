@@ -13,12 +13,19 @@ $transition: transform 0.5s ease-out;
 		font-size: var(--bs-navbar-toggler-font-size);
 		line-height: 1;
 		color: var(--gold1) !important;
-		background-color: transparent;
-		border: var(--bs-border-radius-sm) solid
-			var(--bs-navbar-toggler-border-color);
+		// background-color: transparent;
+		background-color: black;
+
+		border: 3px solid var(--bs-navbar-toggler-border-color);
 		border-radius: var(--bs-navbar-toggler-border-radius);
-		transition: var(--bs-navbar-toggler-transition);
 		border-color: var(--gold1);
+		transform: scale(1);
+		transition: transform 0.5s ease-out;
+		&:hover {
+			transform: scale(0.9);
+			background-color: black;
+			border: 2px var(--gold1) solid;
+		}
 		span {
 			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(166, 130, 58, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 		}
@@ -44,7 +51,7 @@ $transition: transform 0.5s ease-out;
 }
 
 .navbar.nav-animation {
-	transform: scale(0.8) translate(-400px, 227%) !important;
+	transform: scale(0.8) translate(-400px, 215%) !important;
 	transition: $transition !important;
 }
 .navbar.nav-normal {

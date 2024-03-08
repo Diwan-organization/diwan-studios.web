@@ -5,8 +5,15 @@
 	.images-container {
 		display: flex;
 		justify-content: center;
-
+		.img-bg {
+			background-image: url('../../../../assets/Logos/logo-bg.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
 		img {
+			mix-blend-mode: multiply;
+			border-radius: 50%;
+
 			max-width: 150px;
 			min-width: 150px;
 			max-height: 150px;
@@ -17,7 +24,7 @@
 			height: auto; /* Maintain aspect ratio */
 			object-fit: contain;
 
-			filter: grayscale(100%); /* Convert image to black and white */
+			// filter: grayscale(100%); /* Convert image to black and white */
 			transition: filter 0.3s ease;
 			cursor: pointer;
 			&:hover {
@@ -45,6 +52,12 @@
 		background-color: transparent;
 		font-size: 30px;
 		cursor: pointer;
+		color: var(--gold1);
+
+		&.grey {
+			cursor: auto;
+			color: grey;
+		}
 	}
 
 	.prev-btn {
