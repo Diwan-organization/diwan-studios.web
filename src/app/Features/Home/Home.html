@@ -49,7 +49,7 @@
 			</div>
 			<div class="list">
 				<div *ngFor="let Value of Values;" class="value">
-					<div class="title">{{Value.Title}}</div>
+					<div class="title" [innerHTML]="Value.Title"></div>
 				</div>
 			</div>
 		</div>
@@ -64,7 +64,7 @@
 						<div class="category-description">
 							<h1>{{category.Title}}</h1>
 							<h5>{{category.Description}}</h5>
-							<a class="btn btn-primary" [routerLink]="'/'+ RoutePaths.ArtWorks + '/' + category.Link">Learn More</a>
+							<a class="btn btn-primary" [routerLink]="'/'+ RoutePaths.ArtWorks + '/' + category.Link +'/fifa'">Learn More</a>
 						</div>
 					</div>
 				</div>
@@ -77,13 +77,18 @@
 					<h4>sub title</h4>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, laudantium.
-						<a class="" href="./../../../assets/PDF/brandbook diwan studios.pdf" target="_blank">Portfolio</a>
 						<!-- <a class="" [routerLink]="'/'+ RoutePaths.About">Portfolio</a> -->
 					</p>
 
-					<p *ngFor="let category of Categories; index as i" class="own-description" [ngClass]="{'current typing-effect': i==CurrentCategoryIndex}">
+					<!-- <p *ngFor="let category of Categories; index as i" class="own-description" [ngClass]="{'current typing-effect': i==CurrentCategoryIndex}">
 						{{category.OwnDescription}}
+					</p> -->
+					<p class="own-description">
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam vel a beatae voluptatem fugit eveniet dicta, amet eaque! Deleniti
+						ducimus iure quisquam porro atque quis quas officiis, minima accusantium vel dolore quibusdam sequi placeat culpa dicta vero velit ex
+						perspiciatis voluptatum eius hic cum repellendus! Iste sunt quo ea excepturi?
 					</p>
+					<a class="" href="./../../../assets/PDF/brandbook diwan studios.pdf" target="_blank">Check all projects</a>
 				</div>
 			</div>
 		</div>

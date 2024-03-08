@@ -18,20 +18,20 @@
 					<button
 						class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed gold-text"
 						data-bs-toggle="collapse"
-						[attr.data-bs-target]="'#' + category.Name + '-collapse'"
+						[attr.data-bs-target]="'#' + category.Name.replace(regex,'').trim() + '-collapse'"
 						aria-expanded="false">
 						{{category.Name}}
 					</button>
-					<div class="collapse" [attr.id]="category.Name+'-collapse'">
+					<div class="collapse" [attr.id]="category.Name.replace(regex,'').trim() 	+ '-collapse'">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" *ngFor="let project of category.ProjectItem;let i = index">
 							<!-- <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li> -->
 							<li>
 								<a
-									(click)="attachClickEventListeners(category.Name.replace(' ','').trim().toLocaleUpperCase(), project.Name.replace(' ','').trim().toLocaleUpperCase())"
+									(click)="attachClickEventListeners(category.Name.replace(regex,'').trim().toLocaleUpperCase(), project.Name.replace(regex,'').trim().toLocaleUpperCase())"
 									href="javascript:void(0)"
 									class="active gold-text nav-link px-0"
 									id="categories"
-									[attr.data-category]="category.Name.replace(' ','').trim().toLocaleUpperCase()+'-'+project.Name.replace(' ','').trim().toLocaleUpperCase()">
+									[attr.data-category]="category.Name.replace(regex,'').trim().toLocaleUpperCase()+'-'+project.Name.replace(regex,'').trim().toLocaleUpperCase()">
 									{{project.Name}}
 									<span>
 										<i class="fa fa-thumb-tack"></i>
@@ -49,9 +49,9 @@
 		<div
 			class="category"
 			*ngFor="let category of Categories;let i = index"
-			[id]="category.Name.replace(' ', '').trim().toLocaleUpperCase()"
-			[ngClass]="category.Name.replace(' ', '').trim().toLocaleUpperCase()">
-			<div *ngFor="let project of category.ProjectItem; let i = index" class="projects" [id]="project.Name.replace(' ', '').trim().toLocaleUpperCase()">
+			[id]="category.Name.replace(regex, '').trim().toLocaleUpperCase()"
+			[ngClass]="category.Name.replace(regex, '').trim().toLocaleUpperCase()">
+			<div *ngFor="let project of category.ProjectItem; let i = index" class="projects" [id]="project.Name.replace(regex, '').trim().toLocaleUpperCase()">
 				<h1 class="title gold-text">{{project.Name}}</h1>
 				<p class="sub-title gold-text">{{project.Description}}</p>
 				<div class="images">

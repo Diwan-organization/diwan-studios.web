@@ -60,7 +60,7 @@
 			</div>
 			<div class="list">
 				<div *ngFor="let Value of Values;" class="value">
-					<div class="title">{{Value.Title}}</div>
+					<div class="title" [innerHTML]="Value.Title"></div>
 				</div>
 			</div>
 		</div>

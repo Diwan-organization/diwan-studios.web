@@ -16,28 +16,23 @@ class ValueItem {
 export class AboutComponent implements OnInit {
 	Values: ValueItem[] = [
 		{
-			Title: 'Quality',
+			Title: 'Quality <br> Integrity',
 		},
+		// {
+		// 	Title: 'Integrity',
+		// },
 		{
-			Title: 'Integrity',
-
+			Title: 'Team work <br> Innovation',
 		},
+		// {
+		// 	Title: 'Innovation',
+		// },
 		{
-			Title: 'Team work',
-
+			Title: 'Creativity <br> Consistency',
 		},
-		{
-			Title: 'Innovation',
-
-		},
-		{
-			Title: 'Creativity',
-
-		},
-		{
-			Title: 'Consistency',
-
-		}
+		// {
+		// 	Title: 'Consistency',
+		// }
 
 	]
 
