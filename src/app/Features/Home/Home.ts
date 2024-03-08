@@ -11,7 +11,7 @@ class CategoryItem {
 	ImgAlt!: string;
 	Title!: string;
 	Description!: string;
-	OwnDescription!: string;
+	// OwnDescription!: string;
 	Link!: string;
 }
 
@@ -112,41 +112,51 @@ export class HomeComponent implements OnInit {
 
 	Categories: CategoryItem[] = [
 		{
-			ImgSrc: 'assets/Images/girl-wall.jpg',
+			ImgSrc: 'assets/Images/Diwan-categories/category-1.webp',
 			ImgAlt: '',
-			Title: 'Entertainment',
+			Title: 'Restaurants',
 			Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
-			Link: 'fifa',
-			OwnDescription: 'Entertainment Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt veritatis voluptates, saepe laudantium debitis illum voluptatibus assumenda, pariatur reprehenderit dolores facilis nam perferendis illo eum autem rerum ipsum quasi consectetur expedita. Mollitia, nesciunt! Eius ullam illo id quod repellat, ut error, laborum, maxime fuga sit eaque distinctio est? Aliquid, accusamus!'
+			Link: 'restaurants',
 		},
 		{
-			ImgSrc: 'assets/Images/girl-wall-3.jpg',
+			ImgSrc: 'assets/Images/Diwan-categories/category-2.webp',
+			ImgAlt: '',
+			Title: 'Offices & Factories',
+			Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
+			Link: 'offices & factories',
+		},
+		{
+			ImgSrc: 'assets/Images/Diwan-categories/category-3.webp',
+			ImgAlt: '',
+			Title: 'Entertainments',
+			Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
+			Link: 'entertainments',
+		},
+		{
+			ImgSrc: 'assets/Images/Diwan-categories/category-4.webp',
 			ImgAlt: '',
 			Title: 'Commercial',
 			Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
-			Link: 'hsbc',
-			OwnDescription: 'Commercial Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt veritatis voluptates, saepe laudantium debitis illum voluptatibus assumenda, pariatur reprehenderit dolores facilis nam perferendis illo eum autem rerum ipsum quasi consectetur expedita. Mollitia, nesciunt! Eius ullam illo id quod repellat, ut error, laborum, maxime fuga sit eaque distinctio est? Aliquid, accusamus!'
+			Link: 'commercial',
 		},
 		{
-			ImgSrc: 'assets/Images/girl-wall.jpg',
+			ImgSrc: 'assets/Images/Diwan-categories/category-5.webp',
 			ImgAlt: '',
-			Title: 'Residential',
+			Title: 'Showrooms',
 			Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
-			Link: 'moussa',
-			OwnDescription: 'Residential Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt veritatis voluptates, saepe laudantium debitis illum voluptatibus assumenda, pariatur reprehenderit dolores facilis nam perferendis illo eum autem rerum ipsum quasi consectetur expedita. Mollitia, nesciunt! Eius ullam illo id quod repellat, ut error, laborum, maxime fuga sit eaque distinctio est? Aliquid, accusamus!'
+			Link: 'showrooms',
 		},
 		{
-			ImgSrc: 'assets/Images/girl-wall-3.jpg',
+			ImgSrc: 'assets/Images/Diwan-categories/category-6.webp',
 			ImgAlt: '',
-			Title: 'Corporate',
+			Title: 'Malls',
 			Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
-			Link: 'meryal',
-			OwnDescription: 'Corporate Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt veritatis voluptates, saepe laudantium debitis illum voluptatibus assumenda, pariatur reprehenderit dolores facilis nam perferendis illo eum autem rerum ipsum quasi consectetur expedita. Mollitia, nesciunt! Eius ullam illo id quod repellat, ut error, laborum, maxime fuga sit eaque distinctio est? Aliquid, accusamus!'
+			Link: 'malls',
 		}
 
 	];
 	// CategoryOwnDescription: string= 'testtttttttttttttt';
-	CurrentCategoryIndex: number = -1;
+	// CurrentCategoryIndex: number = -1;
 
 	Partners: PartnerItem[] = [
 		{
@@ -486,28 +496,23 @@ export class HomeComponent implements OnInit {
 
 	Values: ValueItem[] = [
 		{
-			Title: 'Quality',
+			Title: 'Quality <br> Integrity',
 		},
+		// {
+		// 	Title: 'Integrity',
+		// },
 		{
-			Title: 'Integrity',
-
+			Title: 'Team work <br> Innovation',
 		},
+		// {
+		// 	Title: 'Innovation',
+		// },
 		{
-			Title: 'Team work',
-
+			Title: 'Creativity <br> Consistency',
 		},
-		{
-			Title: 'Innovation',
-
-		},
-		{
-			Title: 'Creativity',
-
-		},
-		{
-			Title: 'Consistency',
-
-		}
+		// {
+		// 	Title: 'Consistency',
+		// }
 
 	]
 
@@ -627,26 +632,20 @@ export class HomeComponent implements OnInit {
 			})
 
 			// categories description in stationary section
-			const categories1 = document.querySelectorAll('.category-description h1')!;
-			const categoriesDesc = document.querySelectorAll('.own-description')!;
+			const categoriesDesc = document.querySelector('.own-description')!;
 
-			categories1.forEach((category, i) => {
-				const observer = new IntersectionObserver(entries => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							// category.classList.add('category-transition');
-							// console.log('index', i);
+			categoriesDesc.classList.remove('typing-effect');
+			const aboutObserver = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						categoriesDesc.classList.add('typing-effect');
+						return;
+					}
 
-							// categoriesDesc.forEach(desc => desc.classList.remove('current'))
-							// categoriesDesc[i].classList.add('current');
-							this.CurrentCategoryIndex = i;
-							return;
-						}
-						// categoriesDesc[i].classList.remove('current');
-					});
+					categoriesDesc.classList.remove('typing-effect');
 				});
-				observer.observe(category);
-			})
+			});
+			aboutObserver.observe(categoriesDesc);
 		},
 
 		Values: () => {

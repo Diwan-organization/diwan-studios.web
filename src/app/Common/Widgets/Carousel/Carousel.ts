@@ -27,7 +27,7 @@ export class CarouselComponent implements OnInit {
 
     updateVisibleImages() {
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-        this.ImagesPerPage = ((vw - 100) / 150)
+        this.ImagesPerPage = Math.floor((vw - 100) / 120)
         this.currentPage = 0;
         this.Pages = Math.ceil(this.Images.length / this.ImagesPerPage);
         this.updateImagesToShow();

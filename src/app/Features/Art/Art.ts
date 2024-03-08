@@ -27,7 +27,7 @@ class Category {
 })
 export class ArtComponent {
     RoutePaths = RoutePaths;
-
+    regex = /\s/g;
     private animatedSections: Set<string> = new Set();
     SearchText: string = '';
     Projects: ProjectItem[] = [
@@ -105,9 +105,12 @@ export class ArtComponent {
     filteredProjects: ProjectItem[];
     project: string = '';
     Categories: Category[] = [
-        { Name: 'Fun', ProjectItem: this.Projects },
-        { Name: 'Creative', ProjectItem: this.Projects },
-        { Name: 'Killer', ProjectItem: this.Projects }
+        { Name: 'Restaurants', ProjectItem: this.Projects },
+        { Name: 'Offices and Factories', ProjectItem: this.Projects },
+        { Name: 'Entertainments', ProjectItem: this.Projects },
+        { Name: 'Commercial', ProjectItem: this.Projects },
+        { Name: 'Showrooms', ProjectItem: this.Projects },
+        { Name: 'Malls', ProjectItem: this.Projects }
     ]
     category: any;
 
@@ -229,7 +232,7 @@ export class ArtComponent {
 
     attachClickEventListeners(category: string, project: string) {
         debugger;
-        this.location.go('/artworks/' + category.trim().toLocaleLowerCase() + '/' + project.trim().toLocaleLowerCase());
+        this.location.go('/artworks/' + category.replace(' ', '').trim().toLocaleLowerCase() + '/' + project.replace(' ', '').trim().toLocaleLowerCase());
         const parent = this.el.nativeElement.querySelector(`.${category.replace(' ', '').trim().toLocaleUpperCase()}`)
         const element = parent.querySelector(`#${project.replace(' ', '').trim().toLocaleUpperCase()}`)
         this.scrollTo(element);

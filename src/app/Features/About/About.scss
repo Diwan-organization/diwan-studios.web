@@ -66,6 +66,8 @@ $transition: all 0.6s ease-in;
 		}
 
 		&.our-story {
+			align-items: flex-start;
+
 			opacity: 0;
 			transform: translateY(50px);
 			transition: $transition;
@@ -85,7 +87,8 @@ $transition: all 0.6s ease-in;
 
 			.tab-content {
 				opacity: 0;
-				transform: translateY(50px);
+				transform: translateX(-20px);
+
 				transition: $transition;
 
 				width: 100%;
@@ -108,21 +111,20 @@ $transition: all 0.6s ease-in;
 						justify-content: center;
 						align-items: center;
 
-						border-radius: 10px;
 						min-height: 120px;
 						width: 33%;
 
 						.title {
 							color: var(--primary-font-color);
-							font-size: 22px;
+							font-size: 18px;
 							font-weight: 600;
 
 							transition: all 0.5s ease;
 
 							background-image: url('../../../assets/Images/stat-cover-diwan.png');
 							background-size: cover;
-							width: 150px;
-							height: 150px;
+							width: 200px;
+							height: 200px;
 
 							display: flex;
 							justify-content: center;
@@ -155,9 +157,11 @@ $transition: all 0.6s ease-in;
 
 		&.provide {
 			flex-direction: column;
-			background-color: var(--white-bg-color);
-			color: var(--primary-dark-font-color);
+			// background-color: var(--white-bg-color);
+			// color: var(--primary-dark-font-color);
+			padding: 0 20%;
 			padding-top: 50px;
+
 			margin-bottom: 50px;
 
 			opacity: 0;
