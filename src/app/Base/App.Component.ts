@@ -12,7 +12,9 @@ export class AppComponent {
   private readonly VAPID_PUBLIC_KEY: string =
     'BHECh-IJilGwLFwpKQhlsHvqT939nhAcVtU4DW63QimcoT0qsdk_po8_QYgrUjercp8hvwiZHSeTwtx-4HT3J2g';
   IsLoaded: boolean = false;
+  NoLoader: boolean = false;
   ErrorToast!: number;
+
   constructor(
     private PlatformLocation: PlatformLocation,
     private Router: Router,
@@ -22,12 +24,13 @@ export class AppComponent {
 
   ngOnInit() {
     this.PreLoaderListener();
-    // this.ScrollUpSub();
+    this.ScrollUpSub();
     this.CheckIOS();
     this.loadImages();
   }
 
   images: string[] = [
+
   ];
   imagesLoaded: number = 0;
   totalImages: number = this.images.length;
@@ -41,6 +44,7 @@ export class AppComponent {
         if (this.imagesLoaded === this.totalImages) {
           // All images are loaded, hide the preloader
           this.IsLoaded = true;
+
         }
       });
     });
@@ -63,23 +67,29 @@ export class AppComponent {
       if (elapsedTime >= minLoadingTime) {
         console.log('first');
         this.IsLoaded = true;
+        setTimeout(() => {
+          this.NoLoader = true;
+        }, 1000);
       } else {
         setTimeout(() => {
           console.log('scond');
           this.IsLoaded = true;
+          setTimeout(() => {
+            this.NoLoader = true;
+          }, 1000);
         }, minLoadingTime - elapsedTime);
       }
     });
   }
 
-  // ScrollUpSub() {
-  //   this.Router.events.subscribe((event) => {
-  //     if (event instanceof NavigationEnd) {
-  //       // Scroll to the top of the page when a new route is navigated
-  //       window.scrollTo(0, 0);
-  //     }
-  //   });
-  // }
+  ScrollUpSub() {
+    this.Router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Scroll to the top of the page when a new route is navigated
+        window.scrollTo(0, 0);
+      }
+    });
+  }
 
   CheckIOS() {
     // Check if the user is using an iOS device

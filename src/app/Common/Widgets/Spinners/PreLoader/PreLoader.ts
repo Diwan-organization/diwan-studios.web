@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LoaderComponent } from '../Loader/Loader';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -7,11 +8,11 @@ import { LoaderComponent } from '../Loader/Loader';
     standalone: true,
     templateUrl: './PreLoader.html',
     styleUrls: ['PreLoader.scss'],
-    imports: [LoaderComponent]
+    imports: [CommonModule, LoaderComponent]
 })
 export class PreLoaderComponent implements OnInit {
-    constructor(
-    ) { }
+    @Input('Loaded') Loaded: boolean = false;
+    constructor() { }
 
     ngOnInit() { }
 }
