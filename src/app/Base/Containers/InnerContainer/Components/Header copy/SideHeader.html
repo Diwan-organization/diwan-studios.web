@@ -54,7 +54,7 @@
 								<a
 									(click)="closemenu()"
 									class="nav-link d-inline"
-									[routerLink]="RoutePaths.ArtWorks+'/'+category.Title.toLocaleLowerCase()+'/'+category.Links[0].Title.toLocaleLowerCase()"
+									[routerLink]="[RoutePaths.ArtWorks]+'/'+category.Title.replace(regex,'').trim() "
 									data-bs-toggle="collapse">
 									{{category.Title}}
 								</a>
@@ -70,13 +70,7 @@
 								</span>
 								<div class="art-categories dropdown-menu child-menu" attr.aria-labelledby="dropdownMenu{{i}}">
 									<ng-container *ngFor="let link of category.Links; index as i">
-										<a
-											(click)="closemenu()"
-											class="nav-link"
-											*ngIf="i<4"
-											[routerLink]="link.Link+'/'+category.Title.toLocaleLowerCase()+'/'+link.Title.toLocaleLowerCase()">
-											{{link.Title}}</a
-										>
+										<a (click)="closemenu()" class="nav-link" *ngIf="i<4" [routerLink]="link.Link"> {{link.Title}}</a>
 									</ng-container>
 								</div>
 							</span>
@@ -101,13 +95,17 @@
 						<i class="fa fa-chevron-up"></i>
 					</span>
 					<div class="art-categories dropdown-menu" aria-labelledby="dropdownMenuLinkDeft" #dropdownMenuDeft>
-						<div class="art-inner-categories dropdown-item" *ngFor="let category of ArtCategories;let i= index;">
+						<div class="art-inner-categories dropdown-item" *ngFor="let category of DeftCategories;let i= index;">
 							<div class="image-container d-inline">
 								<img [src]="category.ImgSrc" [alt]="category.ImgAlt" />
 							</div>
 
 							<span class="dropdown">
-								<a (click)="closemenu()" class="nav-link d-inline" [routerLink]="[RoutePaths.ArtWorks]" data-bs-toggle="collapse">
+								<a
+									(click)="closemenu()"
+									class="nav-link d-inline"
+									[routerLink]="[RoutePaths.Deft]+'/'+category.Title"
+									data-bs-toggle="collapse">
 									{{category.Title}}
 								</a>
 								<span
@@ -122,9 +120,7 @@
 								</span>
 								<div class="art-categories dropdown-menu child-menu" attr.aria-labelledby="dropdownMenuDeft{{i}}">
 									<ng-container *ngFor="let link of category.Links; index as i">
-										<a (click)="closemenu()" class="nav-link" *ngIf="i<4" [routerLink]="link.Link+'/'+link.Title.toLocaleLowerCase()">
-											{{link.Title}}</a
-										>
+										<a (click)="closemenu()" class="nav-link" *ngIf="i<4" [routerLink]="link.Link"> {{link.Title}}</a>
 									</ng-container>
 								</div>
 							</span>

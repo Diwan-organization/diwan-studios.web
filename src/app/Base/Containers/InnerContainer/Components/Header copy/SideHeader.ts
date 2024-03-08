@@ -20,6 +20,7 @@ export class ArtCategory {
 })
 export class SideHeaderComponent implements OnInit {
 	RoutePaths = RoutePaths
+	regex = /\s/g;
 	@ViewChild('dropdownMenu') dropdownMenu!: ElementRef;
 	@ViewChild('dropdownMenuDeft') dropdownMenuDeft!: ElementRef;
 
@@ -27,93 +28,170 @@ export class SideHeaderComponent implements OnInit {
 	ngOnInit(): void {
 
 	}
+
+
+
+
+
+
+
 	ArtCategories: ArtCategory[] = [
 		{
-			Title: 'KSA Projects',
+			Title: 'Restaurants',
 			ImgAlt: '',
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
-					Title: 'Project 1',
-					Link: `${RoutePaths.ArtWorks}`
+					Title: 'fifa',
+					Link: `${RoutePaths.ArtWorks}/Restaurants/fifa`
 				},
 				{
 					Title: 'Project 2',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.ArtWorks}/Restaurants/project2`
 				},
 				{
 					Title: 'Project 3',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.ArtWorks}/Restaurants/project3`
 				}
 			]
 		}, {
-			Title: 'CREATIVE',
+			Title: 'Offices and Factories',
 			ImgAlt: '',
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
 					Title: 'FIFA',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.ArtWorks}/OfficesandFactories/fifa`
 				},
 				{
 					Title: 'HSBC',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.ArtWorks}/OfficesandFactories/hsbc`
 				},
 				{
 					Title: 'Project 3',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.ArtWorks}/OfficesandFactories/project3`
 				}
 			]
-		}, {
-			Title: 'FUN',
+		},
+		{
+			Title: 'Entertainments',
 			ImgAlt: '',
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
-					Title: 'ADIDAS',
-					Link: `${RoutePaths.ArtWorks}`
+					Title: 'fifa',
+					Link: `${RoutePaths.ArtWorks}/Entertainments/fifa`
 				},
 				{
 					Title: 'Project 2',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.ArtWorks}/Entertainments/project2`
 				},
 				{
 					Title: 'Project 3',
-					Link: `${RoutePaths.ArtWorks}`
-				}, {
-					Title: 'Project 4',
-					Link: `${RoutePaths.ArtWorks}`
-				},
-				{
-					Title: 'Project 5',
-					Link: `${RoutePaths.ArtWorks}`
-				},
-				{
-					Title: 'Project 6',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.ArtWorks}/Entertainments/project3`
 				}
 			]
 		}, {
-			Title: 'France Projects',
+			Title: 'Commercial',
 			ImgAlt: '',
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
 				{
-					Title: 'Project 1',
-					Link: `${RoutePaths.ArtWorks}`
+					Title: 'FIFA',
+					Link: `${RoutePaths.ArtWorks}/Commercial/fifa`
 				},
 				{
-					Title: 'Project 2',
-					Link: `${RoutePaths.ArtWorks}`
+					Title: 'HSBC',
+					Link: `${RoutePaths.ArtWorks}/Commercial/hsbc`
 				},
 				{
 					Title: 'Project 3',
-					Link: `${RoutePaths.ArtWorks}`
+					Link: `${RoutePaths.ArtWorks}/Commercial/project3`
+				}
+			]
+		}, {
+			Title: 'Showrooms',
+			ImgAlt: '',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
+			Links: [
+				{
+					Title: 'fifa',
+					Link: `${RoutePaths.ArtWorks}/Painting/fifa`
+				},
+				{
+					Title: 'Project 2',
+					Link: `${RoutePaths.ArtWorks}/Painting/project2`
+				},
+				{
+					Title: 'Project 3',
+					Link: `${RoutePaths.ArtWorks}/Painting/project3`
+				}
+			]
+		}, {
+			Title: 'Malls',
+			ImgAlt: '',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
+			Links: [
+				{
+					Title: 'FIFA',
+					Link: `${RoutePaths.ArtWorks}/Malls/fifa`
+				},
+				{
+					Title: 'HSBC',
+					Link: `${RoutePaths.ArtWorks}/Malls/hsbc`
+				},
+				{
+					Title: 'Project 3',
+					Link: `${RoutePaths.ArtWorks}/Malls/project3`
 				}
 			]
 		}
+
+
 	]
 
+	DeftCategories: ArtCategory[] = [
+		{
+			Title: 'Painting',
+			ImgAlt: '',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
+			Links: [
+				{
+					Title: 'fifa',
+					Link: `${RoutePaths.Deft}/Painting/fifa`
+				},
+				{
+					Title: 'Project 2',
+					Link: `${RoutePaths.Deft}/Painting/project2`
+				},
+				{
+					Title: 'Project 3',
+					Link: `${RoutePaths.Deft}/Painting/project3`
+				}
+			]
+		}, {
+			Title: 'Sculptures',
+			ImgAlt: '',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
+			Links: [
+				{
+					Title: 'FIFA',
+					Link: `${RoutePaths.Deft}/Sculptures/fifa`
+				},
+				{
+					Title: 'HSBC',
+					Link: `${RoutePaths.Deft}/Sculptures/hsbc`
+				},
+				{
+					Title: 'Project 3',
+					Link: `${RoutePaths.Deft}/Sculptures/project3`
+				}
+			]
+		}
+
+
+
+	]
 	toggleDropdown(event: MouseEvent, dropdown: string) {
 		if (dropdown == 'dropdownMenu') {
 			const dropdownMenuElement = this.dropdownMenu.nativeElement as HTMLElement;
