@@ -20,6 +20,7 @@ export class ArtCategory {
 })
 export class SideHeaderComponent implements OnInit {
 	RoutePaths = RoutePaths
+	regex = /\s/g;
 	@ViewChild('dropdownMenu') dropdownMenu!: ElementRef;
 	@ViewChild('dropdownMenuDeft') dropdownMenuDeft!: ElementRef;
 
@@ -28,7 +29,128 @@ export class SideHeaderComponent implements OnInit {
 
 	}
 
+
+
+
+
+
+
 	ArtCategories: ArtCategory[] = [
+		{
+			Title: 'Restaurants',
+			ImgAlt: '',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
+			Links: [
+				{
+					Title: 'fifa',
+					Link: `${RoutePaths.ArtWorks}/Restaurants/fifa`
+				},
+				{
+					Title: 'Project 2',
+					Link: `${RoutePaths.ArtWorks}/Restaurants/project2`
+				},
+				{
+					Title: 'Project 3',
+					Link: `${RoutePaths.ArtWorks}/Restaurants/project3`
+				}
+			]
+		}, {
+			Title: 'Offices and Factories',
+			ImgAlt: '',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
+			Links: [
+				{
+					Title: 'FIFA',
+					Link: `${RoutePaths.ArtWorks}/OfficesandFactories/fifa`
+				},
+				{
+					Title: 'HSBC',
+					Link: `${RoutePaths.ArtWorks}/OfficesandFactories/hsbc`
+				},
+				{
+					Title: 'Project 3',
+					Link: `${RoutePaths.ArtWorks}/OfficesandFactories/project3`
+				}
+			]
+		},
+		{
+			Title: 'Entertainments',
+			ImgAlt: '',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
+			Links: [
+				{
+					Title: 'fifa',
+					Link: `${RoutePaths.ArtWorks}/Entertainments/fifa`
+				},
+				{
+					Title: 'Project 2',
+					Link: `${RoutePaths.ArtWorks}/Entertainments/project2`
+				},
+				{
+					Title: 'Project 3',
+					Link: `${RoutePaths.ArtWorks}/Entertainments/project3`
+				}
+			]
+		}, {
+			Title: 'Commercial',
+			ImgAlt: '',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
+			Links: [
+				{
+					Title: 'FIFA',
+					Link: `${RoutePaths.ArtWorks}/Commercial/fifa`
+				},
+				{
+					Title: 'HSBC',
+					Link: `${RoutePaths.ArtWorks}/Commercial/hsbc`
+				},
+				{
+					Title: 'Project 3',
+					Link: `${RoutePaths.ArtWorks}/Commercial/project3`
+				}
+			]
+		}, {
+			Title: 'Showrooms',
+			ImgAlt: '',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
+			Links: [
+				{
+					Title: 'fifa',
+					Link: `${RoutePaths.ArtWorks}/Painting/fifa`
+				},
+				{
+					Title: 'Project 2',
+					Link: `${RoutePaths.ArtWorks}/Painting/project2`
+				},
+				{
+					Title: 'Project 3',
+					Link: `${RoutePaths.ArtWorks}/Painting/project3`
+				}
+			]
+		}, {
+			Title: 'Malls',
+			ImgAlt: '',
+			ImgSrc: 'assets/Images/girl-wall.jpg',
+			Links: [
+				{
+					Title: 'FIFA',
+					Link: `${RoutePaths.ArtWorks}/Malls/fifa`
+				},
+				{
+					Title: 'HSBC',
+					Link: `${RoutePaths.ArtWorks}/Malls/hsbc`
+				},
+				{
+					Title: 'Project 3',
+					Link: `${RoutePaths.ArtWorks}/Malls/project3`
+				}
+			]
+		}
+
+
+	]
+
+	DeftCategories: ArtCategory[] = [
 		{
 			Title: 'Painting',
 			ImgAlt: '',
@@ -70,7 +192,6 @@ export class SideHeaderComponent implements OnInit {
 
 
 	]
-
 	toggleDropdown(event: MouseEvent, dropdown: string) {
 		if (dropdown == 'dropdownMenu') {
 			const dropdownMenuElement = this.dropdownMenu.nativeElement as HTMLElement;

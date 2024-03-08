@@ -127,7 +127,7 @@ export class DeftComponent {
     ngAfterViewInit() {
         this.filteredProjects = this.Projects;
         this.ActivatedRoute.params.subscribe((params) => {
-            debugger;
+
             this.project = params['project'];
             this.category = params['category'];
 
@@ -156,7 +156,7 @@ export class DeftComponent {
         const categoryElements = this.el.nativeElement.querySelectorAll('.category');
 
         categoryElements.forEach((categoryElement: Element) => {
-            debugger
+
             const category = categoryElement.getAttribute('id')
             const projectElements = categoryElement.querySelectorAll('.projects');
 
@@ -167,7 +167,7 @@ export class DeftComponent {
 
                 if (rect.top <= 400 && rect.bottom > 400) {
                     this.renderer.addClass(categoryAnchor, 'active');
-                    debugger
+
                     if (project != null && !this.animatedSections.has(category + '-' + project)) {
                         const observerprojects = new IntersectionObserver((entries) => {
                             entries.forEach((entry) => {
@@ -233,7 +233,7 @@ export class DeftComponent {
     }
 
     attachClickEventListeners(category: string, project: string) {
-        debugger;
+
         this.location.go('/deft/' + category.trim().toLocaleLowerCase() + '/' + project.trim().toLocaleLowerCase());
         const parent = this.el.nativeElement.querySelector(`.${category.replace(' ', '').trim().toLocaleUpperCase()}`)
         const element = parent.querySelector(`#${project.replace(' ', '').trim().toLocaleUpperCase()}`)
