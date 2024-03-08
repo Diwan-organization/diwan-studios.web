@@ -131,12 +131,18 @@ export class ArtComponent {
     ngAfterViewInit() {
         this.filteredProjects = this.Projects;
         this.ActivatedRoute.params.subscribe((params) => {
-            debugger;
+
             this.project = params['project'];
             this.category = params['category'];
 
             if (!this.category) { this.checkElementsVisibility(); return }
-            if (!this.project) { this.checkElementsVisibility(); return }
+            if (!this.project) {
+                const parent = this.el.nativeElement.querySelector(`.${this.category.replace(' ', '').trim().toLocaleUpperCase()}`)
+                setTimeout(() => {
+                    this.scrollTo(parent);
+                }, 100);
+                return
+            }
             const parent = this.el.nativeElement.querySelector(`.${this.category.replace(' ', '').trim().toLocaleUpperCase()}`)
             const element = parent.querySelector(`#${this.project.replace(' ', '').trim().toLocaleUpperCase()}`)
             setTimeout(() => {
@@ -154,7 +160,7 @@ export class ArtComponent {
         const categoryElements = this.el.nativeElement.querySelectorAll('.category');
 
         categoryElements.forEach((categoryElement: Element) => {
-            debugger
+
             const category = categoryElement.getAttribute('id')
             const projectElements = categoryElement.querySelectorAll('.projects');
 
@@ -165,7 +171,7 @@ export class ArtComponent {
 
                 if (rect.top <= 400 && rect.bottom > 400) {
                     this.renderer.addClass(categoryAnchor, 'active');
-                    debugger
+
                     if (project != null && !this.animatedSections.has(category + '-' + project)) {
                         const observerprojects = new IntersectionObserver((entries) => {
                             entries.forEach((entry) => {
@@ -231,7 +237,7 @@ export class ArtComponent {
     }
 
     attachClickEventListeners(category: string, project: string) {
-        debugger;
+
         this.location.go('/artworks/' + category.replace(' ', '').trim().toLocaleLowerCase() + '/' + project.replace(' ', '').trim().toLocaleLowerCase());
         const parent = this.el.nativeElement.querySelector(`.${category.replace(' ', '').trim().toLocaleUpperCase()}`)
         const element = parent.querySelector(`#${project.replace(' ', '').trim().toLocaleUpperCase()}`)

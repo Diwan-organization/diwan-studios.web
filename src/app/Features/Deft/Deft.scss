@@ -122,3 +122,16 @@
 		}
 	}
 }
+.btn-toggle::before {
+	width: 1.5em;
+	height: 1.5em;
+	line-height: 0;
+	content: url(../../../assets/Logos/arrowExpand.png);
+	padding-right: 0.2px;
+	transition: transform 0.5s ease;
+	transform-origin: 0.5em 0.5em;
+	scale: 0.011;
+}
+.btn-toggle[aria-expanded='true']::before {
+	transform: rotate(90deg);
+}
