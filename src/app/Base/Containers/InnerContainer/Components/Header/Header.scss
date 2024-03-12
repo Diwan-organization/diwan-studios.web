@@ -51,7 +51,7 @@ $transition: transform 0.5s ease-out;
 }
 
 .navbar.nav-animation {
-	transform: scale(0.8) translate(-400px, 180%) !important;
+	transform: scale(0.8) translate(-400px, 200%) !important;
 	transition: $transition !important;
 }
 .navbar.nav-normal {
@@ -60,24 +60,25 @@ $transition: transform 0.5s ease-out;
 }
 
 .button {
-	width: 35px;
+	width: 45px;
 	height: 40px;
+	background-color: black;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	flex-direction: column;
-	border: 1px solid white;
-	padding: 5px;
+	border: 1px solid var(--gold1);
+	padding: 7px;
 	border-radius: 5px;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
 
 	.lines-div {
-		height: 27px;
-		width: 55px;
+		height: 25px;
+		width: 60px;
 		position: absolute;
-		right: 5px;
+		right: 9px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -106,7 +107,7 @@ $transition: transform 0.5s ease-out;
 				height: 3px;
 				width: 100%;
 
-				background-color: #fff;
+				background-color: var(--gold1);
 
 				&:nth-child(2) {
 					margin-inline-start: 10px;
@@ -129,13 +130,13 @@ $transition: transform 0.5s ease-out;
 
 	&:hover {
 		.line-1 {
-			transform: translateX(32px); // Move to the right
+			transform: translateX(35px); // Move to the right
 		}
 		.line-2 {
-			transform: translateX(32px); // Move to the right
+			transform: translateX(35px); // Move to the right
 		}
 		.line-3 {
-			transform: translateX(32px); // Move to the right
+			transform: translateX(35px); // Move to the right
 		}
 	}
 }
