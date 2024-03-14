@@ -42,7 +42,7 @@ $transition: transform 0.5s ease-out;
 		}
 	}
 	.logo-img {
-		height: 40px;
+		height: 80px;
 	}
 
 	.navbar-toggler-icon {
@@ -51,7 +51,7 @@ $transition: transform 0.5s ease-out;
 }
 
 .navbar.nav-animation {
-	transform: scale(0.8) translate(-400px, 200%) !important;
+	transform: scale(0.8) translate(-400px, 120%) !important;
 	transition: $transition !important;
 }
 .navbar.nav-normal {
@@ -67,7 +67,7 @@ $transition: transform 0.5s ease-out;
 	align-items: center;
 	justify-content: space-between;
 	flex-direction: column;
-	border: 1px solid var(--gold1);
+	border: 1px solid var(--gold2);
 	padding: 7px;
 	border-radius: 5px;
 	cursor: pointer;
@@ -107,7 +107,7 @@ $transition: transform 0.5s ease-out;
 				height: 3px;
 				width: 100%;
 
-				background-color: var(--gold1);
+				background-color: var(--gold2);
 
 				&:nth-child(2) {
 					margin-inline-start: 10px;
@@ -129,6 +129,15 @@ $transition: transform 0.5s ease-out;
 	}
 
 	&:hover {
+		.lines-div{
+			.line-div{
+
+				.line {
+					background-color: var(--gold1);
+				}
+			}
+		}
+
 		.line-1 {
 			transform: translateX(35px); // Move to the right
 		}
