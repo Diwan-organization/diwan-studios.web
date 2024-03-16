@@ -174,21 +174,21 @@ export class HomeComponent implements OnInit {
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/3.jpg ',
+			ImgSrc: 'assets/Logos/3.png',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/4.jpg ',
+			ImgSrc: 'assets/Logos/4.png',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/5.jpg',
+			ImgSrc: 'assets/Logos/5.png',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
@@ -209,14 +209,14 @@ export class HomeComponent implements OnInit {
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/8.png',
+			ImgSrc: 'assets/Logos/8.jpg',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/9.png ',
+			ImgSrc: 'assets/Logos/9.jpg',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
@@ -252,14 +252,14 @@ export class HomeComponent implements OnInit {
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/14.jpeg',
+			ImgSrc: 'assets/Logos/14.png',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/15.png',
+			ImgSrc: 'assets/Logos/15.jpeg',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
@@ -315,21 +315,21 @@ export class HomeComponent implements OnInit {
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/23.jpg',
+			ImgSrc: 'assets/Logos/23.png',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/24.png',
+			ImgSrc: 'assets/Logos/24.jpg',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/25.jpg',
+			ImgSrc: 'assets/Logos/25.png',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
@@ -351,7 +351,7 @@ export class HomeComponent implements OnInit {
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/28.jpg',
+			ImgSrc: 'assets/Logos/28.png',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
@@ -365,7 +365,7 @@ export class HomeComponent implements OnInit {
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/30.png',
+			ImgSrc: 'assets/Logos/30.jpg',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
@@ -386,7 +386,7 @@ export class HomeComponent implements OnInit {
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/33.png',
+			ImgSrc: 'assets/Logos/33.jpg',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
@@ -407,14 +407,14 @@ export class HomeComponent implements OnInit {
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/36.jpg',
+			ImgSrc: 'assets/Logos/36.png',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
 			Link: '',
 		},
 		{
-			ImgSrc: 'assets/Logos/37.jpg',
+			ImgSrc: 'assets/Logos/37.png',
 			ImgAlt: 'about the company',
 			Title: 'The Company',
 			Description: '',
@@ -475,21 +475,7 @@ export class HomeComponent implements OnInit {
 			Title: 'The Company',
 			Description: '',
 			Link: '',
-		},
-		{
-			ImgSrc: 'assets/Logos/46.png',
-			ImgAlt: 'about the company',
-			Title: 'The Company',
-			Description: '',
-			Link: '',
-		},
-		{
-			ImgSrc: 'assets/Logos/47.png',
-			ImgAlt: 'about the company',
-			Title: 'The Company',
-			Description: '',
-			Link: '',
-		},
+		}
 
 	]
 	x = this.Partners.map(p => p.ImgSrc)

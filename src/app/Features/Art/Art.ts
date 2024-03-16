@@ -106,7 +106,7 @@ export class ArtComponent {
     project: string = '';
     Categories: Category[] = [
         { Name: 'Restaurants', ProjectItem: this.Projects },
-        { Name: 'Offices and Factories', ProjectItem: this.Projects },
+        { Name: 'Offices and factories', ProjectItem: this.Projects },
         { Name: 'Entertainments', ProjectItem: this.Projects },
         { Name: 'Commercial', ProjectItem: this.Projects },
         { Name: 'Showrooms', ProjectItem: this.Projects },
@@ -160,8 +160,21 @@ export class ArtComponent {
         const categoryElements = this.el.nativeElement.querySelectorAll('.category');
 
         categoryElements.forEach((categoryElement: Element) => {
+            const category = categoryElement.getAttribute('id');
+            const rectt = categoryElement.getBoundingClientRect();
+            if (!(rectt.top <= 400 && rectt.bottom > 400)) {
+                if (category != null) {
+                    var button = document.querySelector('[data-bs-target="#' + category.trim().replace(' ', '').charAt(0).toUpperCase() + category.trim().replace(' ', '').slice(1).toLowerCase() + '-collapse"]');
+                    if (button) {
+                        this.renderer.removeStyle(button, 'font-weight');
+                        button?.setAttribute('aria-expanded', 'false');
+                        button?.classList.add('collapsed');
+                    }
+                    const ParentDev = document.querySelector('.collapse#' + category.charAt(0).toUpperCase() + category.slice(1).toLowerCase() + '-collapse') as HTMLElement;
+                    ParentDev?.classList.remove('show');
 
-            const category = categoryElement.getAttribute('id')
+                }
+            }
             const projectElements = categoryElement.querySelectorAll('.projects');
 
             projectElements.forEach((projectElement: Element) => {
@@ -171,6 +184,17 @@ export class ArtComponent {
 
                 if (rect.top <= 400 && rect.bottom > 400) {
                     this.renderer.addClass(categoryAnchor, 'active');
+                    if (category != null) {
+                        var button = document.querySelector('[data-bs-target="#' + category.trim().replace(' ', '').charAt(0).toUpperCase() + category.trim().replace(' ', '').slice(1).toLowerCase() + '-collapse"]');
+                        if (button) {
+                            this.renderer.setStyle(button, 'font-weight', 'bold');
+                            button?.setAttribute('aria-expanded', 'true');
+                            button?.classList.remove('collapsed');
+                        }
+                        const ParentDev = document.querySelector('.collapse#' + category.charAt(0).toUpperCase() + category.slice(1).toLowerCase() + '-collapse') as HTMLElement;
+                        ParentDev?.classList.add('show');
+
+                    }
 
                     if (project != null && !this.animatedSections.has(category + '-' + project)) {
                         const observerprojects = new IntersectionObserver((entries) => {
@@ -201,6 +225,7 @@ export class ArtComponent {
                 } else {
                     this.renderer.removeClass(categoryAnchor, 'active');
                 }
+
             });
         });
     }
