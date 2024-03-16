@@ -158,6 +158,20 @@ export class DeftComponent {
         categoryElements.forEach((categoryElement: Element) => {
 
             const category = categoryElement.getAttribute('id')
+            const rectt = categoryElement.getBoundingClientRect();
+            if (!(rectt.top <= 400 && rectt.bottom > 400)) {
+                if (category != null) {
+                    var button = document.querySelector('[data-bs-target="#' + category.trim().replace(' ', '').charAt(0).toUpperCase() + category.trim().replace(' ', '').slice(1).toLowerCase() + '-collapse"]');
+                    if (button) {
+                        this.renderer.removeStyle(button, 'font-weight');
+                        button?.setAttribute('aria-expanded', 'false');
+                        button?.classList.add('collapsed');
+                    }
+                    const parentDev = document.querySelector('.collapse#' + category.charAt(0).toUpperCase() + category.slice(1).toLowerCase() + '-collapse') as HTMLElement;
+                    parentDev?.classList.remove('show');
+
+                }
+            }
             const projectElements = categoryElement.querySelectorAll('.projects');
 
             projectElements.forEach((projectElement: Element) => {
@@ -167,7 +181,17 @@ export class DeftComponent {
 
                 if (rect.top <= 400 && rect.bottom > 400) {
                     this.renderer.addClass(categoryAnchor, 'active');
+                    if (category != null) {
+                        var button = document.querySelector('[data-bs-target="#' + category.trim().replace(' ', '').charAt(0).toUpperCase() + category.trim().replace(' ', '').slice(1).toLowerCase() + '-collapse"]');
+                        if (button) {
+                            this.renderer.setStyle(button, 'font-weight', 'bold');
+                            button?.setAttribute('aria-expanded', 'true');
+                            button?.classList.remove('collapsed');
+                        }
+                        const parentDev = document.querySelector('.collapse#' + category.charAt(0).toUpperCase() + category.slice(1).toLowerCase() + '-collapse') as HTMLElement;
+                        parentDev?.classList.add('show');
 
+                    }
                     if (project != null && !this.animatedSections.has(category + '-' + project)) {
                         const observerprojects = new IntersectionObserver((entries) => {
                             entries.forEach((entry) => {
