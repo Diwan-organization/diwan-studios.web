@@ -9,6 +9,20 @@ export class CategoryItem {
 
 export const Categories: CategoryItem[] = [
     {
+        ImgSrc: 'assets/Images/Diwan-categories/category-4.webp',
+        ImgAlt: '',
+        Title: 'Commercial',
+        Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
+        Link: 'commercial',
+    },
+    {
+        ImgSrc: 'assets/Images/Diwan-categories/category-2.webp',
+        ImgAlt: '',
+        Title: 'Offices & Factories',
+        Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
+        Link: 'officesandfactories',
+    },
+    {
         ImgSrc: 'assets/Images/Diwan-categories/category-1.webp',
         ImgAlt: '',
         Title: 'Restaurants',
@@ -16,25 +30,11 @@ export const Categories: CategoryItem[] = [
         Link: 'restaurants',
     },
     {
-        ImgSrc: 'assets/Images/Diwan-categories/category-2.webp',
+        ImgSrc: 'assets/Images/Diwan-categories/category-6.webp',
         ImgAlt: '',
-        Title: 'Offices & Factories',
+        Title: 'Malls',
         Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
-        Link: 'offices & factories',
-    },
-    {
-        ImgSrc: 'assets/Images/Diwan-categories/category-3.webp',
-        ImgAlt: '',
-        Title: 'Entertainments',
-        Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
-        Link: 'entertainments',
-    },
-    {
-        ImgSrc: 'assets/Images/Diwan-categories/category-4.webp',
-        ImgAlt: '',
-        Title: 'Commercial',
-        Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
-        Link: 'commercial',
+        Link: 'malls',
     },
     {
         ImgSrc: 'assets/Images/Diwan-categories/category-5.webp',
@@ -44,11 +44,10 @@ export const Categories: CategoryItem[] = [
         Link: 'showrooms',
     },
     {
-        ImgSrc: 'assets/Images/Diwan-categories/category-6.webp',
+        ImgSrc: 'assets/Images/Diwan-categories/category-3.webp',
         ImgAlt: '',
-        Title: 'Malls',
+        Title: 'Entertainments',
         Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nemo, ullam quis corporis officia sint fugit, tempora quidem libero.',
-        Link: 'malls',
+        Link: 'entertainments',
     }
-
 ];

@@ -135,7 +135,6 @@ export class HeaderComponent implements OnInit {
 	toggleNavbarScrolled(ishovered: boolean) {
 		const navbar = document.querySelector('.navbar');
 		const mainApp = document.querySelector('.main-app')!;
-		debugger
 		if (mainApp.scrollTop > 1) {
 			navbar?.classList.add('navbar-scrolled');
 		} else {

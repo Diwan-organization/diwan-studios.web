@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { animate, stagger } from 'motion';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Location } from '@angular/common';
 import { RoutePaths } from '@App/Common/Settings/RoutePaths';
@@ -39,7 +38,6 @@ export class ArtComponent {
         });
         element.style.paddingTop = "50px"
         this.checkElementsVisibility();
-
     }
 
     ngAfterViewInit() {
@@ -63,8 +61,52 @@ export class ArtComponent {
                 this.scrollTo(element);
             }, 100);
         });
+
+        this.Animation.Arts();
     }
 
+    Animation = {
+        Arts: () => {
+            const arts = document.querySelectorAll('.hoverable-img-item')!;
+            arts.forEach(art => {
+
+
+                art.classList.remove('art-transition');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const categoryAnchor = this.el.nativeElement.querySelector(`a[data-category="${art.parentElement?.parentElement?.getAttribute('id')}"]`);
+                            this.activetab(categoryAnchor)
+                            art.classList.add('art-transition');
+                            return;
+                        }
+                        art.classList.remove('art-transition');
+                    });
+                });
+
+                observer.observe(art);
+            })
+
+            const videos = document.querySelectorAll('.div-video')!;
+            videos.forEach(art => {
+                // console.log(project);
+                art.classList.remove('art-transition');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            art.classList.add('art-transition');
+                            return;
+                        }
+                        art.classList.remove('art-transition');
+                    });
+                });
+
+                observer.observe(art);
+            })
+        },
+    }
     observerOptions: {} = {
         root: null,
         rootMargin: '10px',
@@ -115,18 +157,18 @@ export class ArtComponent {
                             entries.forEach((entry) => {
                                 if (entry.isIntersecting) {
                                     const imgFluidElements = projectElement.querySelectorAll('.img');
-                                    animate(
-                                        imgFluidElements,
-                                        {
-                                            opacity: [0, 0.5, 1],
-                                            y: [15, 0],
-                                        },
-                                        {
-                                            delay: stagger(0.05),
-                                            duration: 0.6,
-                                            easing: ['ease-in-out'],
-                                        }
-                                    );
+                                    // animate(
+                                    //     imgFluidElements,
+                                    //     {
+                                    //         opacity: [0, 0.5, 1],
+                                    //         y: [15, 0],
+                                    //     },
+                                    //     {
+                                    //         delay: stagger(0.05),
+                                    //         duration: 0.6,
+                                    //         easing: ['ease-in-out'],
+                                    //     }
+                                    // );
 
                                     observerprojects.disconnect();
                                     this.animatedSections.add(category + '-' + project);

@@ -1,4 +1,5 @@
-$transition: all 0.2s ease-in;
+$transition: all 0.6s ease-in;
+$side-transition: all 0.2s ease-in;
 
 .page-inner {
 	display: flex;
@@ -40,12 +41,13 @@ $transition: all 0.2s ease-in;
 
 		.category {
 			button {
+				font-weight: bold;
 				img {
 					width: 10px;
 					height: 10px;
 					margin-inline-end: 5px;
 					object-fit: contain;
-					transition: $transition;
+					transition: $side-transition;
 				}
 				&[aria-expanded='true'] {
 					img {
@@ -55,10 +57,11 @@ $transition: all 0.2s ease-in;
 			}
 
 			.project-list {
-				margin-inline-start: 36px;
+				margin-inline-start: 26px;
 
 				a {
-					font-size: 16px;
+					font-size: 14px;
+					font-weight: bold;
 					margin-bottom: 10px;
 					text-decoration: none;
 					opacity: 0.8;
@@ -69,7 +72,7 @@ $transition: all 0.2s ease-in;
 
 					-webkit-tap-highlight-color: transparent;
 					span {
-						margin-inline-start: 20px;
+						margin-inline-start: 5px;
 					}
 					i {
 						margin-right: 5px;
@@ -81,11 +84,10 @@ $transition: all 0.2s ease-in;
 					position: relative;
 				}
 				a:hover {
-					font-weight: bold;
+					opacity: 1;
 				}
 				a.active {
 					opacity: 1;
-					font-weight: bold;
 				}
 			}
 		}
@@ -106,21 +108,32 @@ $transition: all 0.2s ease-in;
 			}
 
 			.images {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: flex-start;
+				// display: flex;
+				// flex-wrap: wrap;
+				// justify-content: flex-start;
+
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+				grid-auto-rows: 250px;
+				gap: 10px;
 
 				.hoverable-img-item {
 					width: 100%;
-					max-width: 300px;
-					margin: 10px;
+
+					opacity: 0;
+					transform: translateY(20px);
+					transition: $transition;
 
 					.img {
-						height: 250px;
+						height: 100%;
 						width: 100%;
 						object-fit: cover;
-						opacity: 0;
 						cursor: pointer;
+					}
+
+					&.art-transition {
+						opacity: 1;
+						transform: translateY(0px);
 					}
 				}
 			}
