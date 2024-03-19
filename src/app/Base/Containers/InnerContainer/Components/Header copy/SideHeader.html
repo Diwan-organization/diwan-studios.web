@@ -28,29 +28,16 @@
 					About
 				</a>
 			</li>
-			<li class="nav-item small-screen">
+			<li class="nav-item">
 				<a (click)="closemenu()" class="nav-link main-links" [routerLink]="[RoutePaths.ArtWorks]" routerLinkActive="active" data-bs-toggle="collapse">
 					Art Works
 				</a>
+
 				<span class="dropdown">
-					<span
-						(click)="toggleDropdown($event,'dropdownMenu')"
-						class="dropdown-toggle parent-dropdown"
-						href="#"
-						role="button"
-						id="dropdownMenuLink"
-						data-bs-toggle="dropdown"
-						aria-expanded="false">
-						<i class="fa fa-chevron-down"></i>
-						<i class="fa fa-chevron-up"></i>
-					</span>
 					<div class="art-categories dropdown-menu" aria-labelledby="dropdownMenuLink" #dropdownMenu>
 						<div class="art-inner-categories dropdown-item" *ngFor="let category of ArtCategories;let i= index;">
-							<div class="image-container d-inline">
+							<div class="dropdown">
 								<img [src]="category.ImgSrc" [alt]="category.ImgAlt" />
-							</div>
-
-							<span class="dropdown">
 								<a
 									(click)="closemenu()"
 									class="nav-link d-inline"
@@ -58,42 +45,44 @@
 									data-bs-toggle="collapse">
 									{{category.Title}}
 								</a>
-								<span
-									class="dropdown-toggle child-dropdown"
-									href="#"
-									role="button"
-									id="dropdownMenu{{i}}"
-									data-bs-toggle="dropdown"
-									aria-expanded="false">
-									<i class="fa fa-chevron-down"></i>
-									<i class="fa fa-chevron-up"></i>
-								</span>
 								<div class="art-categories dropdown-menu child-menu" attr.aria-labelledby="dropdownMenu{{i}}">
 									<ng-container *ngFor="let link of category.Links; index as i">
 										<a (click)="closemenu()" class="nav-link" *ngIf="i<4" [routerLink]="link.Link"> {{link.Title}}</a>
 									</ng-container>
 								</div>
+							</div>
+							<span
+								class="dropdown-toggle child-dropdown"
+								href="#"
+								role="button"
+								id="dropdownMenu{{i}}"
+								data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fa fa-chevron-down"></i>
+								<i class="fa fa-chevron-up"></i>
 							</span>
 						</div>
 					</div>
 				</span>
+
+				<span
+					(click)="toggleDropdown($event,'dropdownMenu')"
+					class="dropdown-toggle parent-dropdown"
+					href="#"
+					role="button"
+					id="dropdownMenuLink"
+					data-bs-toggle="dropdown"
+					aria-expanded="false">
+					<i class="fa fa-chevron-down"></i>
+					<i class="fa fa-chevron-up"></i>
+				</span>
 			</li>
-			<li class="nav-item small-screen">
+			<li class="nav-item">
 				<a (click)="closemenu()" class="nav-link main-links" [routerLink]="[RoutePaths.Deft]" routerLinkActive="active" data-bs-toggle="collapse">
 					Deft
 				</a>
+
 				<span class="dropdown">
-					<span
-						(click)="toggleDropdown($event,'dropdownMenuDeft')"
-						class="dropdown-toggle parent-dropdown"
-						href="#"
-						role="button"
-						id="dropdownMenuLinkDeft"
-						data-bs-toggle="dropdown"
-						aria-expanded="false">
-						<i class="fa fa-chevron-down"></i>
-						<i class="fa fa-chevron-up"></i>
-					</span>
 					<div class="art-categories dropdown-menu" aria-labelledby="dropdownMenuLinkDeft" #dropdownMenuDeft>
 						<div class="art-inner-categories dropdown-item" *ngFor="let category of DeftCategories;let i= index;">
 							<div class="image-container d-inline">
@@ -108,24 +97,37 @@
 									data-bs-toggle="collapse">
 									{{category.Title}}
 								</a>
-								<span
-									class="dropdown-toggle child-dropdown"
-									href="#"
-									role="button"
-									id="dropdownMenuDeft{{i}}"
-									data-bs-toggle="dropdown"
-									aria-expanded="false">
-									<i class="fa fa-chevron-down"></i>
-									<i class="fa fa-chevron-up"></i>
-								</span>
 								<div class="art-categories dropdown-menu child-menu" attr.aria-labelledby="dropdownMenuDeft{{i}}">
 									<ng-container *ngFor="let link of category.Links; index as i">
 										<a (click)="closemenu()" class="nav-link" *ngIf="i<4" [routerLink]="link.Link"> {{link.Title}}</a>
 									</ng-container>
 								</div>
 							</span>
+
+							<span
+								class="dropdown-toggle child-dropdown"
+								href="#"
+								role="button"
+								id="dropdownMenuDeft{{i}}"
+								data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fa fa-chevron-down"></i>
+								<i class="fa fa-chevron-up"></i>
+							</span>
 						</div>
 					</div>
+				</span>
+
+				<span
+					(click)="toggleDropdown($event,'dropdownMenuDeft')"
+					class="dropdown-toggle parent-dropdown"
+					href="#"
+					role="button"
+					id="dropdownMenuLinkDeft"
+					data-bs-toggle="dropdown"
+					aria-expanded="false">
+					<i class="fa fa-chevron-down"></i>
+					<i class="fa fa-chevron-up"></i>
 				</span>
 			</li>
 			<li class="nav-item">

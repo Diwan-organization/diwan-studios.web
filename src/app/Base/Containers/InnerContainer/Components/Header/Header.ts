@@ -124,7 +124,9 @@ export class HeaderComponent implements OnInit {
 	}
 
 	ScrollChanges() {
-		window.addEventListener('scroll', () => {
+		const mainApp = document.querySelector('.main-app')!;
+
+		mainApp.addEventListener('scroll', () => {
 			this.toggleNavbarScrolled(false);
 			this.toggleBackgroundScrolled();
 		});
@@ -132,7 +134,9 @@ export class HeaderComponent implements OnInit {
 
 	toggleNavbarScrolled(ishovered: boolean) {
 		const navbar = document.querySelector('.navbar');
-		if (window.scrollY > 1) {
+		const mainApp = document.querySelector('.main-app')!;
+		debugger
+		if (mainApp.scrollTop > 1) {
 			navbar?.classList.add('navbar-scrolled');
 		} else {
 			if (ishovered) {

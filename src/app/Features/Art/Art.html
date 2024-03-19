@@ -1,6 +1,6 @@
 <div class="page-inner">
 	<aside>
-		<div class="input-group mb-5 mt-5">
+		<div class="input-group mb-3 mt-3">
 			<input
 				type="text"
 				class="gold-text"
@@ -13,16 +13,17 @@
 		</div>
 
 		<div *ngFor="let category of Categories;let i = index">
-			<ul class="list-unstyled ps-0">
-				<li class="mb-1">
+			<ul class="list-unstyled m-0 ps-0">
+				<li class="category">
 					<button
 						class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed gold-text"
 						data-bs-toggle="collapse"
 						[attr.data-bs-target]="'#' + category.Name.replace(regex,'').trim() + '-collapse'"
 						aria-expanded="false">
+						<img src="assets/Logos/arrowExpand.png" />
 						{{category.Name}}
 					</button>
-					<div class="collapse" [attr.id]="category.Name.replace(regex,'').trim() 	+ '-collapse'">
+					<div class="collapse project-list" [attr.id]="category.Name.replace(regex,'').trim() 	+ '-collapse'">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" *ngFor="let project of category.ProjectItem;let i = index">
 							<!-- <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li> -->
 							<li>
@@ -53,7 +54,7 @@
 			[ngClass]="category.Name.replace(regex, '').trim().toLocaleUpperCase()">
 			<div *ngFor="let project of category.ProjectItem; let i = index" class="projects" [id]="project.Name.replace(regex, '').trim().toLocaleUpperCase()">
 				<h1 class="title gold-text">{{project.Name}}</h1>
-				<p class="sub-title gold-text">{{project.Description}}</p>
+				<p class="sub-title">{{project.Description}}</p>
 				<div class="images">
 					<div *ngFor="let img of project.Images; let j = index" class="hoverable-img-item">
 						<img class="img" [src]="img" alt="" data-bs-toggle="modal" [attr.data-bs-target]="'#project-' + i + '-' + j" />
@@ -63,7 +64,7 @@
 								<div class="modal-content" (click)="$event.stopPropagation()">
 									<div class="modal-header">
 										<h1 class="modal-title fs-5" id="projectLabel">{{project.Name}}</h1>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
 									</div>
 									<div class="modal-body">
 										<img class="img-modal" [src]="img" alt="" />

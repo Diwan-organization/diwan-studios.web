@@ -55,7 +55,7 @@ export class SideHeaderComponent implements OnInit {
 				}
 			]
 		}, {
-			Title: 'Offices and Factories',
+			Title: 'Offices & Factories',
 			ImgAlt: '',
 			ImgSrc: 'assets/Images/girl-wall.jpg',
 			Links: [
