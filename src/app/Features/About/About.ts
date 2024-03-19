@@ -75,7 +75,6 @@ export class AboutComponent implements OnInit {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
 						landingTextDiv.classList.add('landing-text-transition');
-						landingText.classList.add('typing-effect');
 						return;
 					}
 

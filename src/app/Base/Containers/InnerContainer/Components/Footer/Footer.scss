@@ -26,6 +26,7 @@ footer {
 		align-items: center;
 		.phrase {
 			font-size: 14px;
+			text-align: center;
 		}
 
 		.roww {
@@ -90,16 +91,24 @@ footer {
 
 @media (max-width: 576px) {
 	footer {
+		.intro {
+			img {
+				height: 40px;
+			}
+		}
 		.main {
 			flex-direction: column;
-			img {
-				width: 100px;
-				object-fit: cover;
-				margin: auto;
+			padding: 0 5%;
+			.roww {
+				flex-wrap: wrap;
 			}
 		}
 		.copyright {
 			flex-direction: column;
+			padding: 0 5%;
+			.powered-by {
+				font-size: 12px;
+			}
 		}
 	}
 }

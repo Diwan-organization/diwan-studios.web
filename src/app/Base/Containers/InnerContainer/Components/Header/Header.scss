@@ -129,9 +129,8 @@ $transition: transform 0.5s ease-out;
 	}
 
 	&:hover {
-		.lines-div{
-			.line-div{
-
+		.lines-div {
+			.line-div {
 				.line {
 					background-color: var(--gold1);
 				}
@@ -146,6 +145,18 @@ $transition: transform 0.5s ease-out;
 		}
 		.line-3 {
 			transform: translateX(35px); // Move to the right
+		}
+	}
+}
+
+.logo-img {
+	height: 80px;
+}
+
+@media (max-width: 576px) {
+	.navbar {
+		.logo-img {
+			height: 40px;
 		}
 	}
 }

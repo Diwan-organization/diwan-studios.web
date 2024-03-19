@@ -1,3 +1,6 @@
+$partner-logo: 150px;
+$small-partner-logo: 75px;
+
 .carousel {
 	position: relative;
 	width: 100%;
@@ -14,10 +17,10 @@
 			mix-blend-mode: multiply;
 			border-radius: 50%;
 
-			max-width: 120px;
-			min-width: 120px;
-			max-height: 120px;
-			min-height: 120px;
+			max-width: $partner-logo;
+			min-width: $partner-logo;
+			max-height: $partner-logo;
+			min-height: $partner-logo;
 			padding: 10px;
 			display: block; /* Ensure the image takes up its full container */
 			width: 100%; /* Adjust the width as needed */
@@ -65,5 +68,18 @@
 	}
 	.next-btn {
 		right: 0;
+	}
+}
+
+@media (max-width: 576px) {
+	.carousel {
+		.images-container {
+			img {
+				max-width: $small-partner-logo;
+				min-width: $small-partner-logo;
+				max-height: $small-partner-logo;
+				min-height: $small-partner-logo;
+			}
+		}
 	}
 }

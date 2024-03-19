@@ -618,17 +618,33 @@ export class HomeComponent implements OnInit {
 			})
 
 			// categories description in stationary section
+			// const categoriesDesc = document.querySelector('.own-description')!;
+
+			// categoriesDesc.classList.remove('typing-effect');
+			// const aboutObserver = new IntersectionObserver(entries => {
+			// 	entries.forEach(entry => {
+			// 		if (entry.isIntersecting) {
+			// 			categoriesDesc.classList.add('typing-effect');
+			// 			return;
+			// 		}
+
+			// 		categoriesDesc.classList.remove('typing-effect');
+			// 	});
+			// });
+			// aboutObserver.observe(categoriesDesc);
+
+			// categories description in stationary section
 			const categoriesDesc = document.querySelector('.own-description')!;
 
-			categoriesDesc.classList.remove('typing-effect');
+			categoriesDesc.classList.remove('category-transition');
 			const aboutObserver = new IntersectionObserver(entries => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
-						categoriesDesc.classList.add('typing-effect');
+						categoriesDesc.classList.add('category-transition');
 						return;
 					}
 
-					categoriesDesc.classList.remove('typing-effect');
+					categoriesDesc.classList.remove('category-transition');
 				});
 			});
 			aboutObserver.observe(categoriesDesc);
