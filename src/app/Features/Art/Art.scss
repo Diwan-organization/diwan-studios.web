@@ -101,39 +101,47 @@ $side-transition: all 0.2s ease-in;
 
 		.category {
 			margin-bottom: 50px;
+			width: 100%;
+			border-bottom: 1px solid white;
 			.sub-title {
+				max-width: 500px;
 				margin-top: 10px;
-				margin-left: 25px 0px;
 				width: 90%;
 			}
 
-			.images {
-				// display: flex;
-				// flex-wrap: wrap;
-				// justify-content: flex-start;
+			.projects {
+				margin-bottom: 30px;
+				.images {
+					// display: flex;
+					// flex-wrap: wrap;
+					// justify-content: flex-start;
 
-				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
-				grid-auto-rows: 250px;
-				gap: 10px;
+					display: grid;
+					grid-template-columns: repeat(
+						auto-fill,
+						minmax(250px, 300px)
+					);
+					grid-auto-rows: 250px;
+					gap: 10px;
 
-				.hoverable-img-item {
-					width: 100%;
-
-					opacity: 0;
-					transform: translateY(20px);
-					transition: $transition;
-
-					.img {
-						height: 100%;
+					.hoverable-img-item {
 						width: 100%;
-						object-fit: cover;
-						cursor: pointer;
-					}
 
-					&.art-transition {
-						opacity: 1;
-						transform: translateY(0px);
+						opacity: 0;
+						transform: translateY(20px);
+						transition: $transition;
+
+						.img {
+							height: 100%;
+							width: 100%;
+							object-fit: cover;
+							cursor: pointer;
+						}
+
+						&.art-transition {
+							opacity: 1;
+							transform: translateY(0px);
+						}
 					}
 				}
 			}
