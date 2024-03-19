@@ -135,3 +135,11 @@
 .btn-toggle[aria-expanded='true']::before {
 	transform: rotate(90deg);
 }
+@media (max-width: 576px) {
+	.page-inner {
+		padding: 20px;
+		aside {
+			display: none;
+		}
+	}
+}
