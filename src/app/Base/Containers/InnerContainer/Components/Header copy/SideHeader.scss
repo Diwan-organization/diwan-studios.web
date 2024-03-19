@@ -162,11 +162,11 @@ $font-color: var(--gold1);
 	}
 }
 
-@media (max-width: 650px) {
-	.parent-dropdown {
-		transform: translate(50vw, -40px) !important;
-		.child-dropdown {
-			transform: translate(8vw, 33px) !important;
-		}
-	}
-}
+// @media (max-width: 576px) {
+// 	.parent-dropdown {
+// 		transform: translate(50vw, -40px) !important;
+// 		.child-dropdown {
+// 			transform: translate(8vw, 33px) !important;
+// 		}
+// 	}
+// }

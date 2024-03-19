@@ -4,11 +4,11 @@ $transition: transform 0.5s ease-out;
 	transition: $transition;
 
 	&.main-app {
-		transform: scale(0.8) translate(-400px, 5%) !important;
+		transform: scale(0.8) translate(-300px, 5%) !important;
 		overflow: hidden !important;
 	}
 	&.side-menu {
-		transform: scale(0.8) translate(-530px, 5%) !important;
+		transform: scale(0.8) translate(-100%, 5%) !important;
 	}
 
 	.page-inner {
@@ -27,10 +27,11 @@ $transition: transform 0.5s ease-out;
 	transition: $transition;
 	overflow-x: clip !important;
 }
-@media (max-width: 650px) {
+
+@media (max-width: 576px) {
 	.move-animation {
-		&.side-menu {
-			transform: scale(0.8) translate(-500px, 5%) !important;
+		&.main-app {
+			transform: scale(0.8) translate(-350px, 5%) !important;
 		}
 	}
 }
