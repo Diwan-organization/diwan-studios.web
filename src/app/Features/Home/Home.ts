@@ -39,19 +39,19 @@ export class HomeComponent implements OnInit {
 
 	Animation = {
 		LandingText: () => {
-			const landingText = document.querySelector('.landing-text')!;
-			landingText.classList.remove('landing-text-transition');
-			const landingTextObserver = new IntersectionObserver(entries => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						landingText.classList.add('landing-text-transition');
-						return;
-					}
+			// const landingText = document.querySelector('.landing-text')!;
+			// landingText.classList.remove('landing-text-transition');
+			// const landingTextObserver = new IntersectionObserver(entries => {
+			// 	entries.forEach(entry => {
+			// 		if (entry.isIntersecting) {
+			// 			landingText.classList.add('landing-text-transition');
+			// 			return;
+			// 		}
 
-					landingText.classList.remove('landing-text-transition');
-				});
-			});
-			landingTextObserver.observe(landingText);
+			// 		landingText.classList.remove('landing-text-transition');
+			// 	});
+			// });
+			// landingTextObserver.observe(landingText);
 		},
 
 		About: () => {

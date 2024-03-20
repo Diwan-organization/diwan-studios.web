@@ -25,15 +25,8 @@ export class SideHeaderComponent implements OnInit {
 	@ViewChild('dropdownMenuDeft') dropdownMenuDeft!: ElementRef;
 
 	constructor(private Animation: SidebarAnimationService) { }
-	ngOnInit(): void {
 
-	}
-
-
-
-
-
-
+	ngOnInit(): void { }
 
 	ArtCategories: ArtCategory[] = [
 		{
@@ -192,6 +185,7 @@ export class SideHeaderComponent implements OnInit {
 
 
 	]
+
 	toggleDropdown(event: MouseEvent, dropdown: string) {
 		if (dropdown == 'dropdownMenu') {
 			const dropdownMenuElement = this.dropdownMenu.nativeElement as HTMLElement;
@@ -228,11 +222,9 @@ export class SideHeaderComponent implements OnInit {
 
 		event.stopPropagation(); // Prevent event bubbling to parent elements
 	}
+
 	closemenu() {
-		const mainApp = document.querySelector('.main-app');
-		if (mainApp != null) {
-			mainApp.scrollTop = 0;
-		}
+		this.Animation.ScrollUp();
 		this.Animation.animationflag = false;
 		this.Animation.transform();
 	}

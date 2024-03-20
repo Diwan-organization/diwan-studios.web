@@ -5,12 +5,9 @@ import { ElementRef, Injectable } from '@angular/core';
 export class SidebarAnimationService {
     animationflag: boolean = false;
 
+    constructor() { }
 
-    constructor(
-
-    ) { }
     transform() {
-
         const icon = document.getElementById('menu-icon')!;
         const body = document.querySelector('body');
         const mainApp = document.querySelector('.main-app');
@@ -58,4 +55,10 @@ export class SidebarAnimationService {
         }
     }
 
+    ScrollUp() {
+        const mainApp = document.querySelector('.main-app');
+        if (mainApp != null) {
+            mainApp.scrollTop = 0;
+        }
+    }
 }

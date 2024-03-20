@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { PlatformLocation } from '@angular/common';
 import { RoutePaths } from '../Common/Settings/RoutePaths';
 import { HttpClient } from '@angular/common/http';
+import { SidebarAnimationService } from '@App/Common/Services/SidebarAnimation.Service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ export class AppComponent {
     private PlatformLocation: PlatformLocation,
     private Router: Router,
     private appRef: ApplicationRef,
-    private http: HttpClient
+    private http: HttpClient,
+    private SidebarAnimationService: SidebarAnimationService
   ) { }
 
   ngOnInit() {
@@ -86,7 +88,8 @@ export class AppComponent {
     this.Router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // Scroll to the top of the page when a new route is navigated
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
+        this.SidebarAnimationService.ScrollUp();
       }
     });
   }

@@ -111,7 +111,7 @@ $color: var(--primary-font-color);
 		.dropdown {
 			.art-categories.dropdown-menu {
 				max-height: 59vh;
-				overflow-y: scroll;
+				overflow-y: auto;
 				padding-left: 20px;
 				background-color: transparent !important;
 				position: relative !important;
