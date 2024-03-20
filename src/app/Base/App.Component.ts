@@ -56,8 +56,12 @@ export class AppComponent {
     const startTime = new Date().getTime();
     console.log('startTime: ', startTime);
 
+    // for mobile and very slow connections
     setTimeout(() => {
       this.IsLoaded = true;
+      setTimeout(() => {
+        this.NoLoader = true;
+      }, 1000);
     }, 5000);
     // Add an event listener to execute code when the window is loaded
     window.addEventListener('load', () => {
