@@ -88,6 +88,7 @@ $side-transition: all 0.2s ease-in;
 				}
 				a.active {
 					opacity: 1;
+					font-weight: 900;
 				}
 			}
 		}
@@ -147,11 +148,10 @@ $side-transition: all 0.2s ease-in;
 			}
 		}
 	}
-
 	.modal {
 		color: var(--gold1);
 		.modal-dialog {
-			max-width: 100%;
+			max-width: 90%;
 			justify-content: center;
 			.modal-content {
 				background-color: var(--primary-color2);
@@ -160,7 +160,6 @@ $side-transition: all 0.2s ease-in;
 					margin: auto;
 					.img-modal {
 						max-height: 65vh;
-						width: 100%;
 					}
 				}
 				.modal-header,

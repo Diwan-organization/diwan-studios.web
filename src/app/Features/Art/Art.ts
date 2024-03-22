@@ -16,7 +16,8 @@ import { ArtCategories, ArtCategory, ArtProjectItem, ArtProjects } from './Data/
 })
 export class ArtComponent {
     RoutePaths = RoutePaths;
-    regex = /\s/g;
+    regex = /['\s]/g;
+
     private animatedSections: Set<string> = new Set();
 
     SearchText: string = '';
@@ -113,12 +114,13 @@ export class ArtComponent {
         threshold: 0.1,
     };
     private checkElementsVisibility() {
+        debugger
         const categoryElements = this.el.nativeElement.querySelectorAll('.category');
 
         categoryElements.forEach((categoryElement: Element) => {
             const category = categoryElement.getAttribute('id');
             const rectt = categoryElement.getBoundingClientRect();
-            if (!(rectt.top <= 400 && rectt.bottom > 400)) {
+            if (!(rectt.top <= 100 && rectt.bottom > 100)) {
                 if (category != null) {
                     var button = document.querySelector('[data-bs-target="#' + category.trim().replace(' ', '').charAt(0).toUpperCase() + category.trim().replace(' ', '').slice(1).toLowerCase() + '-collapse"]');
                     if (button) {
