@@ -110,7 +110,9 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Inspiring graffiti art used as a motivation for growth using the brand color.',
         Location: 'Egypt',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/CAREEM/careem1.webp',
+            'assets/Images/Projects/CAREEM/careem2.webp',
+            'assets/Images/Projects/CAREEM/careem3.webp',
         ],
         CategoryName: 'Offices and factories'
     }, {
@@ -118,7 +120,15 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'The graffiti drawn on the walls of their head offices in cairo took the walls to another place to keep up the positive vibes in the place.',
         Location: 'Egypt',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/Money-fellows/moneyfellow6.webp',
+            'assets/Images/Projects/Money-fellows/moneyfellow7.jpg',
+            'assets/Images/Projects/Money-fellows/moneyfellow8.jpg',
+            'assets/Images/Projects/Money-fellows/moneyfellow1.webp',
+            'assets/Images/Projects/Money-fellows/moneyfellow2.webp',
+            'assets/Images/Projects/Money-fellows/moneyfellow3.webp',
+            'assets/Images/Projects/Money-fellows/moneyfellow4.webp',
+            'assets/Images/Projects/Money-fellows/moneyfellow5.webp',
+
         ],
         CategoryName: 'Offices and factories'
     }, {
@@ -126,7 +136,12 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Number of walls: 10.\nGame developnig office.\nAdding an artistic touch to walls of the place to match the identity and make it special.',
         Location: 'Egypt',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/vq/vq1.webp',
+            'assets/Images/Projects/vq/vq2.webp',
+            'assets/Images/Projects/vq/vq3.webp',
+            'assets/Images/Projects/vq/vq4.webp',
+            'assets/Images/Projects/vq/vq5.webp',
+            'assets/Images/Projects/vq/vq6.webp',
         ],
         CategoryName: 'Offices and factories'
     }, {
@@ -134,7 +149,14 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Travel solutions company.\nUnique artwork to keep up the positive vibes.',
         Location: 'Egypt',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/GTE-OFFICE/gte1.webp',
+            'assets/Images/Projects/GTE-OFFICE/gte2.webp',
+            'assets/Images/Projects/GTE-OFFICE/gte3.webp',
+            'assets/Images/Projects/GTE-OFFICE/gte4.webp',
+            'assets/Images/Projects/GTE-OFFICE/gte5.webp',
+            'assets/Images/Projects/GTE-OFFICE/gte6.webp',
+            'assets/Images/Projects/GTE-OFFICE/gte7.webp',
+            'assets/Images/Projects/GTE-OFFICE/gte8.webp',
         ],
         CategoryName: 'Offices and factories'
     }, {
@@ -142,7 +164,13 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Number of walls: 8.\nA fun way to keep the audience included.\nIn this project we used the interactive art concept in which the art is involved with the spectator in a way.\nHaving interactive artwork for people to enjoy like the rubik\'s cube which can be used as a bench.',
         Location: 'Egypt',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/rubix-park/rubix1.webp',
+            'assets/Images/Projects/rubix-park/rubix2.webp',
+            'assets/Images/Projects/rubix-park/rubix3.webp',
+            'assets/Images/Projects/rubix-park/rubix4.webp',
+            'assets/Images/Projects/rubix-park/rubix5.webp',
+            'assets/Images/Projects/rubix-park/rubix6.webp',
+            'assets/Images/Projects/rubix-park/rubix7.webp',
         ],
         CategoryName: 'Malls'
     }, {
@@ -150,7 +178,13 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Number of walls: 8.\nAn outdoor hub featuring the beach and summer vibes.',
         Location: 'Egypt',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/gleem-bay/gleembay1.webp',
+            'assets/Images/Projects/gleem-bay/gleembay2.webp',
+            'assets/Images/Projects/gleem-bay/gleembay3.webp',
+            'assets/Images/Projects/gleem-bay/gleembay4.webp',
+            'assets/Images/Projects/gleem-bay/gleembay5.webp',
+            'assets/Images/Projects/gleem-bay/gleembay6.webp',
+            'assets/Images/Projects/gleem-bay/gleembay7.webp',
         ],
         CategoryName: 'Malls'
     }, {
@@ -158,7 +192,21 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: '',
         Location: 'Egypt',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/Tio-Complex/TIO-1.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-2.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-3.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-4.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-5.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-6.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-7.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-8.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-9.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-10.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-11.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-12.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-13.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-14.webp',
+            'assets/Images/Projects/Tio-Complex/TIO-15.webp',
         ],
         CategoryName: 'Malls'
     }, {
@@ -166,7 +214,14 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Pro Guys is one of the best wrapping and car styling companies in Egypt.\nFocus was showcasing their identity and work through our murals ending it witha statement wall of Pro Guy\'s dream team',
         Location: 'Egypt',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/Pro-guys/pro1.webp',
+            'assets/Images/Projects/Pro-guys/pro2.webp',
+            'assets/Images/Projects/Pro-guys/pro3.webp',
+            'assets/Images/Projects/Pro-guys/pro4.webp',
+            'assets/Images/Projects/Pro-guys/pro5.webp',
+            'assets/Images/Projects/Pro-guys/pro6.webp',
+            'assets/Images/Projects/Pro-guys/pro7.webp',
+            'assets/Images/Projects/Pro-guys/pro8.webp',
         ],
         CategoryName: 'Showrooms'
     }, {
@@ -174,7 +229,15 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Adding color to the walls through tropical and relatable artwork.',
         Location: 'Egypt',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/Seats/seats1.webp',
+            'assets/Images/Projects/Seats/seats2.webp',
+            'assets/Images/Projects/Seats/seats3.webp',
+            'assets/Images/Projects/Seats/seats4.webp',
+            'assets/Images/Projects/Seats/seats5.webp',
+            'assets/Images/Projects/Seats/seats6.webp',
+            'assets/Images/Projects/Seats/seats7.webp',
+            'assets/Images/Projects/Seats/seats8.webp',
+            'assets/Images/Projects/Seats/seats9.webp',
         ],
         CategoryName: 'Showrooms'
     }, {
@@ -182,7 +245,10 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'One of the top mexican cuisines in Egypt.\nThe artwork along with the neon lights purpose is to give the place Mexican vibes as if clients are stepping into the heart of Mexico.',
         Location: 'Qatar',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/BONITA/bonita1.webp',
+            'assets/Images/Projects/BONITA/bonita2.webp',
+            'assets/Images/Projects/BONITA/bonita3.webp',
+            'assets/Images/Projects/BONITA/bonita4.webp',
         ],
         CategoryName: 'Restaurants'
     }, {
@@ -190,7 +256,10 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Promoting the Origin of the place through murals that show the street of japan which highlights the japanese culture.',
         Location: 'Qatar',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/taiyaki/taiyaki1.webp',
+            'assets/Images/Projects/taiyaki/taiyaki2.webp',
+            'assets/Images/Projects/taiyaki/taiyaki3.webp',
+            'assets/Images/Projects/taiyaki/taiyaki4.webp',
         ],
         CategoryName: 'Restaurants'
     }, {
@@ -198,7 +267,9 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Number of branches: 10.\nPutting an identity to Butcher\'s Burger walls that matches its modern interior.',
         Location: 'Qatar',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/BUTCHER-BURGER/burcher1.webp',
+            'assets/Images/Projects/BUTCHER-BURGER/burcher2.webp',
+            'assets/Images/Projects/BUTCHER-BURGER/burcher3.webp',
         ],
         CategoryName: 'Restaurants'
     }, {
@@ -206,7 +277,7 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Number of branches: 5.\nGiving a new look to a fried chicken quick service, Kansas interior is all about hip hop street graffiti.',
         Location: 'Qatar',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/kansas/kansas1.webp',
         ],
         CategoryName: 'Restaurants'
     }, {
@@ -214,7 +285,14 @@ export const ArtProjects: ArtProjectItem[] = [
         Description: 'Japanese murals artwork.',
         Location: 'Qatar',
         Images: [
-            'assets/Images/Projects/',
+            'assets/Images/Projects/MORI-SUSHI/MORI-SUSHI-1.webp',
+            'assets/Images/Projects/MORI-SUSHI/MORI-SUSHI-2.webp',
+            'assets/Images/Projects/MORI-SUSHI/MORI-SUSHI-3.webp',
+            'assets/Images/Projects/MORI-SUSHI/MORI-SUSHI-4.webp',
+            'assets/Images/Projects/MORI-SUSHI/MORI-SUSHI-5.webp',
+            'assets/Images/Projects/MORI-SUSHI/MORI-SUSHI-6.webp',
+            'assets/Images/Projects/MORI-SUSHI/MORI-SUSHI-7.webp',
+            'assets/Images/Projects/MORI-SUSHI/MORI-SUSHI-8.webp',
         ],
         CategoryName: 'Restaurants'
     },
