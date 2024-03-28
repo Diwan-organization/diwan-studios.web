@@ -56,8 +56,10 @@
 				<h1 class="title gold-text">{{project.Name}}</h1>
 				<p class="sub-title">{{project.Description}}</p>
 				<div class="images">
-					<div *ngFor="let img of project.Images; let j = index" class="hoverable-img-item">
-						<img class="img" [src]="img" alt="" data-bs-toggle="modal" [attr.data-bs-target]="'#project-' + i + '-' + j" />
+					<ng-container *ngFor="let img of project.Images; let j = index">
+						<div class="hoverable-img-item">
+							<img class="img" [src]="img" alt="" data-bs-toggle="modal" [attr.data-bs-target]="'#project-' + i + '-' + j" />
+						</div>
 						<!-- Modal -->
 						<div class="modal fade" [id]="'project-' + i + '-' + j" tabindex="-1" aria-labelledby="projectLabel">
 							<div class="modal-dialog modal-dialog-centered">
@@ -75,7 +77,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</ng-container>
 				</div>
 			</div>
 		</div>
