@@ -28,7 +28,7 @@ export class AppComponent {
     this.PreLoaderListener();
     this.ScrollUpSub();
     this.CheckIOS();
-    this.loadImages();
+    // this.loadImages();
   }
 
   images: string[] = [
@@ -69,7 +69,7 @@ export class AppComponent {
       const elapsedTime = currentTime - startTime;
       console.log('elapsedTime: ', elapsedTime);
 
-      const minLoadingTime = 1500;
+      const minLoadingTime = 1000;
       if (elapsedTime >= minLoadingTime) {
         console.log('first');
         this.IsLoaded = true;

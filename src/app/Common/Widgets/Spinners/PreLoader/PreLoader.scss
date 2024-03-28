@@ -47,11 +47,14 @@
 	}
 
 	&.loaded {
+		.parent {
+			animation: loaded 1s ease-out;
+		}
 		app-loader {
-			display: none;
+			// display: none;
 		}
 		img {
-			animation: loaded 1s ease-out;
+			// animation: loaded 1s ease-out;
 		}
 	}
 }
@@ -59,6 +62,6 @@
 @keyframes loaded {
 	to {
 		opacity: 0;
-		scale: 10;
+		scale: 0.7;
 	}
 }
