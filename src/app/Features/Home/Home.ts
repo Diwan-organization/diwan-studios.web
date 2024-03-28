@@ -8,12 +8,13 @@ import { PartnerItem, Partners } from './Data/Partners';
 import { Stats, StatsItem } from './Data/Stats';
 import { Categories, CategoryItem } from './Data/Categories';
 import { ValueItem, Values } from './Data/Values';
+import { LandingCarouselComponent } from '@App/Common/Widgets/LandingCarousel/LandingCarousel';
 
 @Component({
 	standalone: true,
 	templateUrl: './Home.html',
 	styleUrls: ['Home.scss'],
-	imports: [FormsModule, CommonModule, RouterModule, CarouselComponent],
+	imports: [FormsModule, CommonModule, RouterModule, LandingCarouselComponent, CarouselComponent],
 })
 export class HomeComponent implements OnInit {
 	RoutePaths = RoutePaths;
@@ -88,7 +89,7 @@ export class HomeComponent implements OnInit {
 					const numberElement = element.querySelector('.number');
 					const targetNumber = parseInt(numberElement.getAttribute('number'));
 					const targetTimeInterval = parseInt(numberElement.getAttribute('timeinterval'));
-					console.log(targetNumber);
+					// console.log(targetNumber);
 
 					let currentNumber = 0;
 					const interval = setInterval(() => {

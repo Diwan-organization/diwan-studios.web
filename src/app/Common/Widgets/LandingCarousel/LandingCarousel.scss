@@ -1,0 +1,117 @@
+$transition: all 1s ease-in;
+
+.carousel {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	.slides {
+		display: flex;
+		transition: $transition;
+		width: 100%;
+		height: 100%;
+		// overflow: hidden;
+
+		.slide {
+			position: relative;
+			width: 100vw;
+			height: 100%;
+
+			img {
+				width: 100vw;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.landing-overlay {
+				position: absolute;
+				top: 0;
+				// background-color: rgba(0, 0, 0, 0.6);
+				background-color: rgba(4, 0, 9, 1);
+				height: 100%;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-start;
+				z-index: 1;
+				opacity: 0.7;
+			}
+
+			.caption {
+				position: absolute;
+				top: 60%;
+				left: 10%;
+				transform: translateY(-50%);
+				text-align: start;
+				color: var(--primary-font-color);
+				z-index: 1;
+
+				transition: $transition;
+				opacity: 0;
+			}
+
+			&.active {
+				.caption {
+					opacity: 1;
+					top: calc(50% + 40px);
+				}
+			}
+		}
+	}
+
+	.title {
+		text-transform: uppercase;
+		position: absolute;
+		left: 10%;
+		top: 45%;
+		transform: translateY(-50%);
+	}
+
+	.arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: transparent;
+		color: var(--secondary-font-color);
+		border: none;
+		outline: none;
+		cursor: pointer;
+		font-size: 24px;
+		z-index: 1;
+
+		&.prev {
+			left: 0;
+		}
+
+		&.next {
+			right: 0;
+		}
+	}
+
+	.indicators {
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		z-index: 1;
+
+		.indicator {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: rgba(255, 255, 255, 0.5);
+			margin: 0 5px;
+			cursor: pointer;
+
+			&.active {
+				background-color: white;
+			}
+			&:hover {
+				background-color: white;
+			}
+		}
+	}
+}

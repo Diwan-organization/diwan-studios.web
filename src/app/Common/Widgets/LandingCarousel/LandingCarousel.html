@@ -1,0 +1,25 @@
+<div class="carousel">
+	<div class="slides" [style.transform]="'translateX(' + (-(currentIndex) * 100) + 'vw)'">
+		<div class="slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex">
+			<img [src]="slide.image" [alt]="slide.title" />
+			<div class="landing-overlay"></div>
+
+			<div class="caption">
+				<h4>{{ slide.title }}</h4>
+				<h5>{{ slide.description }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<h1 class="title">Diwan Studios</h1>
+	<button class="arrow prev" (click)="onPrevSlide()">
+		<i class="fa fa-chevron-left"></i>
+	</button>
+	<button class="arrow next" (click)="onNextSlide()">
+		<i class="fa fa-chevron-right"></i>
+	</button>
+
+	<div class="indicators">
+		<div class="indicator" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex" (click)="onGoToSlide(i)"></div>
+	</div>
+</div>

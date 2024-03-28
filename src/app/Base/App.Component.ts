@@ -28,15 +28,22 @@ export class AppComponent {
     this.PreLoaderListener();
     this.ScrollUpSub();
     this.CheckIOS();
-    // this.loadImages();
+    this.loadImages();
   }
 
   images: string[] = [
-
+    'assets/Images/landing/1.webp',
+    'assets/Images/landing/2.webp',
+    'assets/Images/landing/3.webp',
+    'assets/Images/landing/4.webp',
+    'assets/Images/landing/5.webp',
+    'assets/Images/landing/6.webp',
+    'assets/Images/landing/7.webp'
   ];
   imagesLoaded: number = 0;
   totalImages: number = this.images.length;
 
+  // landing carousel images
   loadImages() {
     this.images.forEach(url => {
       this.http.get(url, { responseType: 'blob' }).subscribe(() => {
@@ -45,8 +52,7 @@ export class AppComponent {
 
         if (this.imagesLoaded === this.totalImages) {
           // All images are loaded, hide the preloader
-          this.IsLoaded = true;
-
+          // this.IsLoaded = true;
         }
       });
     });
@@ -54,7 +60,7 @@ export class AppComponent {
 
   PreLoaderListener() {
     const startTime = new Date().getTime();
-    console.log('startTime: ', startTime);
+    // console.log('startTime: ', startTime);
 
     // for mobile and very slow connections
     setTimeout(() => {
@@ -67,18 +73,18 @@ export class AppComponent {
     window.addEventListener('load', () => {
       const currentTime = new Date().getTime();
       const elapsedTime = currentTime - startTime;
-      console.log('elapsedTime: ', elapsedTime);
+      // console.log('elapsedTime: ', elapsedTime);
 
       const minLoadingTime = 1000;
       if (elapsedTime >= minLoadingTime) {
-        console.log('first');
+        // console.log('first');
         this.IsLoaded = true;
         setTimeout(() => {
           this.NoLoader = true;
         }, 1000);
       } else {
         setTimeout(() => {
-          console.log('scond');
+          // console.log('scond');
           this.IsLoaded = true;
           setTimeout(() => {
             this.NoLoader = true;
